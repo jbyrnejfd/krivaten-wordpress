@@ -1,0 +1,14 @@
+<?php
+include("shortcodes/accordion.php");
+include("shortcodes/blog.php");
+include("shortcodes/checklist.php");
+include("shortcodes/grid.php");
+include("shortcodes/icon.php");
+include("shortcodes/map.php");
+include("shortcodes/overlay.php");
+include("shortcodes/pre.php");
+include("shortcodes/quote.php");
+include("shortcodes/twitter.php");
+include("shortcodes/well.php");
+include("shortcodes/youtube.php");
+?>

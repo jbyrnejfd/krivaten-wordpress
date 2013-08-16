@@ -1,0 +1,260 @@
+body {
+	overflow-y: scroll;
+}
+
+hr {
+	&.soften {
+		.three-color-horizontal-gradient(rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+		height: 1px;
+		margin: 70px 0;
+		border: 0;
+	}
+}
+
+aside, article {
+	padding-top: 20px;
+}
+///////////////
+//  NAV BAR  //
+///////////////
+.banner {
+	.navbar-inner {
+		.current-menu-item, .current-menu-parent {
+			> a, > a:hover {
+				background: @navbar-link-active-bg;
+				color: @navbar-link-active-color;
+			}
+		}
+	}
+}
+
+/////////////////
+//  SIDEMENUS  //
+/////////////////
+.sidenav {
+	ul {
+		margin: 15px 0;
+		padding: 0;
+		background-color: @white;
+		list-style: none;
+	}
+	li {
+		display: none;
+		&:first-child a {
+			.border-radiuses(5px, 0, 0, 5px);
+		}
+		&:last-child a {
+			.border-radiuses(0, 5px, 5px, 0);
+		}
+		&.current-menu-item a, &.current-menu-item a:hover {
+			background: @black-lighter;
+			color: @white;
+			position: relative;
+			z-index: 2;
+			padding: 9px 15px;
+			border: 0;
+		}
+		a {
+			text-decoration: none;
+			display: block;
+			margin: 0 0 -1px;
+			padding: 8px 14px;
+			border: 1px solid @gray;
+
+			&:hover {
+				background-color: @gray;
+			}
+			&:after {
+				font-family: @icon-font;
+				content: '\f138';
+				float: right;
+				color: rgba(0,0,0,0.2);
+			}
+		}
+	}
+	.current-menu-parent {
+		> a {display: none;}
+		> ul {margin: 0;}
+		&, li {display: block;}
+	}
+	
+	&.affix {
+		top: 40px;
+	}
+	&.affix-bottom {
+		position: absolute;
+		top: auto;
+		bottom: 270px;
+	}
+}
+
+////////////////////
+//   SMARTPHONE   //
+////////////////////
+@media (max-width: 767px) {
+	@import "media-smartphone.less";
+}
+
+///////////////////////////////
+//   SMARTPHONE AND TABLET   //
+///////////////////////////////
+@media (max-width: 979px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#page-content {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+////////////////
+//   TABLET   //
+////////////////
+@media (min-width: 768px) and (max-width: 979px) {
+	@import "media-tablet.less";
+}
+
+/////////////////////////////
+//   TABLET  AND DESKTOP   //
+/////////////////////////////
+@media (min-width: 768px) {
+}
+
+//////////////////////////
+//   DESKTOP STANDARD   //
+//////////////////////////
+@media (min-width: 980px) {
+	body {
+		padding-top: 40px;
+	}
+}
+
+///////////////////////////////
+//   DESKTOP LARGE SCREENS   //
+///////////////////////////////
+@media only screen and (min-width: 1824px) {
+}
+
+////////////////
+//   RETINA   //
+////////////////
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+}
+
+/////////////
+//  FORMS  //
+/////////////
+.gform_wrapper ul { 
+	list-style: none; margin-left: 0; 
+}
+.gform_wrapper li {
+	.clearfix();
+}
+.gform_wrapper form { 
+	margin-bottom: 0; 
+}
+.gfield_radio input, .gfield_checkbox input {
+	vertical-align: 0;
+}
+.gfield_radio label, .gfield_checkbox label {
+	display: inline-block;
+	margin-left: 8px;
+}
+.gform_wrapper .gfield_required {
+	color: @brand-danger;
+	padding-left: 1px;
+}
+.gform_wrapper .validation_message { 
+	display: none; 
+}
+.gform_wrapper .gfield_error label {
+	color: @brand-warning;
+}
+.gform_wrapper .gform_button {
+	.btn;
+	.btn-primary;
+}
+
+.clear-multi:after {
+	display: block;
+	clear: both;
+}
+.gfield_date_dropdown_month, .gfield_date_dropdown_day, .gfield_date_dropdown_year {
+	select {
+		width: 94px;
+	}
+	input {
+		width: 80px;
+	}
+
+	select, input {
+		float: left;
+		margin-right: 5px;
+	}
+}
+.gfield_time_hour, .gfield_time_minute, .gfield_time_ampm {
+	width: 110px;
+	float: left;
+
+	select {
+		width: 94px;
+	}
+	input {
+		width: 80px;
+	}
+}
+.ginput_container {
+	
+	.ginput_full {
+		input {
+			width: 360px;
+		}
+	}
+	.ginput_left, .ginput_right {
+		float: left;
+		width: 180px;
+		
+		select {
+			width: 174px;
+		}
+		input {
+			width: 160px;
+		}
+		br {
+			display: none;
+		}
+	}
+	> label {
+		font: 12px/16px @font-family-sans-serif;
+	}
+}
+
+.gform_footer.top_label {
+	br {
+		display: none;
+	}
+}
+
+////////////////
+//  IE FIXES  //
+////////////////
+.lt-ie9-show {
+	display: none;
+}
+.lt-ie9-hide {
+	display: inherit;
+}
+.lt-ie9 {
+	.lt-ie9-show {
+		display: inherit;
+	}
+	.lt-ie9-hide {
+		display: none;
+	}
+}

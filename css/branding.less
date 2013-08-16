@@ -1,0 +1,88 @@
+////////////////////
+//  BASIC STYLES  //
+////////////////////
+body {
+	padding-top: @navbar-height;
+}
+h1 {
+	font: 300 45px/50px @font-family-sans-serif;
+}
+h2 {
+	font: 300 35px/40px @font-family-sans-serif;
+}
+h3 {
+	font: 700 25px/30px @font-family-sans-serif;
+}
+h4 {font: 700 20px/25px @font-family-sans-serif;}
+h5 {font: 700 20px/25px @font-family-sans-serif;}
+
+h1, h2, h3, h4, h5, h6 {}
+h3, h4, h5, h6 {
+	span {}
+}
+
+hr {
+	height: 1px; 
+	border: 0; 
+	margin: 1em 0;
+	background: @gray-light;
+	background: -moz-linear-gradient(left, @white-dark 0%, @gray-light 24%, @gray-light 75%, @white-dark 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,@white-dark), color-stop(24%,@gray-light), color-stop(75%,@gray-light), color-stop(100%,@white-dark));
+	background: -webkit-linear-gradient(left, @white-dark 0%,@gray-light 24%,@gray-light 75%,@white-dark 100%);
+	background: -o-linear-gradient(left, @white-dark 0%,@gray-light 24%,@gray-light 75%,@white-dark 100%);
+	background: -ms-linear-gradient(left, @white-dark 0%,@gray-light 24%,@gray-light 75%,@white-dark 100%);
+	background: linear-gradient(to right, @white-dark 0%,@gray-light 24%,@gray-light 75%,@white-dark 100%);
+}
+
+footer {}
+header {}
+
+//////////////////
+//  SMARTPHONE  //
+//////////////////
+@media (max-width: 767px) {
+	@import "media-smartphone.less";
+}
+
+/////////////////////////////
+//  SMARTPHONE AND TABLET  //
+/////////////////////////////
+@media (max-width: 979px) {
+	@import "drawer.less";
+	@import "media-smartphone-and-tablet.less";
+}
+
+//////////////
+//  TABLET  //
+//////////////
+@media (min-width: 768px) and (max-width: 979px) {
+	@import "media-tablet.less";
+}
+
+///////////////////////////
+//  TABLET  AND DESKTOP  //
+///////////////////////////
+@media (min-width: 768px) {
+	@import "media-tablet-and-desktop.less";
+}
+
+////////////////////////
+//  DESKTOP STANDARD  //
+////////////////////////
+@media (min-width: 980px) {
+	@import "media-desktop.less";
+}
+
+/////////////////////////////
+//  DESKTOP LARGE SCREENS  //
+/////////////////////////////
+@media only screen and (min-width: 1824px) {
+	@import "media-desktop-large.less";
+}
+
+//////////////
+//  RETINA  //
+//////////////
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+	@import "media-retina.less";
+}
