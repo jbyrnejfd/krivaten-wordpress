@@ -4,6 +4,11 @@
 .text-shadow (@string: 0 1px 2px rgba(0, 0, 0, 0.5)) {
 	text-shadow: @string;
 }
+.background-size (@string) {
+	-webkit-background-size: @string;
+	-moz-background-size: @string;
+	background-size: @string;
+}
 .box-shadow (@string) {
 	-webkit-box-shadow: @string;
 	-moz-box-shadow:    @string;
@@ -58,6 +63,28 @@
 	-moz-opacity:     @opacity;
 	opacity:    @opacity;
 }
+//http://www.inserthtml.com/2012/06/css-filters/
+.filter-blur(@amount: 5px) {
+	filter: blur(@amount);
+	-webkit-filter: blur(@amount);
+	-moz-filter: blur(@amount);
+	-o-filter: blur(@amount);
+	-ms-filter: blur(@amount);
+}
+.filter-grayscale() {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+}
+.filter-saturate(@amount: 50%) {
+	filter: saturate(@amount);
+	-webkit-filter: saturate(@amount);
+	-moz-filter: saturate(@amount);
+	-o-filter: saturate(@amount);
+	-ms-filter: saturate(@amount);
+}
 .gradient (@startColor: #eee, @endColor: white) {
 	background-color: @startColor;
 	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
@@ -66,7 +93,7 @@
 	background: -ms-linear-gradient(top, @startColor, @endColor);
 	background: -o-linear-gradient(top, @startColor, @endColor);
 }
-.horizontal-gradient (@startColor: #eee, @endColor: white) {
+.gradient-horizontal (@startColor: #eee, @endColor: white) {
 	background-color: @startColor;
 	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
 	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
@@ -75,7 +102,7 @@
 	background-image: -o-linear-gradient(left, @startColor, @endColor);
 }
 
-.three-color-horizontal-gradient (@startColor: #eee, @midColor: grey, @endColor: white) {
+.gradient-three-color-horizontal (@startColor: #eee, @midColor: grey, @endColor: white) {
 	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), color-stop(50%, @midColor), to(@endColor));
 	background-image: -webkit-linear-gradient(left, @startColor, @midColor, @endColor);
 	background-image: -moz-linear-gradient(left, @startColor, @midColor, @endColor);

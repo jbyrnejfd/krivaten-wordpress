@@ -113,10 +113,17 @@ add_filter('widget_text', 'do_shortcode');
 
 
 function vdp_edit_post_link($output) {
-    $output = str_replace('class="post-edit-link"', 'class="btn btn-info btn-lg"', $output);
+    $output = str_replace('class="post-edit-link"', 'class="btn btn-primary btn-lg"', $output);
     return $output;
 }
 add_filter('edit_post_link', 'vdp_edit_post_link');
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="btn btn-primary"';
+}
 
 // Scripts
 require_once("functions/scripts.php");
@@ -128,6 +135,5 @@ require_once("functions/shortcodes.php");
 require_once("functions/menu-walkers.php");
 
 // Initiate Admin
-function vdp_admin_menu() {require_once("functions/admin.php");}  
-add_action("admin_menu", "vdp_admin_menu");  
+require_once("functions/admin.php");
 ?>

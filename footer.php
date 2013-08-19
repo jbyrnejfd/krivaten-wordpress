@@ -1,10 +1,10 @@
 			<div class="clearfix"></div>
-			<?php vdp_sidebar('sidebar-all'); ?>
+			<?php vdp_sidebar('sidebar_all'); ?>
 		</div>
 	</div>
 
-</div> <!-- / #site-content -->
-<footer class="footer content-info" id="footer" role="contentinfo">
+</div> <!-- / #page-content -->
+<footer class="footer content-info" id="page-footer" role="contentinfo">
 	<div class="container">
 		<div class="drawer-search hidden-lg">
 			<?php get_search_form(); ?>
@@ -16,7 +16,6 @@
 			endif;
 			?>
 		</nav>
-		<hr />
 		<?php dynamic_sidebar('sidebar-footer'); ?>
 		<?php require_once(TEMPLATEPATH . '/inc/social-icons.php'); ?>
 		<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>

@@ -3,7 +3,7 @@
 	<div class="col-sm-8">
 		<?php require_once(TEMPLATEPATH . '/inc/excerpt.php' ); ?>
 	</div>
-	<div class="col-sm-4 hidden-sm sidebar-left">
+	<div class="col-sm-4 hidden-xs">
 		<aside>
 			<?php
 				vdp_sidebar('sidebar-blog');

@@ -7,6 +7,5 @@ function sc_map($atts, $content = null) {
    ), $atts));    
    return '<iframe width="'.$width.'" height="'.$height.'" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="'.$src.'"></iframe>';    
 }
-add_shortcode("map", "sc_map");  
 // [map src="(Map URL)" width="600" height"360"]   
 ?>

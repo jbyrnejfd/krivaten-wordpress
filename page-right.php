@@ -8,7 +8,7 @@ Template Name: Right Column
 	<div class="col-sm-8">
 		<?php require_once(TEMPLATEPATH . '/inc/content.php' ); ?>
 	</div>
-	<div class="col-sm-4 hidden-sm sidebar-right">
+	<div class="col-sm-4 hidden-xs">
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/inc/sub-pages.php' );

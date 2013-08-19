@@ -1,11 +1,14 @@
 /////////////////
 //  ACCORDION  //
 /////////////////
-.accordion-group {
-	border: 1px solid rgba(0,0,0,0.1);
-	background: rgba(0,0,0,0.1);
-	.accordion-heading {
-		.accordion-toggle {
+.panel-group {
+	margin-bottom: 5px;
+	.panel-title {
+		a {
+			display:block;
+			text-decoration: none;
+			color: @black;
+
 			&:before {
 				font-family: @icon-font;
 				content: '\f056';
@@ -17,13 +20,6 @@
 				}
 			}
 		}
-		a {
-			text-decoration: none;
-			color: @black;
-		}
-	}
-	.accordion-inner {
-		border-top: 1px solid rgba(0,0,0,0.1);
 	}
 }
 
@@ -33,50 +29,17 @@
 .checklist {
 	ul, ol {
 		list-style-type: none;
-		
 	}
 	li {
 		position: relative;
 		&:before {
 			content: '\f00c';
 			text-align: center;
-			color: @gray;
+			color: @brand-success;
 			font-family: @icon-font;
 			position: absolute;
 			left: -40px;
 			width: 40px;
-		}
-	}
-}
-
-///////////////
-//  OVERLAY  //
-///////////////
-.imageOverlay {
-	position: relative;
-	
-	.imageOverlayContent {
-		.border-radius();
-		display: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 100;
-		padding: 10px;
-		background: @gray;
-		
-		h5 {
-			color: @white;
-		}
-		p {
-			font: 14px/20px @font-family-sans-serif;
-			color: @white;
-		}
-		a {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
 		}
 	}
 }
@@ -103,11 +66,4 @@ blockquote {
 			color: @gray-dark;
 		}
 	}
-}
-
-///////////////
-//  YOUTUBE  //
-///////////////
-.youtube {
-	margin: 0 auto;
 }

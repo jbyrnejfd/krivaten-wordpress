@@ -1,32 +1,30 @@
 <?php
-// Start Fluid Grid
-function sc_grid($atts, $content = null){
+// Start Row
+function sc_row($atts, $content = null){
 	return '<div class="row">'.do_shortcode(trim($content)).'</div>';
 }
-add_shortcode('grid', 'sc_grid');
-add_shortcode('grid_inner', 'sc_grid');
-// [fluid]Content[/fluid]
-// [fluid_inner]Content[/fluid_inner]
 
-// Column Span
+// [row]Content[/row]
+// [row_inner]Content[/row_inner]
+
+// Columns
 function sc_col($atts, $content = null){
 	extract(shortcode_atts(array(  
-        "all" => null,
-        "small" => null,
-        "large" => 4,
-        "style" => null,
+        "xs" => null,
+        "sm" => null,
+        "md" => 4,
+        "lg" => null,
         "class" => null
     ), $atts));
 
-
-    if($all) {$classAll = "col-".$large;}
-    if($small) {$classSmall = "col-sm-".$small;}
-    if($large) {$classLarge = "col-lg-".$large;}
+    if($xs) {$classXs = "col-xs-".$xs;}
+    if($sm) {$classSm = "col-sm-".$sm;}
+    if($md) {$classMd = "col-md-".$md;}
+    if($lg) {$classLg = "col-lg-".$lg;}
     if($style) {$divStyle = 'style="'.$style.'"';}
 
-	return '<div class="'.($all?$classAll.' ':'').($small?$classSmall.' ':'').($large?$classLarge.' ':'').$class.'" '.$divStyle.'>'.do_shortcode(trim($content)).'</div>';
+	return '<div class="'.($xs?$classXs.' ':'').($sm?$classSm.' ':'').($md?$classMd.' ':'').($lg?$classLg.' ':'').$class.'" '.$divStyle.'>'.do_shortcode(trim($content)).'</div>';
 }
-add_shortcode('col', 'sc_col');
-add_shortcode('col_inner', 'sc_col');
-// [col width="4" style="padding-top: 50px"]Content[/col]
+
+// [col xs="4" sm="4" md="4" lg="4" class="red" style="padding-top: 50px"]Content[/col]
 ?>

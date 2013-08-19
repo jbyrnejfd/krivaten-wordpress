@@ -6,6 +6,5 @@ function sc_icon($atts, $content = null) {
    ), $atts));    
    return '<i class="icon-'.$icon.' '.$class.'"></i>';    
 }
-add_shortcode("icon", "sc_icon");  
 // [icon icon="ok" class="red"]   
 ?>

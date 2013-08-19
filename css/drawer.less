@@ -8,7 +8,7 @@
 		top: 0;
 		left: 0;
 	}
-	footer {
+	#page-footer {
 		position: absolute;
 		top: 0;
 		left: -256px;
@@ -19,7 +19,7 @@
 		#page-body {
 			left: 256px;
 		}
-		footer {
+		#page-footer {
 			left: 0;
 		}
 	}
@@ -32,12 +32,12 @@
 		top: 0;
 		left: 0;
 
-		> div, > header {
+		> * {
 			.translate(0, 0);
 			.transition(-webkit-transform 200ms ease-out);
 		}
 	}
-	footer {
+	#page-footer {
 		.translate(0, 0);
 		.transition(-webkit-transform 200ms ease-out);
 		position: fixed;
@@ -47,11 +47,11 @@
 	}
 	&.drawer-open {
 		#page-body {
-			> div, > header {
+			> * {
 				.translate(256px, 0);
 			}
 		}
-		footer {
+		#page-footer {
 			.translate(256px, 0);
 			padding-bottom: 60px;
 			overflow-y: scroll;
@@ -66,7 +66,7 @@
 	width: 100%;
 	overflow: hidden;
 }
-footer {
+#page-footer {
 	.inner-shadow(-5px, 0, 10px, 0, 0.35);
 	z-index: 10;
 	width: 256px;
@@ -104,9 +104,16 @@ footer {
 			padding: 0;
 			margin: 0;
 		}
-		.drawer-menu li, .drawer-header {
-			border-top: 1px solid rgba(255,255,255,0.1);
-			border-bottom: 1px solid rgba(0,0,0,0.4);
+		li {
+			a, h3 {
+				border-top: 1px solid rgba(255,255,255,0.1);
+				border-bottom: 1px solid rgba(0,0,0,0.4);
+			}
+			h3 {
+				font: 16px/25px @font-family-sans-serif;
+				margin: 0;
+				padding: 0;
+			}
 		}
 		.drawer-menu {
 			> li {

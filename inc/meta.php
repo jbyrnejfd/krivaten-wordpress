@@ -1,8 +1,7 @@
-<div class="postmetadata">
-	<i class="icon-time"></i> <time datetime="<?php echo date(DATE_W3C); ?>"><?php the_time('F jS, Y') ?></time><br />
-	<?php the_tags('<i class="icon-tags"></i> ', ', ', '<br />'); ?>
+<div class="post-meta">
+	<div class="time"><i class="icon-time"></i> <time datetime="<?php echo date(DATE_W3C); ?>"><?php the_time('F jS, Y') ?></time></div>
+	<?php the_tags('<div class="tags"><i class="icon-tags"></i> ', ', ', '</div>'); ?>
 	<?php if(is_category()) { ?>
-		<i class="icon-list"></i> <?php the_category(', ') ?> | 
+		<div class="categories"><i class="icon-list"></i> <?php the_category(', ') ?></div> 
 	<?php } ?>
-	<i class="icon-comments-alt"></i> <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
 </div>

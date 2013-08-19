@@ -30,14 +30,14 @@
 	<div id="page-body">
 		<header class="navbar navbar-fixed-top" role="banner">
 			<div class="navbar-inner">
-				<div class="hidden-lg pull-left btn-drawer">
+				<div class="hidden-desktop pull-left btn-drawer">
 					<a href="#"><i class="icon-reorder"></i>&nbsp;</a>
 				</div>
 				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 					Development
 				</a>
 
-				<nav class="nav-collapse collapse pull-right visible-lg" role="navigation">
+				<nav class="nav-collapse pull-right visible-desktop" role="navigation">
 					<?php
 					if (has_nav_menu('main-menu')) :
 						wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_nav()));

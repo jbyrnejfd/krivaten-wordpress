@@ -22,7 +22,5 @@ function sc_blog($atts){
 	
 	return $output;
 }
-
-add_shortcode('blog', 'sc_blog');
 // [blog count="3" category="4" orderby="post_date" showtags="true"]
 ?>

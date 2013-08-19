@@ -5,7 +5,7 @@ Template Name: Left Menu
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="col-sm-4 hidden-sm sidebar-left">
+	<div class="col-sm-4 hidden-xs">
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/inc/sub-pages.php' );

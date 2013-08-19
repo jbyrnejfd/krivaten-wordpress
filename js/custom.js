@@ -10,10 +10,8 @@ jQuery(function($){
 			$(this).closest(".gfield_radio").find(".active").removeClass("active");
 			$(this).next('label').toggleClass("active");
 		});
-		$(".imageOverlay").hover(function(){
-			$(this).find(".imageOverlayContent").fadeIn();
-		}, function(){
-			$(this).find(".imageOverlayContent").fadeOut();
+		$('.datepicker').datepicker({
+		  format: 'mm-dd-yyyy'
 		});
 
         ///////////////////////

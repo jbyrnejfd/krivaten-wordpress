@@ -4,25 +4,44 @@ body {
 
 hr {
 	&.soften {
-		.three-color-horizontal-gradient(rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
+		.gradient-three-color-horizontal(rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
 		height: 1px;
 		margin: 70px 0;
 		border: 0;
 	}
 }
 
-aside, article {
-	padding-top: 20px;
+article {
+	padding: 10px 0;
+	&.excerpt {
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+	.title {
+		margin-top: 0;
+	}
 }
-///////////////
-//  NAV BAR  //
-///////////////
-.banner {
-	.navbar-inner {
-		.current-menu-item, .current-menu-parent {
-			> a, > a:hover {
-				background: @navbar-link-active-bg;
-				color: @navbar-link-active-color;
+aside {
+	[class*='sidebar-'] {
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			&:last-child {
+				border-bottom: 0;
+			}
+			a {
+				display: block;
+				padding: 10px;
+				&:hover {
+					background: @blue;
+					color: @white;
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -88,156 +107,66 @@ aside, article {
 	}
 }
 
-////////////////////
-//   SMARTPHONE   //
-////////////////////
-@media (max-width: 767px) {
-	@import "media-smartphone.less";
-}
-
-///////////////////////////////
-//   SMARTPHONE AND TABLET   //
-///////////////////////////////
-@media (max-width: 979px) {
-	body {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	#page-content {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
-////////////////
-//   TABLET   //
-////////////////
-@media (min-width: 768px) and (max-width: 979px) {
-	@import "media-tablet.less";
-}
-
-/////////////////////////////
-//   TABLET  AND DESKTOP   //
-/////////////////////////////
-@media (min-width: 768px) {
-}
-
-//////////////////////////
-//   DESKTOP STANDARD   //
-//////////////////////////
-@media (min-width: 980px) {
-	body {
-		padding-top: 40px;
-	}
-}
-
-///////////////////////////////
-//   DESKTOP LARGE SCREENS   //
-///////////////////////////////
-@media only screen and (min-width: 1824px) {
-}
-
-////////////////
-//   RETINA   //
-////////////////
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
-}
-
 /////////////
 //  FORMS  //
 /////////////
-.gform_wrapper ul { 
-	list-style: none; margin-left: 0; 
-}
-.gform_wrapper li {
-	.clearfix();
-}
-.gform_wrapper form { 
-	margin-bottom: 0; 
-}
-.gfield_radio input, .gfield_checkbox input {
-	vertical-align: 0;
-}
-.gfield_radio label, .gfield_checkbox label {
-	display: inline-block;
-	margin-left: 8px;
-}
-.gform_wrapper .gfield_required {
-	color: @brand-danger;
-	padding-left: 1px;
-}
-.gform_wrapper .validation_message { 
-	display: none; 
-}
-.gform_wrapper .gfield_error label {
-	color: @brand-warning;
-}
-.gform_wrapper .gform_button {
-	.btn;
-	.btn-primary;
-}
-
-.clear-multi:after {
-	display: block;
-	clear: both;
-}
-.gfield_date_dropdown_month, .gfield_date_dropdown_day, .gfield_date_dropdown_year {
-	select {
-		width: 94px;
+.gform_wrapper { 
+	ul {
+		list-style: none; 
+		margin: 0;
+		padding: 0;
 	}
+	li {
+		.clearfix();
+		margin-bottom: 10px;
+	}
+	.gfield_required {
+		color: @brand-danger;
+		padding-left: 1px;
+	}
+	.validation_message { 
+		display: none; 
+	}
+	form { 
+		margin-bottom: 0; 
+	}
+	.gfield_error label {
+		color: @brand-warning;
+	}
+	.gform_button {
+		.btn;
+		.btn-primary;
+	}
+}
+.gfield_radio, .gfield_checkbox {
 	input {
-		width: 80px;
+		vertical-align: 0;
 	}
-
-	select, input {
-		float: left;
-		margin-right: 5px;
-	}
-}
-.gfield_time_hour, .gfield_time_minute, .gfield_time_ampm {
-	width: 110px;
-	float: left;
-
-	select {
-		width: 94px;
-	}
-	input {
-		width: 80px;
+	label {
+		display: inline-block;
+		margin-left: 8px;
 	}
 }
 .ginput_container {
-	
+	input, textarea {
+		display: block;
+		width: 100%;
+	}
 	.ginput_full {
-		input {
-			width: 360px;
-		}
+		width: 100%;
+	}
+	label {
+		font: 12px/16px @font-family-sans-serif;
+		text-transform: lowercase;
 	}
 	.ginput_left, .ginput_right {
+		width: 48%;
+	}
+	.ginput_left {
 		float: left;
-		width: 180px;
-		
-		select {
-			width: 174px;
-		}
-		input {
-			width: 160px;
-		}
-		br {
-			display: none;
-		}
 	}
-	> label {
-		font: 12px/16px @font-family-sans-serif;
-	}
-}
-
-.gform_footer.top_label {
-	br {
-		display: none;
+	.ginput_right {
+		float: right;
 	}
 }
 

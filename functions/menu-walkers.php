@@ -109,10 +109,10 @@ class drawer_walker extends Walker_Nav_Menu {
 			$classes[] = 'menu-item-' . $item->ID;
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-			if ($args->has_children && $depth > 0) {
-				$class_names .= ' drawer-submenu';
-			} else if($args->has_children && $depth === 0) {
-				$class_names .= ' drawer-section';
+			if (!$args->has_children) {
+				$class_names .= ($depth == 0) ? ' drawer-topmenu' : ' drawer-submenu';
+			} else if($args->has_children) {
+				$class_names .= ($depth == 0) ? ' drawer-section' : '';
 			}
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -125,9 +125,9 @@ class drawer_walker extends Walker_Nav_Menu {
 			if($args->has_children) {
 				$attributes .= ($args->has_children) 	    ? ' class="drawer-header"' : '';
 			} else {
-				$attributes = ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-				$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-				$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+				$attributes = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target) .'"' : '';
+				$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn) .'"' : '';
+				$attributes .= ! empty( $item->url ) ? ' href="'  . esc_attr( $item->url) .'"' : '';
 			}
 
 			$item_output = $args->before;
@@ -136,14 +136,14 @@ class drawer_walker extends Walker_Nav_Menu {
 				$item_output .= '<a'. $attributes .'><i class="' . esc_attr( $item->attr_title ) . '"></i>&nbsp;';
 			} else {
 				if($args->has_children) {
-					$item_output .= '<span'. $attributes .'>';
+					$item_output .= '<h3'. $attributes .'>';
 				} else {
 					$item_output .= '<a'. $attributes .'>';
 				}
 			}
 			
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ($args->has_children && $depth == 0) ? '</span>' : '</a>';
+			$item_output .= ($args->has_children && $depth == 0) ? '</h3>' : '</a>';
 			$item_output .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
