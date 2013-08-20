@@ -45,7 +45,7 @@ header {}
 /////////////////////////////
 //  SMARTPHONE AND TABLET  //
 /////////////////////////////
-@media (max-width: @screen-tablet-max) {
+@media (max-width: @screen-sm-max) {
 	@import "drawer.less";
 	@import "media-smartphone-and-tablet.less";
 }
@@ -53,28 +53,28 @@ header {}
 //////////////
 //  TABLET  //
 //////////////
-@media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
 	@import "media-tablet.less";
 }
 
 ///////////////////////////
 //  TABLET  AND DESKTOP  //
 ///////////////////////////
-@media (min-width: @screen-tablet) and (max-width: @screen-desktop-max) {
+@media (min-width: @screen-sm) and (max-width: @screen-md-max) {
 	@import "media-tablet-and-desktop.less";
 }
 
 ////////////////////////
 //  DESKTOP STANDARD  //
 ////////////////////////
-@media (min-width: @screen-desktop) {
+@media (min-width: @screen-md) {
 	@import "media-desktop.less";
 }
 
 /////////////////////////////
 //  DESKTOP LARGE SCREENS  //
 /////////////////////////////
-@media (min-width: @screen-large-desktop) {
+@media (min-width: @screen-lg-desktop) {
 	@import "media-desktop-large.less";
 }
 

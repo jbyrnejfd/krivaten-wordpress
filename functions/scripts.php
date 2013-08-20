@@ -15,8 +15,8 @@ function viral_scripts($DEVELOPMENT) {
 
 	wp_enqueue_script('jquery', get_bloginfo('template_url') . '/js/jquery-1.9.1.min.js',false,false,true);
 	wp_enqueue_script('bootstrap', get_bloginfo('template_url') . '/js/bootstrap/bootstrap.min.js',false,false,true);
-	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/js/bootstrap/bootstrap-datepicker.js',false,false,true);
-	wp_enqueue_script('swipe', get_bloginfo('template_url') . '/js/touchSwipe.min.js',false,false,true);
+	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/js/min/bootstrap-datepicker.min.js',false,false,true);
+	wp_enqueue_script('swipe', get_bloginfo('template_url') . '/js/min/touchSwipe.min.js',false,false,true);
 	wp_enqueue_script('custom', get_bloginfo('template_url') . '/js/min/custom.min.js',false,false,true);
 }
 add_action('wp_enqueue_scripts', 'viral_scripts', 100);
