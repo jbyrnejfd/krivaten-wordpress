@@ -39,3 +39,6 @@ I did my best to create shortcodes for all the Bootstrap elements (And then some
 * Email: <krivaten@gmail.com>
 * Twitter: <http://twtter.com/krivaten>
 * GitHub: <http://github.com/krivaten>
+
+##Known Issues##
+* No structure in place for comments, because I use [Disqus](http://disqus.com). If you want it, ask nicely.
