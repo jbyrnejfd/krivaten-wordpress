@@ -1,12 +1,12 @@
 <?php
 /**
- * Enqueue scripts and stylesheets
+ * Enqueue scripts
  */
 function viral_scripts($DEVELOPMENT) {
 
 	if (!is_admin() && current_theme_supports('jquery-cdn')) {
 		wp_deregister_script('jquery');
-		//wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, null, false);
+		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, null, false);
 	}
 
 	if (is_single() && comments_open() && get_option('thread_comments')) {

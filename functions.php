@@ -24,15 +24,15 @@ $vdp_Widgets = array(
 	//'Header Body',
 	//'Header Bottom',
 	//'Navigation',
-	'Showcase',
-	'Content Top',
+	//'Showcase',
+	//'Content Top',
 	'Sidebar Blog',
 	'Sidebar Left',
 	'Sidebar Right',
 	'Sidebar All',
 	//'Body Top',
 	//'Body Bottom',
-	'Content Bottom',
+	//'Content Bottom',
 	//'Footer Top',
 	//'Footer Body',
 	//'Footer Bottom',
@@ -89,28 +89,8 @@ if (function_exists('register_nav_menus')) {
 	);
 }
 
-// Instagram Feed
-function vdp_instagram($tag) {
-	$url = file_get_contents('http://instagram.com/tags/'.$tag.'/feed/recent.rss');
-	$feed = new SimpleXmlElement($url);
-	
-	foreach($feed->channel->item as $entry) {
-		$count++;
-		$namespaces = $entry->getNameSpaces(true);
-		$media = $entry->children($namespaces['media']); 
-		$thumbnail = $media->thumbnail->attributes();
-		echo '<a href="'.$entry->link.'" title="'.$entry->title.'" target="_blank">';
-			echo '<img src="'.$thumbnail['url'].'" width="54px" height="54px" alt="'.$entry->title.'" ';
-				if($count == 3 || $count == 6) {echo 'class="last"';}
-			echo '/>';
-		echo '</a>';
-		if($count == 3) {return;}
-	}
-}
-
 // Enable Shortcodes in Widgets
 add_filter('widget_text', 'do_shortcode');
-
 
 function vdp_edit_post_link($output) {
     $output = str_replace('class="post-edit-link"', 'class="btn btn-primary btn-lg"', $output);
@@ -118,21 +98,15 @@ function vdp_edit_post_link($output) {
 }
 add_filter('edit_post_link', 'vdp_edit_post_link');
 
-add_filter('next_posts_link_attributes', 'posts_link_attributes');
-add_filter('previous_posts_link_attributes', 'posts_link_attributes');
-
-function posts_link_attributes() {
-    return 'class="btn btn-primary"';
-}
-
 // Scripts
 require_once("functions/scripts.php");
 
 // Shortcodes
 require_once("functions/shortcodes.php");
 
-// Bootstrap Nav Walker
-require_once("functions/menu-walkers.php");
+// Menu Walkers
+require_once("functions/walker-nav.php");
+require_once("functions/walker-drawer.php");
 
 // Initiate Admin
 require_once("functions/admin.php");

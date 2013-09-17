@@ -1,5 +1,6 @@
 <?php
 include("shortcodes/accordion.php");
+include("shortcodes/alert.php");
 include("shortcodes/blog.php");
 include("shortcodes/checklist.php");
 include("shortcodes/grid.php");
@@ -20,6 +21,7 @@ function pre_process_shortcode($content) {
 
 	// Add shortcodes
 	add_shortcode('accordion', 'sc_accordion');
+	add_shortcode('alert', 'sc_alert');
 	add_shortcode('blog', 'sc_blog');
 	add_shortcode('checklist', 'sc_checklist');
 	add_shortcode('row', 'sc_row');

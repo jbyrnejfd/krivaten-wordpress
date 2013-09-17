@@ -1,15 +1,13 @@
 .visible-mobile, .hidden-desktop {display: none!important;}
 
 footer {
-	#footer_body{padding: 10px 0;}
-	
-	.copyright {
-		padding: 5px;
-		text-transform: lowercase;
-		line-height: 15px;
-		font: 12px/40px @font-family-sans-serif;
-	}
 	.social-icons {
 		float: right;
+		a {
+			color: @link-color;
+			&:hover {
+				color: @link-hover-color;
+			}
+		}
 	}
 }

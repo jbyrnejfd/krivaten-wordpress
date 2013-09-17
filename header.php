@@ -13,8 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
 	<!--[if lt IE 9]>
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style-ie.css" />
-		<script src="<?php bloginfo('template_directory'); ?>/js/html5shiv.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/js/min/html5shiv.min.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/js/min/respond.min.js"></script>
 	<![endif]-->
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-16.png" />
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-114.png" />
@@ -28,10 +28,11 @@
 <body <?php body_class('site-background'); ?>>
 	
 	<div id="page-body">
-		<header class="navbar navbar-fixed-top" role="banner">
+		<header class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="navbar-inner">
 				<div class="hidden-desktop pull-left btn-drawer">
-					<a href="#"><i class="icon-reorder"></i>&nbsp;</a>
+					<a href="#" class="drawer-toggle"><i class="icon-reorder"></i>&nbsp;</a>
+					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="icon-search"></i>&nbsp;</a>
 				</div>
 				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 					Development
@@ -74,6 +75,7 @@
 				<?php } ?>
 			</div>
 		</div>
+
 		<!--[if lt IE 9]>
 		<div class="container">
 			<div class="alert alert-error text-center">
@@ -85,5 +87,4 @@
 		<![endif]-->
 		
 		<div id="page-content">
-			<?php vdp_sidebar('content-top',true);?>
 			<div class="container">

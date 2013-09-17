@@ -2,12 +2,14 @@ body {
 	overflow-y: scroll;
 }
 
-hr {
-	&.soften {
-		.gradient-three-color-horizontal(rgba(0,0,0,0), rgba(0,0,0,.2), rgba(0,0,0,0));
-		height: 1px;
-		margin: 70px 0;
-		border: 0;
+#page-body {
+	padding-top: @navbar-height;
+}
+
+a {
+	.transition(all 0.2s ease);
+	&:hover {
+		text-decoration: none;
 	}
 }
 
@@ -23,6 +25,7 @@ article {
 		margin-top: 0;
 	}
 }
+
 aside {
 	[class*='sidebar-'] {
 		ul {
@@ -45,6 +48,16 @@ aside {
 			}
 		}
 	}
+}
+
+/////////////
+//  MODAL  //
+/////////////
+body.modal-open {
+	margin-right: 0;
+}
+.modal {
+	overflow: hidden;
 }
 
 /////////////////
@@ -107,72 +120,7 @@ aside {
 	}
 }
 
-/////////////
-//  FORMS  //
-/////////////
-.gform_wrapper { 
-	ul {
-		list-style: none; 
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		.clearfix();
-		margin-bottom: 10px;
-	}
-	.gfield_required {
-		color: @brand-danger;
-		padding-left: 1px;
-	}
-	.validation_message { 
-		display: none; 
-	}
-	form { 
-		margin-bottom: 0; 
-	}
-	.gfield_error label {
-		color: @brand-warning;
-	}
-	.gform_button {
-		.btn;
-		.btn-primary;
-		.btn-lg;
-	}
-}
-.gfield_radio, .gfield_checkbox {
-	input {
-		vertical-align: 0;
-	}
-	label {
-		display: inline-block;
-		margin-left: 8px;
-	}
-}
-.gfield_label {
-	cursor: pointer;
-}
-.ginput_container {
-	input, textarea {
-		display: block;
-		width: 100%;
-	}
-	.ginput_full {
-		width: 100%;
-	}
-	label {
-		font: italic 12px/16px @font-family-sans-serif;
-		text-transform: lowercase;
-	}
-	.ginput_left, .ginput_right {
-		width: 48%;
-	}
-	.ginput_left {
-		float: left;
-	}
-	.ginput_right {
-		float: right;
-	}
-}
+
 
 ////////////////
 //  IE FIXES  //

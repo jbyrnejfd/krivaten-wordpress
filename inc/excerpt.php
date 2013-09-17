@@ -14,7 +14,7 @@
 	</article>
 <?php endwhile; ?>
 
-<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
+<?php include (TEMPLATEPATH . '/inc/pager.php' ); ?>
 
 <?php else : ?>
 	<h2>Not Found</h2>
