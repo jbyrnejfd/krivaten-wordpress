@@ -78,7 +78,7 @@
 
 		<!--[if lt IE 9]>
 		<div class="container">
-			<div class="alert alert-error text-center">
+			<div class="alert alert-warning text-center">
 				<h2 class="text-center">Outdated Browser Warning</h4>	
 				<p class="text-center">While this site will look and work fine for the most part, you are likely missing out on an optimal user experience.</p>
 				<p class="text-center">Do yourself a favor and please upgrade to <a href="https://www.google.com/chrome" title="Google Chrome" target="_blank" style="color: black; font-weight: bold;">Google Chrome</a> or <a href="http://www.mozilla.org/" title="Mozilla Firefox" target="_blank" style="color: black; font-weight: bold;">Mozilla Firefox</a></p>

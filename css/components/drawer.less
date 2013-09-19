@@ -17,7 +17,14 @@
 	}
 	&.drawer-open {
 		#page-body {
-			left: 256px;
+			> * {
+				left: 256px;
+				overflow-x: hidden;
+				width: 100%;
+			}
+			> div {
+				position: relative;
+			}
 		}
 		#page-footer {
 			left: 0;
@@ -75,29 +82,8 @@
 	.container {
 		width: 100%;
 		color: rgba(255,255,255,0.8); 
-		padding: 0;
-	}
-	.drawer-search {
-		padding: 10px;
-		border-bottom: 1px solid rgba(0,0,0,0.4);
-		
-		form {
-			margin: 0;
-			padding: 0;
-		}
-		input {
-			.box-shadow(none);
-			.border-radius(10px);
-			color: @white;
-			background: rgba(0,0,0,0.3);
-			border: 0;
-			border-bottom: 1px solid rgba(255,255,255,0.3);
-			margin: 0;
-
-			&:focus {
-				outline: none;
-			}
-		}
+		padding-left: 0;
+		padding-right: 0;
 	}
 	.nav-drawer {
 		ul {

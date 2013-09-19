@@ -61,16 +61,17 @@ jQuery(function($){
 		///////////////////////
 		//  DRAWER CONTROLS  //
 		///////////////////////
-		var drawerHeight, drawerIsOpen, swipeThreshold = 120;
+		var drawerHeight, drawerIsOpen, swipeThreshold = 120, navbarHeight = 50;
 
 		function drawerResetHeight() {
-			drawerHeight = Math.max(document.body.clientHeight, $('#page-footer .container').height());
+			drawerHeight = $('#page-footer .container').height();
 		}(drawerResetHeight());
 
 		function drawerOpen() {
 			drawerIsOpen = true;
 			if(!transitions) {
 				$('body, #page-footer, #page-body').height(drawerHeight);
+				$('#page-body').height(drawerHeight-navbarHeight);
 			}
 			$('body').addClass('drawer-open');
 		}
