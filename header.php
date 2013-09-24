@@ -16,11 +16,11 @@
 		<script src="<?php bloginfo('template_directory'); ?>/js/min/html5shiv.min.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/js/min/respond.min.js"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-16.png" />
-	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-114.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-114.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-144.png" />
-	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/img/plugins/logo-144.png" />
+	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-16.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
