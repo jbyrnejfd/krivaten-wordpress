@@ -11,6 +11,7 @@
 	<title><?php wp_title(''); ?></title>
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
 	<!--[if lt IE 9]>
 		<script src="<?php bloginfo('template_directory'); ?>/js/min/html5shiv.min.js"></script>
