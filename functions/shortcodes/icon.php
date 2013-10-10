@@ -6,5 +6,6 @@ function sc_icon($atts, $content = null) {
    ), $atts));    
    return '<i class="icon-'.$icon.' '.$class.'"></i>';    
 }
-// [icon icon="ok" class="red"]   
+
+// [icon icon="ok" (class="")]  
 ?>

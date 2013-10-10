@@ -12,5 +12,6 @@ function sc_checklist($atts, $content = null){
 
 	return '<div class="'.$checklistClass.'">'.do_shortcode(trim($content)).'</div>';
 }
-// [checklist class="one_half"]Content[/checklist]
+
+// [checklist (class="")]Content[/checklist]
 ?>

@@ -8,5 +8,6 @@ function sc_alert($atts, $content = null){
 	);
 	return '<div class="alert'.($type?' alert-'.$type:'').'">'.do_shortcode(trim($content)).'</div>';
 }
-// [alert]Content[/alert]
+
+// [alert (type="danger")]Content[/alert]
 ?>

@@ -22,5 +22,6 @@ function sc_blog($atts){
 	
 	return $output;
 }
+
 // [blog count="3" category="4" orderby="post_date" showtags="true"]
 ?>

@@ -2,7 +2,7 @@
 function sc_vimeo($atts) {	
     extract(shortcode_atts(array(  
         "video" => '52596685',  
-        "title" => 'Vimdeo Video'    
+        "title" => 'Vimeo Video'    
     ), $atts));
 
     $url = file_get_contents('http://vimeo.com/api/v2/video/'.$video.'.xml');
@@ -21,5 +21,6 @@ function sc_vimeo($atts) {
 			<p><a href="'.$link.'" title="'.$title.'" target="_blank" class="btn btn-primary btn-lg btn-block">View on Vimeo</a></p>
 		</div></div>
 	';
-}  
-// [vimeo video="52596685"]  
+}
+
+// [vimeo video="52596685" (title="Vimeo Video")]

@@ -12,9 +12,10 @@ function sc_col($atts, $content = null){
 	extract(shortcode_atts(array(  
         "xs" => null,
         "sm" => null,
-        "md" => 4,
+        "md" => null,
         "lg" => null,
-        "class" => null
+        "class" => null,
+        "style" => null
     ), $atts));
 
     if($xs) {$classXs = "col-xs-".$xs;}
@@ -26,5 +27,6 @@ function sc_col($atts, $content = null){
 	return '<div class="'.($xs?$classXs.' ':'').($sm?$classSm.' ':'').($md?$classMd.' ':'').($lg?$classLg.' ':'').$class.'" '.$divStyle.'>'.do_shortcode(trim($content)).'</div>';
 }
 
-// [col xs="4" sm="4" md="4" lg="4" class="red" style="padding-top: 50px"]Content[/col]
+// [row][/row]
+// [col (xs="" sm="" md="" lg="" class="" style="")]Content[/col]
 ?>

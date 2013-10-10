@@ -18,5 +18,6 @@ function sc_youtube($atts) {
 			<p><a href="'.$link.'" title="'.$title.'" target="_blank" class="btn btn-primary btn-lg btn-block">View on YouTube</a></p>
 		</div></div>
 	';
-}  
-// [youtube video="1aBSPn2P9bg"]  
+}
+
+// [youtube video="1aBSPn2P9bg" (title="YouTube Video")] 

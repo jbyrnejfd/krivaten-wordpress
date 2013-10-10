@@ -1,7 +1,7 @@
-#Viral Bootstrap#
-This is a Wordpress theme I built using various libraries I've grown quite font of in my experience.
+#Krivaten#
+This is a Wordpress theme I built using various libraries I've grown quite fond of in my experience.
 
-This theme was largely built to suit my particular workflow, but if you by chance use the same set up I do (Or want to adopt it), then you will likely love this theme. So enjoy it.
+It was largely built to suit my particular workflow, but if you by chance use the same set up I do (Or want to adopt it), then you will likely love this theme. So enjoy it.
 
 ##Features##
 * Swipable mobile nav drawer using [touchSwipe](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)
@@ -11,19 +11,54 @@ This theme was largely built to suit my particular workflow, but if you by chanc
 * Menu walkers for navbar and drawer to add necessary classes
 
 ##Shortcodes##
-I did my best to create shortcodes for all the Bootstrap elements (And then some) that I felt one would be likely to use. These include:
+I did my best to create shortcodes for all the Bootstrap elements (And then some) that I felt one would be likely to use. How to use them is documented below and note that attributes in parenthesis are not required but may contain a default value if not manually set.
 
-* Accordion
-* Alert
-* Checklist
-* Grid
-* Icon
-* Pre
-* Quote
-* Vimeo Video
-* Well
-* YouTube Video
-* And more...
+**Accordion**
+
+```
+[accordion title="Title" (tag="h3" open="false")]Content[/accordion]
+```
+**Alert**
+```
+[alert (type="danger")]Content[/alert]
+```
+**Checklist**
+```
+[checklist (class="")]Content[/checklist]
+```
+**Grid**
+```
+[row][/row]
+[col (xs="" sm="" md="" lg="" class="" style="")]Content[/col]
+```
+**Icon**
+```
+[icon icon="ok" (class="")] 
+```
+**Map**
+```
+[map src="" (width="100%" height"360")]
+```
+**Pre**
+```
+[pre]Content[/pre]
+```
+**Quote**
+```
+[quote]Content[/quote]
+```
+**Vimeo Video**
+```
+[vimeo video="52596685" (title="Vimeo Video")]
+```
+**Well**
+```
+[well]Content[/well]
+```
+**YouTube Video**
+```
+[youtube video="1aBSPn2P9bg" (title="YouTube Video")] 
+```
 
 ##Examples##
 * [ProTheist](http://protheist.com)

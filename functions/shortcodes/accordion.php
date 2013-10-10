@@ -13,5 +13,6 @@ function sc_accordion($atts, $content = null){
 	if($open) {$collapsed = ""; $in = "in";} else {$collapsed = "collapsed"; $in = "";}
 
 	return '<div class="panel-group" id="accordion-'.$count.'"> <div class="panel"><div class="panel-heading"><'.$tag.' class="panel-title"><a class="accordion-toggle '.$collapsed.'" data-toggle="collapse" data-parent="#accordion-'.$count.'" href="#collapse-'.$count.'">'.$title.'</a> </'.$tag.'></div><div id="collapse-'.$count.'" class="panel-collapse collapse '.$in.'"><div class="panel-body">'.do_shortcode(trim($content)).'</div></div></div></div>'; }
-// [accordion title="Your Toggle Title" tag="h2"]Toggle Content[/accordion]
+
+// [accordion title="Title" (tag="h3" open="false")]Content[/accordion]
 ?>
