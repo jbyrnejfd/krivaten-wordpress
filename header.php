@@ -23,7 +23,9 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+	
+	<?php $detect = new Mobile_Detect; ?>
+	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class('site-background'); ?>>

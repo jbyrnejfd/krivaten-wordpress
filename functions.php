@@ -110,4 +110,12 @@ require_once("functions/walker-drawer.php");
 
 // Initiate Admin
 require_once("functions/admin.php");
+
+// Mobile Detect
+require_once("functions/mobile-detect.php");
+// $detect = new Mobile_Detect;
+// $detect->isMobile();
+// $detect->isTablet();
+// $detect->isiOS();
+// $detect->isAndroidOS();
 ?>
