@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-md-8">
 		<?php require_once(TEMPLATEPATH . '/inc/excerpt.php' ); ?>
 	</div>
-	<div class="col-sm-4 hidden-xs">
+	<div class="col-md-4 hidden-xs">
 		<aside>
 			<?php
 				vdp_sidebar('sidebar-blog');

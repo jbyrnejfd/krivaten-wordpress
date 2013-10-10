@@ -5,10 +5,10 @@ Template Name: Right Column
 ?>
 <?php get_header(); ?>
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-md-8">
 		<?php require_once(TEMPLATEPATH . '/inc/content.php' ); ?>
 	</div>
-	<div class="col-sm-4 hidden-xs">
+	<div class="col-md-4 hidden-xs">
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/inc/sub-pages.php' );
