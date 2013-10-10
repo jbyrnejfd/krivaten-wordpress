@@ -6,7 +6,7 @@ It was largely built to suit my particular workflow, but if you by chance use th
 ##Features##
 * Swipable mobile nav drawer using [touchSwipe](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)
 * Styles for [Gravity Forms](http://www.gravityforms.com/)
-* Theme admin for Social Networking URLs and Google Analytics code
+* Theme admin for adding Social Networking URLs and Google Analytics code
 * LESS and JS compiled and minified using [PrePros](https://github.com/sbspk/Prepros)
 * Menu walkers for navbar and drawer to add necessary classes
 
@@ -67,6 +67,7 @@ I did my best to create shortcodes for all the Bootstrap elements (And then some
 * [Bootstrap 3](https://github.com/twbs/bootstrap)
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 * [touchSwipe](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)
+* [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 * [PrePros](https://github.com/sbspk/Prepros)
 
