@@ -1,4 +1,4 @@
-#Krivaten for Wordpress#
+#Krivaten for Wordpress (Stellar Cabinetry)#
 This is a Wordpress theme I built using various libraries I've grown quite fond of in my experience.
 
 It was largely built to suit my particular workflow, but if you by chance use the same set up I do (Or want to adopt it), then you will likely love this theme. So enjoy it.
