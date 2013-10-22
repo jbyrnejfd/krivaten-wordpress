@@ -33,7 +33,7 @@
 	<div id="page-body">
 		<header class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="navbar-inner">
-				<div class="hidden-desktop pull-left btn-drawer">
+				<div class="hidden-md hidden-lg pull-left btn-drawer">
 					<a href="#" class="drawer-toggle"><i class="icon-reorder"></i>&nbsp;</a>
 					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="icon-search"></i>&nbsp;</a>
 				</div>
@@ -41,7 +41,7 @@
 					Development
 				</a>
 
-				<nav class="nav-collapse pull-right visible-desktop" role="navigation">
+				<nav class="nav-collapse pull-right visible-md visible-lg" role="navigation">
 					<?php
 					if (has_nav_menu('main-menu')) :
 						wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_nav()));

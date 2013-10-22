@@ -8,13 +8,12 @@ header {}
 //////////////////
 //  SMARTPHONE  //
 //////////////////
-@import "media-smartphone.less";
+@import "media-xs.less";
 
 /////////////////////////////
 //  SMARTPHONE AND TABLET  //
 /////////////////////////////
 @media (max-width: @screen-sm-max) {
-	@import "media-smartphone-and-tablet.less";
 	@import "components/drawer.less";
 }
 
@@ -22,33 +21,26 @@ header {}
 //  TABLET  //
 //////////////
 @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
-	@import "media-tablet.less";
-}
-
-///////////////////////////
-//  TABLET  AND DESKTOP  //
-///////////////////////////
-@media (min-width: @screen-sm) and (max-width: @screen-md-max) {
-	@import "media-tablet-and-desktop.less";
+	@import "media-sm.less";
 }
 
 ////////////////////////
 //  DESKTOP STANDARD  //
 ////////////////////////
 @media (min-width: @screen-md) {
-	@import "media-desktop.less";
+	@import "media-md.less";
 }
 
 /////////////////////////////
 //  DESKTOP LARGE SCREENS  //
 /////////////////////////////
 @media (min-width: @screen-lg-desktop) {
-	@import "media-desktop-large.less";
+	@import "media-lg.less";
 }
 
 //////////////
 //  RETINA  //
 //////////////
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
-	@import "media-retina.less";
+	@import "media-rt.less";
 }

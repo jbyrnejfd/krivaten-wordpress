@@ -13,6 +13,9 @@ function vdp_settings() {
 	// Update databse on submit
 	if (isset($_POST["update_settings"])) {
 		
+		$phoneNum = esc_attr($_POST["vdp_phone_num"]);  
+		update_option("vdp_phone_num", $phoneNum);
+
 		$urlFacebook = esc_attr($_POST["vdp_facebook_url"]);  
 		update_option("vdp_facebook_url", $urlFacebook);
 		
@@ -53,6 +56,7 @@ function vdp_settings() {
 	}
 	
 	// Get values for form
+	$phoneNum    	= get_option("vdp_phone_num");
 	$urlFacebook    = get_option("vdp_facebook_url");
 	$urlTwitter     = get_option("vdp_twitter_url");
 	$urlLinkedIn    = get_option("vdp_linkedin_url");
@@ -71,6 +75,17 @@ function vdp_settings() {
 		<?php screen_icon('themes'); ?> <h2>The Viral Theme Admin</h2>  
 		
 		<form method="POST" action="">
+			<h3>Contact Information</h3>
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row">
+						<label for="vdp_phone_num">Phone Number:</label>
+					</th>
+					<td>
+						<input type="text" id="vdp_phone_num" name="vdp_phone_num" value="<?php echo $phoneNum;?>" size="25" />
+					</td>
+				</tr>
+			</table>
 			<h3>Social Media</h3>
 			<table class="form-table">                
 				<tr valign="top">
