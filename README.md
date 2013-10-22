@@ -8,6 +8,7 @@ It was largely built to suit my particular workflow, but if you by chance use th
 * Styles for [Gravity Forms](http://www.gravityforms.com/)
 * Theme admin for adding Social Networking URLs and Google Analytics code
 * LESS and JS compiled and minified using [PrePros](https://github.com/sbspk/Prepros)
+* Custom skin for [Royal Slider](http://dimsemenov.com/plugins/royal-slider)
 * Menu walkers for navbar and drawer to add necessary classes
 
 ##Shortcodes##
