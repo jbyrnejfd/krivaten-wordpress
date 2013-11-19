@@ -11,7 +11,7 @@
 	<title><?php wp_title(''); ?></title>
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
 	<!--[if lt IE 9]>
 		<script src="<?php bloginfo('template_directory'); ?>/js/min/html5shiv.min.js"></script>
@@ -34,8 +34,8 @@
 		<header class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="navbar-inner">
 				<div class="hidden-md hidden-lg pull-left btn-drawer">
-					<a href="#" class="drawer-toggle"><i class="icon-reorder"></i>&nbsp;</a>
-					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="icon-search"></i>&nbsp;</a>
+					<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
+					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
 				</div>
 				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 					Development

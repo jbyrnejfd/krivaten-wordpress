@@ -4,7 +4,7 @@ function sc_icon($atts, $content = null) {
       "icon" => 'ok',    
       "class" => ''   
    ), $atts));    
-   return '<i class="icon-'.$icon.' '.$class.'"></i>';    
+   return '<i class="fa fa-'.$icon.' '.$class.'"></i>';    
 }
 
 // [icon icon="ok" (class="")]  
