@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Left Menu
+Template Name: Left Column
 */
 ?>
 <?php get_header(); ?>
