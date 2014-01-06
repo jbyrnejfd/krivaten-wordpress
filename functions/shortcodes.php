@@ -3,6 +3,7 @@ include("shortcodes/accordion.php");
 include("shortcodes/alert.php");
 include("shortcodes/blog.php");
 include("shortcodes/checklist.php");
+include("shortcodes/circle_icon.php");
 include("shortcodes/grid.php");
 include("shortcodes/icon.php");
 include("shortcodes/map.php");
@@ -24,6 +25,7 @@ function pre_process_shortcode($content) {
 	add_shortcode('alert', 'sc_alert');
 	add_shortcode('blog', 'sc_blog');
 	add_shortcode('checklist', 'sc_checklist');
+	add_shortcode('circle_icon', 'sc_circle_icon');
 	add_shortcode('row', 'sc_row');
 	add_shortcode('row_inner', 'sc_row');
 	add_shortcode('col', 'sc_col');
