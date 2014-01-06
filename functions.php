@@ -98,6 +98,16 @@ function vdp_edit_post_link($output) {
 }
 add_filter('edit_post_link', 'vdp_edit_post_link');
 
+// Enable Custom Royal Slider Skin
+add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);
+function new_royalslider_add_custom_skin($skins) {
+	$skins['customSkin'] = array(
+		'label' => 'Custom skin',
+		'path' => get_bloginfo('template_directory') . '/css/components/royal-slider/custom-skin.css'
+	);
+	return $skins;
+}
+
 // Scripts
 require_once("functions/scripts.php");
 
