@@ -47,6 +47,8 @@
 ///////////////////
 //  CIRCLE ICON  //
 ///////////////////
+@circle-icon-diameter-xs: 80px;
+@circle-icon-diameter-sm: 160px;
 .circle-icon {
 	.transition(all 200ms ease);
 	.border-radius(500px);
@@ -54,11 +56,22 @@
 	display: block;
 	background: @brand-warning;
 	text-align: center;
-	font-size: 60px;
+	font-size: 40px;
+	width: @circle-icon-diameter-xs;
+	height: @circle-icon-diameter-xs;
+	line-height: @circle-icon-diameter-xs;
 	color: @body-bg;
 	&:hover {
 		background: @blue;
 		color: @white;
+	}
+}
+@media (min-width: @screen-sm) {
+	.circle-icon {
+		font-size: 60px;
+		width: @circle-icon-diameter-sm;
+		height: @circle-icon-diameter-sm;
+		line-height: @circle-icon-diameter-sm;
 	}
 }
 

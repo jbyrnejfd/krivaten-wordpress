@@ -1,12 +1,11 @@
 <?php
 function sc_circle_icon($atts, $content = null) {
 	extract(shortcode_atts(array(
-		"icon" => 'ok',
-		"class" => '',
-		"diameter" => 160
+		"icon" => 'fa-star',
+		"class" => ''
 		), $atts));
-	return '<i class="circle-icon fa '.$icon.' '.$class.'" style="line-height: '.$diameter.'px; width: '.$diameter.'px; height: '.$diameter.'px;"></i>';
+	return '<i class="circle-icon fa '.$icon.' '.$class.'"></i>';
 }
 
-// [circle_icon icon="ok" (class="" diameter="160")]  
+// [circle_icon icon="fa-star" (class="" diameter="160")]  
 ?>
