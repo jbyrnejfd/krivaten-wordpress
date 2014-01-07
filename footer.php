@@ -8,7 +8,7 @@
 		<nav class="nav-drawer" role="navigation">
 			<?php
 			if (has_nav_menu('mobile-menu')) :
-				wp_nav_menu(array('theme_location' => 'mobile-menu', 'menu_class' => 'hidden-lg', 'walker' => new drawer_nav()));
+				wp_nav_menu(array('theme_location' => 'mobile-menu', 'menu_class' => 'hidden-md hidden-lg', 'walker' => new drawer_nav()));
 			endif;
 			?>
 		</nav>

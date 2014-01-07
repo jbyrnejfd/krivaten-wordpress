@@ -33,7 +33,7 @@
 	<div id="page-body">
 		<header class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="navbar-inner">
-				<div class="hidden-md hidden-lg pull-left btn-drawer">
+				<div class="visible-xs visible-sm pull-left btn-drawer">
 					<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
 					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
 				</div>
