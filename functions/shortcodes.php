@@ -3,7 +3,7 @@ include("shortcodes/accordion.php");
 include("shortcodes/alert.php");
 include("shortcodes/blog.php");
 include("shortcodes/checklist.php");
-include("shortcodes/circle_icon.php");
+include("shortcodes/circle-icon.php");
 include("shortcodes/grid.php");
 include("shortcodes/icon.php");
 include("shortcodes/map.php");
