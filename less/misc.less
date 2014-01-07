@@ -69,62 +69,25 @@ body.modal-open {
 /////////////////
 .sidenav {
 	ul {
-		margin: 15px 0;
 		padding: 0;
-		background-color: @white;
 		list-style: none;
 	}
 	li {
 		display: none;
-		&:first-child a {
-			.border-radiuses(5px, 0, 0, 5px);
-		}
-		&:last-child a {
-			.border-radiuses(0, 5px, 5px, 0);
-		}
-		&.current-menu-item a, &.current-menu-item a:hover {
-			background: @black-lighter;
-			color: @white;
-			position: relative;
-			z-index: 2;
-			padding: 9px 15px;
-			border: 0;
-		}
+	}
+	.current-menu-parent, .current-menu-item {
+		&, li, a {display: block;}
 		a {
-			text-decoration: none;
-			display: block;
-			margin: 0 0 -1px;
-			padding: 8px 14px;
-			border: 1px solid @gray;
-
-			&:hover {
-				background-color: @gray;
-			}
-			&:after {
-				font-family: @icon-font;
-				content: '\f138';
-				float: right;
-				color: rgba(0,0,0,0.2);
-			}
+			font-size: @font-size-h4;
+			padding: 10px 15px;
 		}
 	}
-	.current-menu-parent {
-		> a {display: none;}
-		> ul {margin: 0;}
-		&, li {display: block;}
-	}
-	
-	&.affix {
-		top: 40px;
-	}
-	&.affix-bottom {
-		position: absolute;
-		top: auto;
-		bottom: 270px;
+	.current-menu-item {
+		> a {
+			color: @link-hover-color;
+		}
 	}
 }
-
-
 
 ////////////////
 //  IE FIXES  //
