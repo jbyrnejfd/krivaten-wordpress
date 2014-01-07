@@ -38,7 +38,7 @@
 					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
 				</div>
 				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
-					Development
+					<?php bloginfo('name'); ?>
 				</a>
 
 				<nav class="nav-collapse pull-right visible-md visible-lg" role="navigation">
