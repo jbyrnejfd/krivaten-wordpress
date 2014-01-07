@@ -2,6 +2,6 @@
 	'theme_location' => 'main-menu', 
 	'container' => 'nav',
 	'container_class' => 'sidenav',
-	'menu_class' => 'nav nav-list', 
+	'menu_class' => 'well well-sm', 
 	'depth' => '0'));
 ?>
