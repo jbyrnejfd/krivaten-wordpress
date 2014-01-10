@@ -2,6 +2,7 @@
 ## Krivaten
 #################
 *.css
+vendor/
 
 #################
 ## Eclipse
