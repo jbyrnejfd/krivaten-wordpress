@@ -1,0 +1,8 @@
+{
+  "name": "ember-app-kit",
+  "dependencies": {
+    "bootstrap": "twbs/bootstrap#~3.x.x",
+    "jquery-touchswipe": "mattbryson/TouchSwipe-Jquery-Plugin#~1.x.x",
+    "bootstrap-datepicker": "eternicode/bootstrap-datepicker#~1.x.x"
+  }
+}
