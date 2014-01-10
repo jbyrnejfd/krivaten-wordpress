@@ -81,15 +81,15 @@
 	
 	.container {
 		width: 100%;
-		color: rgba(255,255,255,0.8); 
 		padding-left: 0;
 		padding-right: 0;
+		color: rgba(255,255,255,0.8); 
 	}
 	.nav-drawer {
 		ul {
-			list-style-type: none;
 			padding: 0;
 			margin: 0;
+			list-style-type: none;
 		}
 		li {
 			a, h3 {
@@ -97,9 +97,9 @@
 				border-bottom: 1px solid rgba(0,0,0,0.4);
 			}
 			h3 {
-				font: 16px/25px @font-family-sans-serif;
-				margin: 0;
 				padding: 0;
+				margin: 0;
+				font: 16px/25px @font-family-sans-serif;
 			}
 		}
 		.drawer-menu {
@@ -114,9 +114,9 @@
 		}
 		.drawer-header {
 			display: block;
+			padding: 0 10px;
 			background: @gray;
 			color: @white;
-			padding: 0 10px;
 		}
 		li {
 			padding: 0;
@@ -124,16 +124,16 @@
 			line-height: auto;
 
 			a {
-				color: @white;
-				padding: 10px;
 				display: block;
+				padding: 10px;
+				color: @white;
 				
 				&:hover, &:focus, &:active {
 					text-decoration: none;
 				}
 				&:active {
-					color: @white;
 					background: rgba(0,0,0,0.4);
+					color: @white;
 				}
 			}
 		}
@@ -148,8 +148,8 @@
 		}
 	}
 	p {
-		margin-top: 20px;
 		padding: 0 15px;
+		margin-top: 20px;
 		text-align: center;
 	}
 	hr {
@@ -158,10 +158,10 @@
 }
 
 .btn-drawer {
-	font-size: 24px/@navbar-height @font-family-sans-serif;
-	margin-right: 20px;
 	position: relative;
 	z-index: 10;
+	margin-right: 20px;
+	font-size: 24px/@navbar-height @font-family-sans-serif;
 	a {
 		color: @blue;
 		&:hover, &:active {
@@ -171,10 +171,10 @@
 			line-height: inherit;
 		}
 		[class^="fa-"], [class*="fa-"] {
-			line-height: @navbar-height;
-			height: @navbar-height;
 			width: 40px;
+			height: @navbar-height;
 			font-size: 30px;
+			line-height: @navbar-height;
 		}
 	}
 	span {

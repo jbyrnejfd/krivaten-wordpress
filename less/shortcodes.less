@@ -6,13 +6,13 @@
 	.panel-title {
 		a {
 			display:block;
-			text-decoration: none;
 			color: @black;
+			text-decoration: none;
 
 			&:before {
+				margin-right: 10px;
 				font-family: @icon-font;
 				content: '\f056';
-				margin-right: 10px;
 			}
 			&.collapsed {
 				&:before {
@@ -33,13 +33,13 @@
 	li {
 		position: relative;
 		&:before {
-			content: '\f00c';
-			text-align: center;
-			color: @brand-success;
-			font-family: @icon-font;
 			position: absolute;
 			left: -40px;
 			width: 40px;
+			color: @brand-success;
+			font-family: @icon-font;
+			text-align: center;
+			content: '\f00c';
 		}
 	}
 }
@@ -52,15 +52,15 @@
 .circle-icon {
 	.transition(all 200ms ease);
 	.border-radius(500px);
-	margin: 0 auto;
 	display: block;
-	background: @brand-warning;
-	text-align: center;
-	font-size: 40px;
+	margin: 0 auto;
 	width: @circle-icon-diameter-xs;
 	height: @circle-icon-diameter-xs;
-	line-height: @circle-icon-diameter-xs;
+	background: @brand-warning;
 	color: @body-bg;
+	font-size: 40px;
+	line-height: @circle-icon-diameter-xs;
+	text-align: center;
 	&:hover {
 		background: @blue;
 		color: @white;
@@ -68,9 +68,9 @@
 }
 @media (min-width: @screen-sm) {
 	.circle-icon {
-		font-size: 60px;
 		width: @circle-icon-diameter-sm;
 		height: @circle-icon-diameter-sm;
+		font-size: 60px;
 		line-height: @circle-icon-diameter-sm;
 	}
 }

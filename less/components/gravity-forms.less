@@ -3,9 +3,9 @@
 /////////////////////
 .gform_wrapper { 
 	ul {
-		list-style: none; 
-		margin: 0;
 		padding: 0;
+		margin: 0;
+		list-style: none; 
 	}
 	li {
 		.clearfix();
@@ -35,9 +35,9 @@
 		display: none !important;
 		&+label:before {
 			margin-right: 10px;
+			color: @brown;
 			font-family: @icon-font;
 			content: "\f10c";
-			color: @brown;
 		}
 		&:checked+label{
 			&:before {
@@ -55,9 +55,9 @@
 		display: none !important;
 		&+label:before {
 			margin-right: 10px;
+			color: @brown;
 			font-family: @icon-font;
 			content: "\f096";
-			color: @brown;
 		}
 		&:checked+label{
 			&:before {
@@ -84,8 +84,8 @@
 		width: 100%;
 	}
 	textarea {
-		resize: none;
 		height: 200px;
+		resize: none;
 	}
 	.ginput_full {
 		width: 100%;
