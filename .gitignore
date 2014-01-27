@@ -2,6 +2,7 @@
 ## Krivaten
 #################
 *.css
+js/js.js
 vendor/
 node_modules/
 
