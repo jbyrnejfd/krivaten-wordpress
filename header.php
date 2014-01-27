@@ -12,10 +12,10 @@
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/css.css" />
 	<!--[if lt IE 9]>
-		<script src="<?php bloginfo('template_directory'); ?>/js/min/html5shiv.min.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/js/min/respond.min.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/vendor/html5shiv/dist/html5shiv.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/vendor/respond/dest/respond.min.js"></script>
 	<![endif]-->
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-16.png" />
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-114.png" />

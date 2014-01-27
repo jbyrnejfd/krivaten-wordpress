@@ -14,6 +14,6 @@ function viral_scripts($DEVELOPMENT) {
 	}
 
 	wp_enqueue_script('jquery', get_bloginfo('template_url') . '/js/jquery-1.9.1.min.js',false,false,true);
-	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/js/min/js.min.js',false,false,true);
+	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/js/js.js',false,false,true);
 }
 add_action('wp_enqueue_scripts', 'viral_scripts', 100);
