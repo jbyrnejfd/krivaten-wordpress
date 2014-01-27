@@ -1,16 +1,20 @@
 'use strict';
 module.exports = function(grunt) {
-    var jsFiles = [
-        'vendor/bootstrap/js/alert.js',
-        'vendor/bootstrap/js/button.js',
-        'vendor/bootstrap/js/collapse.js',
-        'vendor/bootstrap/js/dropdown.js',
-        'vendor/bootstrap/js/modal.js',
-        'vendor/bootstrap/js/transition.js',
-        'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
-        'vendor/jquery-touchswipe/jquery.touchSwipe.min.js',
-        'js/custom.js'
-    ];
+    var source = 'C:/Users/Kris Van Houten/Documents/Development/dev/wp-content/themes/krivaten-wordpress',
+        destination = '/public_html/test',
+        host = 'kvhouten.info',
+
+        jsFiles = [
+            'vendor/bootstrap/js/alert.js',
+            'vendor/bootstrap/js/button.js',
+            'vendor/bootstrap/js/collapse.js',
+            'vendor/bootstrap/js/dropdown.js',
+            'vendor/bootstrap/js/modal.js',
+            'vendor/bootstrap/js/transition.js',
+            'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
+            'vendor/jquery-touchswipe/jquery.touchSwipe.min.js',
+            'js/custom.js'
+        ];
 
     // load all grunt tasks matching the `grunt-*` pattern
     require('load-grunt-tasks')(grunt);
@@ -18,7 +22,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // watch for changes and trigger compass, jshint, uglify and livereload
-        watch: {
+        'watch': {
             less: {
                 files: ['less/**/*.less'],
                 tasks: ['less']
@@ -37,7 +41,7 @@ module.exports = function(grunt) {
         },
 
         // less
-        less: {
+        'less': {
             development: {
                 options: {
                     compress: true
@@ -49,7 +53,7 @@ module.exports = function(grunt) {
         },
 
         // js
-        concat: {
+        'concat': {
             production: {
                 files: {
                     "js/js.js": [jsFiles]
@@ -58,7 +62,7 @@ module.exports = function(grunt) {
         },
 
         // minify js and css
-        uglify: {
+        'uglify': {
             production: {
                 files: {
                     "js/js.js": "js/js.js"
@@ -66,35 +70,31 @@ module.exports = function(grunt) {
             }
         },
 
-        // deploy via rsync
-        deploy: {
-            options: {
-                src: "./",
-                args: ["--verbose"],
-                exclude: ['.git*', 'node_modules', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb', '.jshintrc'],
-                recursive: true,
-                syncDestIgnoreExcl: true
-            },
-            staging: {
-                options: {
-                    dest: "~/path/to/theme",
-                    host: "user@host.com"
-                }
-            },
-            production: {
-                options: {
-                    dest: "~/path/to/theme",
-                    host: "user@host.com"
-                }
+        // deploy
+        'ftp-deploy': {
+            build: {
+                auth: {
+                  host: host,
+                  port: 21,
+                  authKey: 'primary'
+                },
+                src: source,
+                dest: destination,
+                exclusions: [
+                    source + '/.*',
+                    source + '/node_modules',
+                    source + '/bower.json',
+                    source + '/package.json',
+                    source + '/vendor'
+
+                ]
             }
         }
 
     });
 
-    // rename tasks
-    grunt.renameTask('rsync', 'deploy');
-
     // register task
     grunt.registerTask('default', ['less', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('deploy', ['ftp-deploy']);
 
 };
