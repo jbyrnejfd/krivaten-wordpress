@@ -86,7 +86,6 @@ module.exports = function(grunt) {
                     source + '/bower.json',
                     source + '/package.json',
                     source + '/vendor'
-
                 ]
             }
         }
