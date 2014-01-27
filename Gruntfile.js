@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         'vendor/bootstrap/js/modal.js',
         'vendor/bootstrap/js/transition.js',
         'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
-        'vendor/jquery-touchswipe/js/jquery.touchSwipe.min.js',
+        'vendor/jquery-touchswipe/jquery.touchSwipe.min.js',
         'js/custom.js'
     ];
 
