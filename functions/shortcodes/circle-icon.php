@@ -7,5 +7,5 @@ function sc_circle_icon($atts, $content = null) {
 	return '<i class="circle-icon fa '.$icon.' '.$class.'"></i>';
 }
 
-// [circle_icon icon="fa-star" (class="" diameter="160")]  
+// [circle_icon icon="fa-star" (class="")]  
 ?>
