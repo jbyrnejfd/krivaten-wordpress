@@ -1,8 +1,11 @@
 'use strict';
 module.exports = function(grunt) {
-    var source = 'C:/Users/Kris Van Houten/Documents/Development/dev/wp-content/themes/krivaten-wordpress',
-        destination = '/public_html/test',
+    var source = 'C:/path/to/working/directory',
+        destination = '/public_html',
         host = 'kvhouten.info',
+
+        // ex: 'grunt deploy --target=less' to deploy '/less' folder
+        target = (grunt.option('target') ? '/' + grunt.option('target') : ''),
 
         jsFiles = [
             'vendor/bootstrap/js/alert.js',
@@ -54,16 +57,16 @@ module.exports = function(grunt) {
 
         // js
         'concat': {
-            production: {
+            development: {
                 files: {
                     "js/js.js": [jsFiles]
                 }
             }
         },
 
-        // minify js and css
+        // minify js
         'uglify': {
-            production: {
+            development: {
                 files: {
                     "js/js.js": "js/js.js"
                 }
@@ -72,16 +75,17 @@ module.exports = function(grunt) {
 
         // deploy
         'ftp-deploy': {
-            build: {
+            production: {
                 auth: {
                   host: host,
                   port: 21,
                   authKey: 'primary'
                 },
-                src: source,
-                dest: destination,
+                src: source + target,
+                dest: destination + target,
                 exclusions: [
                     source + '/.*',
+                    source + '/Gruntfile',
                     source + '/node_modules',
                     source + '/bower.json',
                     source + '/package.json',
@@ -95,5 +99,4 @@ module.exports = function(grunt) {
     // register task
     grunt.registerTask('default', ['less', 'concat', 'uglify', 'watch']);
     grunt.registerTask('deploy', ['ftp-deploy']);
-
 };
