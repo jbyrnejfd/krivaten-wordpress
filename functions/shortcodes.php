@@ -7,6 +7,7 @@ include("shortcodes/circle-icon.php");
 include("shortcodes/grid.php");
 include("shortcodes/icon.php");
 include("shortcodes/map.php");
+include("shortcodes/modal-slider.php");
 include("shortcodes/pre.php");
 include("shortcodes/quote.php");
 include("shortcodes/vimeo.php");
@@ -32,6 +33,7 @@ function pre_process_shortcode($content) {
 	add_shortcode('col_inner', 'sc_col');
 	add_shortcode("icon", "sc_icon");
 	add_shortcode("map", "sc_map");
+	add_shortcode("modal_slider", "sc_modal_slider");
 	add_shortcode('pre', 'sc_pre');
 	add_shortcode('quote', 'sc_quote');
 	add_shortcode("vimeo", "sc_vimeo");
