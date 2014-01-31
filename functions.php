@@ -115,8 +115,9 @@ require_once("functions/scripts.php");
 require_once("functions/shortcodes.php");
 
 // Menu Walkers
-require_once("functions/walker-nav.php");
-require_once("functions/walker-drawer.php");
+require_once("functions/walker-top-nav.php");
+require_once("functions/walker-side-nav.php");
+require_once("functions/walker-drawer-nav.php");
 
 // Initiate Admin
 require_once("functions/admin.php");
