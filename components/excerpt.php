@@ -9,12 +9,12 @@
 				</a>
 			<?php } ?>
 			<?php the_excerpt(); ?>
-			<?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+			<?php include (TEMPLATEPATH . '/components/meta.php' ); ?>
 		</div>
 	</article>
 <?php endwhile; ?>
 
-<?php include (TEMPLATEPATH . '/inc/pager.php' ); ?>
+<?php include (TEMPLATEPATH . '/components/pager.php' ); ?>
 
 <?php else : ?>
 	<h2>Not Found</h2>

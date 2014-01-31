@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-<?php include(TEMPLATEPATH . '/inc/content.php' ); ?>
+<?php include(TEMPLATEPATH . '/components/content.php' ); ?>
 <?php get_footer(); ?>

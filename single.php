@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="row">
 	<div class="col-md-8">
-		<?php require_once(TEMPLATEPATH . '/inc/content.php' ); ?>
+		<?php require_once(TEMPLATEPATH . '/components/content.php' ); ?>
 		<?php comments_template(); ?>
 	</div>
 	<div class="col-md-4 hidden-xs sidebar-left">
