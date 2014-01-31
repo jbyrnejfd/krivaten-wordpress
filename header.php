@@ -44,7 +44,7 @@
 				<nav class="nav-collapse pull-right visible-md visible-lg" role="navigation">
 					<?php
 					if (has_nav_menu('main-menu')) :
-						wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_nav()));
+						wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new top_nav()));
 					endif;
 					?>
 				</nav>
