@@ -2,6 +2,8 @@
 	'theme_location' => 'main-menu', 
 	'container' => 'nav',
 	'container_class' => 'sidenav',
-	'menu_class' => 'well well-sm', 
-	'depth' => '0'));
+	'menu_class' => 'nav', 
+	'depth' => '0',
+	'walker' => new side_nav()
+));
 ?>
