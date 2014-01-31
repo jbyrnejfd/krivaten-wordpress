@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                     port: 35729,
                     livereload: true
                 },
-                files: ['less/**/*.less', jsFiles, '**/*.php', 'img/**/*.{png,jpg,jpeg,gif,svg}']
+                files: ['**/*.less', jsFiles, '**/*.php', 'img/**/*.{png,jpg,jpeg,gif,svg}']
             }
         },
 
