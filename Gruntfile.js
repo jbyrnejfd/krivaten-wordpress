@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                     port: 35729,
                     livereload: true
                 },
-                files: ['less/**/*.less', jsFiles, '*.php', 'img/**/*.{png,jpg,jpeg,gif,svg}']
+                files: ['less/**/*.less', jsFiles, '**/*.php', 'img/**/*.{png,jpg,jpeg,gif,svg}']
             }
         },
 
@@ -50,7 +50,8 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'css/css.css': 'less/style.less'
+                    'css/css.css': 'less/style.less',
+                    'css/components/royal-slider/custom-skin.css': 'less/components/royal-slider/custom-skin.less'
                 }
             }
         },
