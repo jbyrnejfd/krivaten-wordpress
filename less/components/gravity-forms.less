@@ -110,3 +110,26 @@
 .gform_validation_container {
 	display: none;
 }
+
+.gform_drop_area {
+	.clearfix();
+	.border-radius(10px);
+	padding: 15px;
+	border: 1px dashed @brand-primary;
+	background: lighten(@brand-primary, 30%);
+
+	.gform_drop_instructions {
+		float: left;
+		width: 50%;
+		padding-right: 15px;
+		color: @white;
+		text-align: right;
+		line-height: 34px;
+	}
+	.gform_button_select_files {
+		.btn();
+		.btn-default();
+		float: left;
+		width: auto;
+	}
+}
