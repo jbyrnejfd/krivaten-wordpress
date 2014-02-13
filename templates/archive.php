@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php require_once(TEMPLATEPATH . '/templates/header.php'); ?>
 <div class="row">
 	<div class="col-md-8">
 		<?php require_once(TEMPLATEPATH . '/components/excerpt.php' ); ?>
@@ -12,4 +12,4 @@
 		</aside>
 	</div>
 </div>
-<?php get_footer(); ?>
+<?php require_once(TEMPLATEPATH . '/templates/footer.php'); ?>

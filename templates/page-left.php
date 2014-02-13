@@ -3,7 +3,7 @@
 Template Name: Left Column
 */
 ?>
-<?php get_header(); ?>
+<?php require_once(TEMPLATEPATH . '/templates/header.php'); ?>
 <div class="row">
 	<div class="col-md-4 hidden-xs">
 		<aside>
@@ -18,4 +18,4 @@ Template Name: Left Column
 		<?php require_once(TEMPLATEPATH . '/components/content.php' ); ?>
 	</div>
 </div>
-<?php get_footer(); ?>
+<?php require_once(TEMPLATEPATH . '/templates/footer.php'); ?>

@@ -1,15 +1,12 @@
-<?php get_header(); ?>
-<div class="row">
-	<div class="col-md-8">
-		<?php require_once(TEMPLATEPATH . '/components/excerpt.php' ); ?>
-	</div>
-	<div class="col-md-4 hidden-xs">
-		<aside>
-			<?php
-				vdp_sidebar('sidebar-blog');
-				vdp_sidebar('sidebar-all');
-			?>
-		</aside>
-	</div>
-</div>
-<?php get_footer(); ?>
+<?php 
+	if(is_page() && !is_page_template()) {
+		$pageTemplate = 'page';
+	} elseif(is_archive() || is_search()) {
+		$pageTemplate = 'archive';
+	} elseif(is_404()) {
+		$pageTemplate = '404';
+	} else {
+		$pageTemplate = 'index';
+	}
+	require_once(TEMPLATEPATH . '/templates/'.$pageTemplate.'.php');
+?>
