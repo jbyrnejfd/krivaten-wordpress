@@ -12,7 +12,7 @@
 			endif;
 			?>
 		</nav>
-		<?php require_once(TEMPLATEPATH . '/components/social-icons.php'); ?>
+		<?php require_once(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
 		<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
 	</div>
 </footer><!--/#page-footer-->
