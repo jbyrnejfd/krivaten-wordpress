@@ -1,1 +1,2 @@
-<?php require_once("functions/index.php");?>
+<?php require("functions/index.php");?>
+<?php require("functions/admin.php");?>
