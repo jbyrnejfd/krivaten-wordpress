@@ -103,7 +103,7 @@ add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);
 function new_royalslider_add_custom_skin($skins) {
 	$skins['customSkin'] = array(
 		'label' => 'Custom skin',
-		'path' => get_bloginfo('template_directory') . '/css/components/royal-slider/custom-skin.css'
+		'path' => ''
 	);
 	return $skins;
 }
