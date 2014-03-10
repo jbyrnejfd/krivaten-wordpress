@@ -119,9 +119,6 @@ require_once("walker-top-nav.php");
 require_once("walker-side-nav.php");
 require_once("walker-drawer-nav.php");
 
-// Initiate Admin
-require_once("admin.php");
-
 // Mobile Detect
 require_once("mobile-detect.php");
 // $detect = new Mobile_Detect;
