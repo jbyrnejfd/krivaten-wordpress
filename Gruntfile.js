@@ -50,8 +50,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'css/css.css': 'less/style.less',
-                    'css/components/royal-slider/custom-skin.css': 'less/components/royal-slider/custom-skin.less'
+                    'css/css.css': 'less/style.less'
                 }
             }
         },
