@@ -9,8 +9,8 @@ Template Name: Left Column
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/templates/components/sub-pages.php' );
-				vdp_sidebar('sidebar-left');
-				vdp_sidebar('sidebar-all');
+				kvt_sidebar('sidebar-left');
+				kvt_sidebar('sidebar-all');
 			?>
 		</aside>
 	</div>

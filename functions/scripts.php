@@ -2,7 +2,7 @@
 /**
  * Enqueue scripts
  */
-function viral_scripts($DEVELOPMENT) {
+function kvt_scripts($DEVELOPMENT) {
 
 	if (!is_admin() && current_theme_supports('jquery-cdn')) {
 		wp_deregister_script('jquery');
@@ -16,4 +16,4 @@ function viral_scripts($DEVELOPMENT) {
 	wp_enqueue_script('jquery', get_bloginfo('template_url') . '/js/jquery-1.9.1.min.js',false,false,true);
 	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/js/js.js',false,false,true);
 }
-add_action('wp_enqueue_scripts', 'viral_scripts', 100);
+add_action('wp_enqueue_scripts', 'kvt_scripts', 100);

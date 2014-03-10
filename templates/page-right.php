@@ -12,8 +12,8 @@ Template Name: Right Column
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/templates/components/sub-pages.php' );
-				vdp_sidebar('sidebar-right');
-				vdp_sidebar('sidebar-all');
+				kvt_sidebar('sidebar-right');
+				kvt_sidebar('sidebar-all');
 			?>
 		</aside>
 	</div>

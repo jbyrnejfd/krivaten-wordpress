@@ -18,7 +18,7 @@ add_theme_support('post-thumbnails');
 // add_image_size('medium', 880, 660);
 
 // Widgets
-$vdp_Widgets = array(
+$kvt_Widgets = array(
 	//'Top',
 	//'Header Top',
 	//'Header Body',
@@ -39,7 +39,7 @@ $vdp_Widgets = array(
 	//'Copyright',
 	//'Bottom'
 );
-foreach ($vdp_Widgets as $widget) {
+foreach ($kvt_Widgets as $widget) {
 	if (function_exists('register_sidebar')){
 	    $widgetstring = str_replace(" ","-",strtolower($widget));
 	    register_sidebar(array(
@@ -54,7 +54,7 @@ foreach ($vdp_Widgets as $widget) {
 }
 
 // Widget Check
-function vdp_sidebar($widget,$container = false) {
+function kvt_sidebar($widget,$container = false) {
 	if (is_active_sidebar($widget)) {
 		if($container != false) {echo "<div id=\"$widget\"><div class=\"wrapper\">";}
 		if(!function_exists('dynamic_sidebar') || !dynamic_sidebar($widget)) : endif;
@@ -63,7 +63,7 @@ function vdp_sidebar($widget,$container = false) {
 }
 
 // Add HTTP
-function vdp_add_http($url) {
+function kvt_add_http($url) {
     if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
         $url = "http://" . $url;
     }
@@ -92,11 +92,11 @@ if (function_exists('register_nav_menus')) {
 // Enable Shortcodes in Widgets
 add_filter('widget_text', 'do_shortcode');
 
-function vdp_edit_post_link($output) {
+function kvt_edit_post_link($output) {
     $output = str_replace('class="post-edit-link"', 'class="btn btn-primary btn-lg"', $output);
     return $output;
 }
-add_filter('edit_post_link', 'vdp_edit_post_link');
+add_filter('edit_post_link', 'kvt_edit_post_link');
 
 // Enable Custom Royal Slider Skin
 add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);

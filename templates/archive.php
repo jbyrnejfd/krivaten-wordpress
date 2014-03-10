@@ -6,8 +6,8 @@
 	<div class="col-md-4 hidden-xs">
 		<aside>
 			<?php
-				vdp_sidebar('sidebar-blog');
-				vdp_sidebar('sidebar-all');
+				kvt_sidebar('sidebar-blog');
+				kvt_sidebar('sidebar-all');
 			?>
 		</aside>
 	</div>
