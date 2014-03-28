@@ -1,6 +1,3 @@
 *.ftppass
-css/css.css
-css/components/royal-slider/custom-skin.css
-js/js.js
 vendor/
 node_modules/
