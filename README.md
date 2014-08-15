@@ -89,5 +89,6 @@ I did my best to create shortcodes for all the Bootstrap elements (And then some
 * No structure in place for comments, because I use [Disqus](http://disqus.com). If you want it, ask nicely.
 
 ##Todos##
-* Move from touchSwipe to Hammer
 * Create custom menu walker for side nav
+* Switch to SASS
+* Get rid of swipe
