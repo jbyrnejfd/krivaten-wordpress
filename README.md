@@ -6,12 +6,10 @@ It was largely built to suit my particular workflow, but if you by chance use th
 ##Features##
 * Built using [Twitter Bootstrap](http://getbootstrap.com/)
 * Integrated with [Grunt](http://gruntjs.com/)
-* LESS compiles using [Grunt Less](https://github.com/gruntjs/grunt-contrib-less)
+* SASS compiles using [Grunt SASS](https://github.com/gruntjs/grunt-contrib-sass)
 * JS compiled and minified using [Grunt Uglify](https://github.com/gruntjs/grunt-contrib-uglify) and [Grunt Concat](https://github.com/gruntjs/grunt-contrib-concat)
-* FTP Deployment using [Grunt FTP Deploy](https://github.com/zonak/grunt-ftp-deploy)
 * Styles for the [Gravity Forms](http://www.gravityforms.com/) Wordpress plugin
 * Custom skin for [Royal Slider](http://dimsemenov.com/plugins/royal-slider)
-* Swipable mobile nav drawer using [touchSwipe](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)
 * Menu walkers for navbar and drawer to add necessary classes
 * Theme admin for adding Social Networking URLs and Google Analytics code
 
@@ -76,7 +74,6 @@ I did my best to create shortcodes for all the Bootstrap elements (And then some
 * [Bootstrap 3](https://github.com/twbs/bootstrap)
 * [Grunt](http://gruntjs.com/)
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
-* [touchSwipe](https://github.com/mattbryson/TouchSwipe-Jquery-Plugin)
 * [Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 
@@ -90,5 +87,3 @@ I did my best to create shortcodes for all the Bootstrap elements (And then some
 
 ##Todos##
 * Create custom menu walker for side nav
-* Switch to SASS
-* Get rid of swipe
