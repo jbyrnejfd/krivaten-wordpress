@@ -1,0 +1,17 @@
+/**
+ * Social Icons
+ */
+
+.social-icons {
+	font: 20px/30px $icon-font-name;
+	text-align: center;
+	a {
+		margin: 0 5px;
+		color: $gray;
+		
+		&:hover {
+			text-decoration: none;
+			color: $gray-dark;
+		}
+	}
+}

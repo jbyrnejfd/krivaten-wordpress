@@ -1,6 +1,7 @@
-//////////////
-//  DRAWER  //
-//////////////
+/**
+ * Navigation Drawer
+ */
+
 // No transitions
 .no-transitions {
 	#page-body {
@@ -40,13 +41,13 @@
 		left: 0;
 
 		> * {
-			.translate(0, 0);
-			.transition(-webkit-transform 200ms ease-out);
+			@include transform(translate3d(0, 0, 0));
+			@include transition(-webkit-transform 0.2s ease-in-out);
 		}
 	}
 	#page-footer {
-		.translate(0, 0);
-		.transition(-webkit-transform 200ms ease-out);
+		@include transform(translate3d(0, 0, 0));
+		@include transition(-webkit-transform 0.2s ease-in-out);
 		position: fixed;
 		top: 0;
 		left: -256px;
@@ -55,11 +56,11 @@
 	&.drawer-open {
 		#page-body {
 			> * {
-				.translate(256px, 0);
+				@include transform(translate3d(256px, 0, 0));
 			}
 		}
 		#page-footer {
-			.translate(256px, 0);
+			@include transform(translate3d(256px, 0, 0));
 			padding-bottom: 60px;
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
@@ -74,7 +75,7 @@
 	overflow: hidden;
 }
 #page-footer {
-	.inner-shadow(-5px, 0, 10px, 0, 0.35);
+	box-shadow: inset -5px 0 10px rgba(0,0,0,0.35);
 	z-index: 10;
 	width: 256px;
 	background: #3a3536; 
@@ -103,7 +104,7 @@
 			h3 {
 				padding: 0;
 				margin: 0;
-				font: 16px/25px @font-family-sans-serif;
+				font: 16px/25px $font-family-sans-serif;
 			}
 		}
 		.drawer-menu {
@@ -119,8 +120,8 @@
 		.drawer-header {
 			display: block;
 			padding: 0 10px;
-			background: @gray;
-			color: @white;
+			background: $gray;
+			color: $body-bg;
 		}
 		li {
 			padding: 0;
@@ -130,14 +131,14 @@
 			a {
 				display: block;
 				padding: 10px;
-				color: @white;
+				color: $body-bg;
 				
 				&:hover, &:focus, &:active {
 					text-decoration: none;
 				}
 				&:active {
 					background: rgba(0,0,0,0.4);
-					color: @white;
+					color: $body-bg;
 				}
 			}
 		}
@@ -145,9 +146,9 @@
 	.social-icons {
 		font-size: 25px;
 		a {
-			color: @white;
+			color: $body-bg;
 			&:hover {
-				color: @gray;
+				color: $gray;
 			}
 		}
 	}
@@ -165,9 +166,9 @@
 	position: relative;
 	z-index: 10;
 	margin-right: 20px;
-	font-size: 24px/@navbar-height @font-family-sans-serif;
+	font-size: 24px/$navbar-height $font-family-sans-serif;
 	a {
-		color: @blue;
+		color: $brand-primary;
 		&:hover, &:active {
 			text-decoration: none;
 		}
@@ -176,9 +177,9 @@
 		}
 		.fa {
 			width: 40px;
-			height: @navbar-height;
+			height: $navbar-height;
+			line-height: $navbar-height;
 			font-size: 30px;
-			line-height: @navbar-height;
 		}
 	}
 	span {

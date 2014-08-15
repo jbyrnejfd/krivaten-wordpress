@@ -1,3 +1,7 @@
+/**
+ * Misc Styles
+ */
+
 body {
 	overflow-y: scroll !important;
 }
@@ -10,11 +14,11 @@ img {
 }
 
 #page-body {
-	padding-top: @navbar-height;
+	padding-top: $navbar-height;
 }
 
 a {
-	.transition(all 0.2s ease);
+	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		text-decoration: none;
 	}
@@ -48,29 +52,11 @@ aside {
 				display: block;
 				padding: 10px;
 				&:hover {
-					background: @blue;
-					color: @white;
+					background: $brand-primary;
+					color: $body-bg;
 					text-decoration: none;
 				}
 			}
 		}
-	}
-}
-
-////////////////
-//  IE FIXES  //
-////////////////
-.lt-ie9-show {
-	display: none;
-}
-.lt-ie9-hide {
-	display: inherit;
-}
-.lt-ie9 {
-	.lt-ie9-show {
-		display: inherit;
-	}
-	.lt-ie9-hide {
-		display: none;
 	}
 }

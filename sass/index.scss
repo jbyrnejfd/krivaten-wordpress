@@ -1,16 +1,25 @@
-// Bootstrap
-@import "../vendor/bootstrap/less/bootstrap.less";
-@import "variables.less";
+@import "variables";
+@import "bootstrap";
+@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
 
 // Components
-@import "../vendor/bootstrap-datepicker/less/datepicker3.less";
-@import "components/gravity-forms.less";
+// @import "../vendor/bootstrap-datepicker/less/datepicker3.less";
+// @import "components/gravity-forms.less";
+@import "components/misc";
+@import "components/gravity-forms";
+@import "components/royal-slider";
 
 // Styles
-@import "mixins.less";
-@import "branding.less";
-@import "shortcodes.less";
-@import "misc.less";
+@import "branding";
+
+/**
+ * Shortcodes
+ */
+@import "shortcodes/accordion";
+@import "shortcodes/checklist";
+@import "shortcodes/circle-icon";
+@import "shortcodes/quote";
+@import "shortcodes/social-icons";
 
 /*
 DEMO CSS PROPERTY ORDER
