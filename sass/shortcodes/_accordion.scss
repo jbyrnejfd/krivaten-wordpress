@@ -1,0 +1,24 @@
+/**
+ * Accordion
+ */
+.panel-group {
+	margin-bottom: 5px;
+	.panel-title {
+		a {
+			display: block;
+			color: $text-color;
+			text-decoration: none;
+
+			&:before {
+				margin-right: 10px;
+				font-family: $icon-font-name;
+				content: '\f056';
+			}
+			&.collapsed {
+				&:before {
+					content: '\f055';
+				}
+			}
+		}
+	}
+}

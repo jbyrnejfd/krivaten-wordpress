@@ -1,0 +1,136 @@
+/**
+ * Gravity Forms
+ */
+
+.gform_wrapper { 
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none; 
+	}
+	li {
+		@include clearfix;
+		margin-bottom: 10px;
+	}
+	.gfield_required {
+		color: $brand-danger;
+		padding-left: 1px;
+	}
+	.validation_message { 
+		display: none; 
+	}
+	form { 
+		margin-bottom: 0; 
+	}
+	.gfield_error label {
+		color: $brand-warning;
+	}
+	.gform_button {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+	}
+}
+.gfield_radio {
+	input {
+		display: none !important;
+		&+label:before {
+			margin-right: 10px;
+			color: $brand-primary;
+			font-family: $icon-font-name;
+			content: "\f10c";
+		}
+		&:checked+label{
+			&:before {
+				content: "\f111";
+			}
+		} 
+	}
+	label {
+		display: inline-block;
+		font-weight: 400;
+	}
+}
+.gfield_checkbox {
+	input {
+		display: none !important;
+		&+label:before {
+			margin-right: 10px;
+			color: $brand-primary;
+			font-family: $icon-font-name;
+			content: "\f096";
+		}
+		&:checked+label{
+			&:before {
+				content: "\f046";
+			}
+		} 
+	}
+	label {
+		display: inline-block;
+		font-weight: 400;
+	}
+}
+.gfield_label {
+	cursor: pointer;
+}
+.gfield_description {
+	display: block;
+	font: italic 12px/16px $font-family-sans-serif;
+	text-transform: lowercase;
+}
+.ginput_container {
+	input, textarea, select {
+		@extend .form-control;
+		width: 100%;
+	}
+	textarea {
+		height: 200px;
+		resize: none;
+	}
+	.ginput_full {
+		width: 100%;
+	}
+	.ginput_left, .ginput_right {
+		width: 48%;
+	}
+	.ginput_full,.ginput_left, .ginput_right {
+		label {
+			display: block;
+			font: italic 12px/16px $font-family-sans-serif;
+			text-transform: lowercase;
+		}
+	}
+	.ginput_left {
+		float: left;
+	}
+	.ginput_right {
+		float: right;
+	}
+}
+.gform_validation_container {
+	display: none;
+}
+
+.gform_drop_area {
+	@include clearfix;
+	border-radius: 10px;
+	padding: 15px;
+	border: 1px dashed $brand-primary;
+	background: lighten($brand-primary, 30%);
+
+	.gform_drop_instructions {
+		float: left;
+		width: 50%;
+		padding-right: 15px;
+		color: $body-bg;
+		text-align: right;
+		line-height: 34px;
+	}
+	.gform_button_select_files {
+		@extend .btn;
+		@extend .btn-default;
+		float: left;
+		width: auto;
+	}
+}

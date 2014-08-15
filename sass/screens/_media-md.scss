@@ -1,0 +1,19 @@
+/**
+ * Medium Screens (SD Desktops)
+ */
+
+.text-md-left {text-align: left;}
+.text-md-center {text-align: center;}
+.text-md-right {text-align: right;}
+
+footer {
+	.social-icons {
+		float: right;
+		a {
+			color: $link-color;
+			&:hover {
+				color: $link-hover-color;
+			}
+		}
+	}
+}

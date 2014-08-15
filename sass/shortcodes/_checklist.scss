@@ -1,0 +1,21 @@
+/**
+ * Checklist
+ */
+
+.checklist {
+	ul, ol {
+		list-style-type: none;
+	}
+	li {
+		position: relative;
+		&:before {
+			position: absolute;
+			left: -40px;
+			width: 40px;
+			color: $brand-success;
+			font-family: $icon-font-name;
+			text-align: center;
+			content: '\f00c';
+		}
+	}
+}

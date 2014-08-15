@@ -1,0 +1,62 @@
+/**
+ * Misc Styles
+ */
+
+body {
+	overflow-y: scroll !important;
+}
+.modal {
+	overflow-y: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+#page-body {
+	padding-top: $navbar-height;
+}
+
+a {
+	@include transition(all 0.2s ease-in-out);
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+article {
+	padding: 10px 0;
+	&.excerpt {
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+	.title {
+		margin-top: 0;
+	}
+}
+
+aside {
+	[class*='sidebar-'] {
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			border-bottom: 1px solid rgba(0,0,0,0.2);
+			&:last-child {
+				border-bottom: 0;
+			}
+			a {
+				display: block;
+				padding: 10px;
+				&:hover {
+					background: $brand-primary;
+					color: $body-bg;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+////////////////////
+//  BASIC STYLES  //
+////////////////////
+
+footer {}
+header {}
+
+/**
+ * Smartphone
+ */
+@import "screens/media-xs";
+
+/**
+ * Smartphone and Tablet
+ */
+@media (max-width: $screen-sm-max) {
+	@import "components/drawer";
+}
+
+/**
+ * Tablet
+ */
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+	@import "screens/media-sm";
+}
+
+/**
+ * Desktop Standard
+ */
+@media (min-width: $screen-md) {
+	@import "screens/media-md";
+}
+
+/**
+ * Desktop Large Screens
+ */
+@media (min-width: $screen-lg-desktop) {
+	@import "screens/media-lg";
+}
+
+/**
+ * Retina
+ */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+	@import "screens/media-rt";
+}
