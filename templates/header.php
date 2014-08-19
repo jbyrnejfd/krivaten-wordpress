@@ -54,10 +54,23 @@
 						?>
 					</nav>
 				</div>
-				<div class="navbar-icons">
-					<i class="icon facebook"></i>
-					<i class="icon twitter"></i>
-					<i class="icon rss"></i>
+				<div class="navbar-connect">
+					<div class="navbar-phone">
+						<?php
+							echo get_option("kvt_phone_num");
+						?>
+					</div>
+					<div class="navbar-icons">
+						<i class="icon city"></i>
+						<i class="icon facebook"></i>
+						<i class="icon twitter"></i>
+						<i class="icon rss"></i>
+					</div>
+					<div class="navbar-address">
+						Sunday @ 10:30 AM<br />
+						210 S 2nd Street<br />
+						Hamilton, OH
+					</div>
 				</div>
 			</div>
 		</header>

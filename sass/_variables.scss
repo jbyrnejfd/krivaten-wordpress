@@ -477,7 +477,7 @@
  //##
 
  $jumbotron-padding:              30px !default;
- $jumbotron-color:                inherit !default;
+ $jumbotron-color:                $body-bg !default;
  $jumbotron-bg:                   $gray-lighter !default;
  $jumbotron-heading-color:        inherit !default;
  $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;

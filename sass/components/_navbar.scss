@@ -18,11 +18,10 @@
 	}
 }
 
-.navbar-icons {
+.navbar-connect {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 0;
 	
 	.icon {
 		@include transition(opacity 0.2s ease-in-out);
@@ -30,4 +29,22 @@
 			opacity: 0.8;
 		}
 	}
+}
+.navbar-icons {
+	font-size: 0;
+}
+.navbar-address {
+	margin-top: 5px;
+}
+.navbar-phone {
+	@include transform(rotate(90deg) translate(50%));
+	color: $brand-danger;
+	font-weight: 700;
+	position: absolute;
+	top: -5px;
+	right: $navbar-height;
+	width: ($navbar-height - 10);
+	text-align: center;
+	padding: 0;
+	margin: 0;
 }
