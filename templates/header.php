@@ -27,27 +27,38 @@
 	<?php $detect = new Mobile_Detect; ?>
 	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 	<?php wp_head(); ?>
+
+	<script type="text/javascript" src="//use.typekit.net/leg7ved.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 </head>
 <body <?php body_class('site-background'); ?>>
 	
 	<div id="page-body">
 		<header class="navbar navbar-default navbar-fixed-top" role="banner">
-			<div class="navbar-inner">
-				<div class="hidden-md hidden-lg pull-left btn-drawer">
-					<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
-					<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
-				</div>
-				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
-					<?php bloginfo('name'); ?>
-				</a>
+			<div class="container">
+				<div class="navbar-inner">
+					<div class="hidden-md hidden-lg pull-left btn-drawer">
+						<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
+						<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
+					</div>
+					<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" />
+					</a>
 
-				<nav class="nav-collapse pull-right hidden-xs hidden-sm" role="navigation">
-					<?php
-					if (has_nav_menu('main-menu')) :
-						wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new top_nav()));
-					endif;
-					?>
-				</nav>
+					<nav class="nav-collapse pull-right hidden-xs hidden-sm" role="navigation">
+						<?php
+						if (has_nav_menu('main-menu')) :
+							wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new top_nav()));
+						endif;
+						?>
+					</nav>
+				</div>
+				<div class="navbar-icons">
+					<i class="icon facebook"></i>
+					<i class="icon twitter"></i>
+					<i class="icon rss"></i>
+				</div>
 			</div>
 		</header>
 
