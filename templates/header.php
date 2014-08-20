@@ -54,7 +54,7 @@
 						?>
 					</nav>
 				</div>
-				<div class="navbar-connect">
+				<div class="navbar-connect visible-md visible-lg">
 					<div class="navbar-phone">
 						<?php
 							echo get_option("kvt_phone_num");
@@ -78,7 +78,7 @@
 		<div class="jumbotron <?php if(is_page('home')) {echo "masthead";} else {echo "subhead";} ?>">
 			<div class="container">
 				<?php if(is_page('home')) { ?>
-					<?php echo do_shortcode('[new_royalslider id="1"]');?>
+					<h1>love &bull; live &bull; move</h1>
 				<?php /* If this is the blog page */ } elseif (is_home()) { ?>
 					<h1>Blog</h1>
 				<?php /* If this is a category archive */ } elseif (is_category()) { ?>
