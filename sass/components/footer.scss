@@ -1,0 +1,45 @@
+/**
+ * Footer
+ */
+
+footer {
+	h4 {
+		font-weight: 700;
+	}
+	.container {
+		background: $brand-primary;
+		position: relative;
+	}
+	.bg-danger {
+		background: $brand-danger;
+		color: $body-bg;
+	}
+	.bg-warning {
+		background: $brand-warning;
+	}
+	.footer-cols {
+		.row {
+			> div {
+				padding-bottom: 38px;
+			}
+		}
+	}
+	.footer-bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		.row {
+			margin: 0 15px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			background: $brand-info;
+			color: $body-bg;
+			font-weight: 700;
+			font-size: 20px;
+			text-transform: lowercase;
+			
+		}
+	}
+}
