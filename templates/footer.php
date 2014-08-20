@@ -12,8 +12,38 @@
 			endif;
 			?>
 		</nav>
-		<?php require_once(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
-		<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+		<?php //require_once(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
+
+		<div class="footer-cols">
+			<div class="row">
+				<div class="col-md-2">
+					<h4>who we are</h4>
+				</div>
+				<div class="col-md-2">
+					<h4>join the family</h4>
+				</div>
+				<div class="col-md-2">
+					<h4>join the mission</h4>
+				</div>
+				<div class="col-md-3 bg-danger">
+					<h4>recent posts</h4>
+				</div>
+				<div class="col-md-3 bg-warning">
+					<h4>the village church</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="row">
+				<div class="col-md-6 text-md-left">
+					love &bull; live &bull; move
+				</div>
+				<div class="col-md-6 text-md-right">
+					&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>
+				</div>
+			</div>
+		</div>
 	</div>
 </footer><!--/#page-footer-->
 
