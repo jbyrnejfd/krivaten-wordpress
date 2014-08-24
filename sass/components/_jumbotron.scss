@@ -11,6 +11,8 @@
 
 @media (min-width: $screen-md) {
 	.jumbotron {
+		position: relative;
+		
 		body.home & {
 			height: 650px;
 

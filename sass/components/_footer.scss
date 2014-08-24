@@ -13,6 +13,16 @@ footer {
 	.bg-danger {
 		background: $brand-danger;
 		color: $body-bg;
+		&, a {
+			color: $body-bg;
+		}
+		a {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+			width: 100%;
+		}
 	}
 	.bg-warning {
 		background: $brand-warning;
@@ -20,6 +30,7 @@ footer {
 	.footer-cols {
 		.row {
 			> div {
+				height: 250px;
 				padding-bottom: 38px;
 			}
 		}
