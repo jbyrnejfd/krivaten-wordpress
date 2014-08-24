@@ -23,9 +23,10 @@ $navbar-height-md: ($navbar-height * 2);
 	.navbar-nav {
 		> li {
 			> a {
-				width: 180px;
-				text-align: center;
 				@include transition(color 0.2s ease-in-out);
+				width: 160px;
+				text-align: center;
+				padding: 15px 5px;
 			}
 		}
 	}
@@ -33,7 +34,7 @@ $navbar-height-md: ($navbar-height * 2);
 		width: 100%;
 		@include box-shadow(none);
 		border-radius: 0;
-		
+
 		> li {
 			> a {
 				font-weight: 700;
