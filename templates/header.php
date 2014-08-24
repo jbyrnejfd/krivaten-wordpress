@@ -46,7 +46,7 @@
 						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" />
 					</a>
 
-					<nav class="nav-collapse pull-right hidden-xs hidden-sm" role="navigation">
+					<nav class="nav-collapse hidden-xs hidden-sm" role="navigation">
 						<?php
 						if (has_nav_menu('main-menu')) :
 							wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new top_nav()));
