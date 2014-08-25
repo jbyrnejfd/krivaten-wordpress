@@ -16,14 +16,12 @@
 
 		<div class="footer-cols">
 			<div class="row">
-				<div class="col-md-2">
-					<h4>who we are</h4>
-				</div>
-				<div class="col-md-2">
-					<h4>join the family</h4>
-				</div>
-				<div class="col-md-2">
-					<h4>join the mission</h4>
+				<div class="col-md-6">
+					<?php
+					if (has_nav_menu('main-menu')) :
+						wp_nav_menu(array('theme_location' => 'footer-misc', 'menu_class' => 'footer-nav row'));
+					endif;
+					?>
 				</div>
 				<div class="col-md-3 bg-danger">
 					<h4>recent posts</h4>
