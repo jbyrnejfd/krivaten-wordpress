@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'css/css.css': 'sass/index.scss'
+					'assets/css/css.css': 'sass/index.scss'
 				}
 			}
 		},
@@ -52,7 +52,9 @@ module.exports = function(grunt) {
 		'concat': {
 			development: {
 				files: {
-					"js/js.js": [jsFiles]
+					"assets/js/js.js": [jsFiles],
+					"assets/js/jplayer.js": "vendor/jplayer/jquery.jplayer/jquery.jplayer.js",
+					"assets/js/jplayer.playlist.js": "vendor/jplayer/add-on/jplayer.playlist.js"
 				}
 			}
 		},
@@ -61,7 +63,9 @@ module.exports = function(grunt) {
 		'uglify': {
 			development: {
 				files: {
-					"js/js.js": "js/js.js"
+					"assets/js/js.js": "assets/js/js.js",
+					"assets/js/jplayer.js": "assets/js/jplayer.js",
+					"assets/js/jplayer.playlist.js": "assets/js/jplayer.playlist.js"
 				}
 			}
 		}
