@@ -1,0 +1,50 @@
+/**
+ * Featured Tiles
+ */
+
+.featured-tiles {
+	.featured-tile {
+		margin: 0 0 15px 0;
+		background: $brand-danger;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 75%;
+		}
+
+		&:hover {
+			.featured-tile-image {
+				@include transform(translate3d(0, -150%, 0));
+			}
+		}
+	}
+
+	.featured-tile-image, .featured-tile-desription {
+		@include transition(all 0.2s ease-in-out);
+		position: absolute;
+		width: 100%;
+		top: 50%;
+	}
+	.featured-tile-image {
+		@include transform(translate3d(0, -50%, 0));
+		z-index: 10;
+	}
+	.featured-tile-desription {
+		@include transform(translateY(-50%));
+		color: $body-bg;
+		padding: 0 15px;
+		z-index: 0;
+	}
+}
+
+@media (min-width: $screen-md) {
+	.featured-tiles {
+		.featured-tile {
+			margin: 15px 0;
+		}
+	}
+}
