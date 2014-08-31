@@ -24,7 +24,7 @@ $navbar-height-md: ($navbar-height * 2);
 		> li {
 			> a {
 				@include transition(color 0.2s ease-in-out);
-				width: 160px;
+				width: 165px;
 				text-align: center;
 				padding: 15px 5px;
 			}

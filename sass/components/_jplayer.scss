@@ -1,0 +1,66 @@
+/**
+ * jPlayer
+ */
+.jp-container {
+
+	ul {
+		list-style-type: none;
+	}
+	.jp-interface {
+
+		> div {
+			height: 70px;
+		}
+	}
+	.jp-primary-controls {
+		background: $brand-danger;
+		position: relative;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		&, a {
+			color: $body-bg;
+		}
+		.jp-control-title {
+			font-size: 1.25em;
+			font-weight: 700;
+		}
+		.jp-play, .jp-pause {
+			padding: 4px 0;
+		}
+	}
+
+	.jp-main-content {
+		padding: 0;
+	}
+	.jp-progress {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		height: 3px;
+		background: $brand-primary;
+	}
+	.jp-seek-bar {
+		&:hover {
+			cursor: pointer;
+		}
+		.jp-play-bar {
+			background: $brand-danger;
+			height: 3px;
+			position: relative;
+
+			/*
+			&:before {
+				content: '';
+				display: block;
+				height: 3px;
+				width: 3px;
+				background: $body-bg;
+				position: absolute;
+				right: 0;
+				margin-left: 13px;
+			}
+			*/
+		}
+	}
+}
