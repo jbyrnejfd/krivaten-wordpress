@@ -12,16 +12,16 @@
 	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/css.css" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/css.css" />
 	<!--[if lt IE 9]>
 		<script src="<?php bloginfo('template_directory'); ?>/vendor/html5shiv/dist/html5shiv.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/vendor/respond/dest/respond.min.js"></script>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-16.png" />
-	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-114.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-114.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
-	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/img/logos/logo-144.png" />
+	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-16.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-114.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-144.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-144.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
 	<?php $detect = new Mobile_Detect; ?>
@@ -43,7 +43,7 @@
 						<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
 					</div>
 					<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
-						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" />
+						<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
 					</a>
 
 					<nav class="nav-collapse hidden-xs hidden-sm" role="navigation">
