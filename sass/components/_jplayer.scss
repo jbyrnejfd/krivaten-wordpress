@@ -12,6 +12,22 @@
 			height: 70px;
 		}
 	}
+	.jp-history {
+		background: $brand-primary;
+		text-transform: uppercase;
+		font-size: 1.25em;
+		text-align: right;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		line-height: 25px;
+		&, a {
+			color: $body-bg;
+			display: block;
+		}
+	}
+	.jp-thumbnail {
+		background: $brand-primary;
+	}
 	.jp-primary-controls {
 		background: $brand-danger;
 		position: relative;
@@ -24,9 +40,6 @@
 		.jp-control-title {
 			font-size: 1.25em;
 			font-weight: 700;
-		}
-		.jp-play, .jp-pause {
-			padding: 4px 0;
 		}
 	}
 
@@ -48,19 +61,35 @@
 			background: $brand-danger;
 			height: 3px;
 			position: relative;
-
-			/*
-			&:before {
-				content: '';
-				display: block;
-				height: 3px;
-				width: 3px;
-				background: $body-bg;
-				position: absolute;
-				right: 0;
-				margin-left: 13px;
-			}
-			*/
 		}
+	}
+
+	&.jp-playing {
+		.jp-play-bar {
+			border-right: 3px solid $body-bg;
+		}
+		.jp-pause {
+			@include transform(translateX(-50%) scale3d(1, 1, 1));
+			opacity: 1;
+		}
+		.jp-play {
+			@include transform(translateX(-50%) scale3d(0, 0, 1));
+			opacity: 0;
+		}
+	}
+	.jp-play, .jp-pause {
+		@include transition(all 0.2s ease-in-out);
+		display: block !important;
+		position: absolute;
+		left: 50%;
+		top: 3px;
+	}
+	.jp-play {
+		@include transform(translateX(-50%) scale3d(1, 1, 1));
+		opacity: 1;
+	}
+	.jp-pause {
+		@include transform(translateX(-50%) scale3d(0, 0, 1));
+		opacity: 0;
 	}
 }
