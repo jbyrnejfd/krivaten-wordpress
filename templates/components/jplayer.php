@@ -18,7 +18,7 @@
 
 	$jplayerAuthor = $jplayerItunes->author;
 	$jplayerSubtitle = $jplayerItunes->subtitle;
-	$jplayerImage = $jplayerItunes->image->attributes()[0];
+	$jplayerImage = $jplayerItunes->image->attributes();
 	$jplayerDate = $jplayerFeed->channel->item->pubDate;
 	$jplayerTitle = $jplayerFeed->channel->item->title;
 
