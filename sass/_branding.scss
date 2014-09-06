@@ -5,6 +5,8 @@
 footer {}
 header {}
 
+@import "components/drawer";
+
 /**
  * Smartphone
  */
@@ -14,7 +16,6 @@ header {}
  * Smartphone and Tablet
  */
 @media (max-width: $screen-sm-max) {
-	@import "components/drawer";
 }
 
 /**

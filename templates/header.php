@@ -40,7 +40,7 @@
 				<div class="navbar-inner">
 					<div class="hidden-md hidden-lg pull-left btn-drawer">
 						<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
-						<a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a>
+						<!-- <a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a> -->
 					</div>
 					<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 						<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
@@ -61,10 +61,7 @@
 						?>
 					</div>
 					<div class="navbar-icons">
-						<i class="icon city"></i>
-						<i class="icon facebook"></i>
-						<i class="icon twitter"></i>
-						<i class="icon rss"></i>
+						<?php require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
 					</div>
 					<div class="navbar-address">
 						Sunday @ 10:30 AM<br />

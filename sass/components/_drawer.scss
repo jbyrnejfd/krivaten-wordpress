@@ -2,6 +2,13 @@
  * Navigation Drawer
  */
 
+// Hide on desktop
+@media (min-width: $screen-md) {
+	#drawer {
+		display: none;
+	}
+}
+
 // No transitions
 .no-transitions {
 	#page-body {
@@ -9,7 +16,7 @@
 		top: 0;
 		left: 0;
 	}
-	#page-footer {
+	#drawer {
 		position: absolute;
 		top: 0;
 		left: -256px;
@@ -27,7 +34,7 @@
 				position: relative;
 			}
 		}
-		#page-footer {
+		#drawer {
 			left: 0;
 		}
 	}
@@ -45,7 +52,7 @@
 			@include transition(-webkit-transform 0.2s ease-in-out);
 		}
 	}
-	#page-footer {
+	#drawer {
 		@include transform(translate3d(0, 0, 0));
 		@include transition(-webkit-transform 0.2s ease-in-out);
 		position: fixed;
@@ -59,7 +66,7 @@
 				@include transform(translate3d(256px, 0, 0));
 			}
 		}
-		#page-footer {
+		#drawer {
 			@include transform(translate3d(256px, 0, 0));
 			padding-bottom: 60px;
 			overflow-y: scroll;
@@ -74,7 +81,7 @@
 	width: 100%;
 	overflow: hidden;
 }
-#page-footer {
+#drawer {
 	box-shadow: inset -5px 0 10px rgba(0,0,0,0.35);
 	z-index: 10;
 	width: 256px;
@@ -86,13 +93,15 @@
 		padding-right: 0;
 		color: rgba(255,255,255,0.8); 
 	}
-	.nav-drawer {
+	.drawer-nav {
 		ul {
 			padding: 0;
 			margin: 0;
 			list-style-type: none;
+
 		}
 		li {
+			text-transform: uppercase;
 			a, h3 {
 				border-top: 1px solid rgba(255,255,255,0.1);
 				border-bottom: 1px solid rgba(0,0,0,0.4);
@@ -109,6 +118,8 @@
 		}
 		.drawer-menu {
 			> li {
+				text-transform: lowercase;
+
 				&:first-child {
 					border-top: 0;
 				}
@@ -143,10 +154,17 @@
 			}
 		}
 	}
-	.social-icons {
-		font-size: 25px;
+	.icons {
+		padding: 15px;
+		text-align: center;
+		
+		.icon {
+			width: 40px;
+			height: 40px;
+		}
 		a {
 			color: $body-bg;
+			margin: 0 5px;
 			&:hover {
 				color: $gray;
 			}

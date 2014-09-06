@@ -2,6 +2,15 @@
  * Gravity Forms
  */
 
+.form-control {
+	&, &:active, &:focus {
+		box-shadow: none;
+	}
+	outline: 0;
+	border-radius: 0;
+	border: 0;
+}
+
 .gform_wrapper { 
 	ul {
 		padding: 0;

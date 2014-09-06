@@ -2,27 +2,32 @@
  * Featured Tiles
  */
 
-.featured-tiles {
-	.featured-tile {
-		margin: 0 0 15px 0;
-		background: $brand-danger;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
+.featured-tile {
+	margin: 0 0 15px 0;
+	background: $brand-danger;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
 
-		&:before {
-			content: '';
-			display: block;
-			padding-top: 75%;
-		}
-
-		&:hover {
-			.featured-tile-image {
-				@include transform(translate3d(0, -150%, 0));
-			}
-		}
+	&:before {
+		content: '';
+		display: block;
+		padding-top: 75%;
 	}
 
+	&:hover {
+		.featured-tile-image {
+			@include transform(translate3d(0, -150%, 0));
+		}
+	}
+	.featured-tile-link {
+		display: block;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
 	.featured-tile-image, .featured-tile-desription {
 		@include transition(all 0.2s ease-in-out);
 		position: absolute;
@@ -35,16 +40,17 @@
 	}
 	.featured-tile-desription {
 		@include transform(translateY(-50%));
-		color: $body-bg;
 		padding: 0 15px;
 		z-index: 0;
+
+		p, h3 {
+			color: $body-bg;
+		}
 	}
 }
 
 @media (min-width: $screen-md) {
-	.featured-tiles {
-		.featured-tile {
-			margin: 15px 0;
-		}
+	.featured-tile {
+		// margin: 15px 0;
 	}
 }

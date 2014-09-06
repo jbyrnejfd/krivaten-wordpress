@@ -3,6 +3,7 @@
  */
 
 .jumbotron {
+	@include transform(translateZ(0));
 	background-image: url(../img/jumbotron.jpg);
 	background-size: cover;
 	background-attachment: fixed;

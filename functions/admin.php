@@ -16,6 +16,9 @@ function kvt_settings() {
 		$phoneNum = esc_attr($_POST["kvt_phone_num"]);  
 		update_option("kvt_phone_num", $phoneNum);
 
+		$urlCity = esc_attr($_POST["kvt_city_url"]);  
+		update_option("kvt_city_url", $urlCity);
+
 		$urlFacebook = esc_attr($_POST["kvt_facebook_url"]);  
 		update_option("kvt_facebook_url", $urlFacebook);
 		
@@ -57,6 +60,7 @@ function kvt_settings() {
 	
 	// Get values for form
 	$phoneNum    	= get_option("kvt_phone_num");
+	$urlCity    = get_option("kvt_city_url");
 	$urlFacebook    = get_option("kvt_facebook_url");
 	$urlTwitter     = get_option("kvt_twitter_url");
 	$urlLinkedIn    = get_option("kvt_linkedin_url");
@@ -87,7 +91,16 @@ function kvt_settings() {
 				</tr>
 			</table>
 			<h3>Social Media</h3>
-			<table class="form-table">                
+			<table class="form-table"> 
+				<tr valign="top">
+					<th scope="row">
+						<label for="kvt_city_url">City Url:</label>
+					</th>
+					<td>
+						<input type="text" id="kvt_city_url" name="kvt_city_url" value="<?php echo $urlCity;?>" size="25" />
+					</td>
+				</tr>
+
 				<tr valign="top">
 					<th scope="row">
 						<label for="kvt_facebook_url">Facebook Url:</label>

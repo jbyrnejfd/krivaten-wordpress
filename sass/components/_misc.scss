@@ -23,6 +23,7 @@ a {
 	}
 }
 
+
 article {
 	padding: 10px 0;
 	&.excerpt {
@@ -33,6 +34,18 @@ article {
 	}
 	.title {
 		margin-top: 0;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		color: $brand-primary;
+		font-weight: 300;
+
+		span {
+			color: $brand-danger;
+		}
+	}
+	h3, h4, h5, h6 {
+		font-weight: 700;
 	}
 }
 
@@ -69,4 +82,9 @@ aside {
 
 .btn {
 	border-radius: 0;
+	span {
+		font-weight: 600;
+		font-size: 1.25em;
+		display: block;
+	}
 }

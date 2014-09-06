@@ -25,19 +25,26 @@ footer {
 	}
 	li {
 		a {
-			color: $text-color;
 			line-height: 30px;
 			text-transform: lowercase;
+
+			&, &:hover {
+				color: $text-color;
+			}
 		}
 	}
 	.container {
 		background: $brand-primary;
 		position: relative;
 	}
+	.bg-danger, .bg-warning {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	.bg-danger {
 		background: $brand-danger;
-		color: $body-bg;
-		&, a {
+
+		&, h4, a, a:hover {
 			color: $body-bg;
 		}
 		a {
@@ -49,14 +56,11 @@ footer {
 		}
 	}
 	.bg-warning {
+		position: relative;
 		background: $brand-warning;
-	}
-	.footer-cols {
-		.row {
-			> div {
-				height: 240px;
-				padding-bottom: 38px;
-			}
+
+		h4 {
+			color: $text-color;
 		}
 	}
 	.footer-bottom {
@@ -75,6 +79,20 @@ footer {
 			font-size: 20px;
 			text-transform: lowercase;
 			
+		}
+	}
+	@media (min-width: $screen-md) {
+		.bg-danger, .bg-warning {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.footer-cols {
+			.row {
+				> div {
+					height: 240px;
+					padding-bottom: 38px;
+				}
+			}
 		}
 	}
 }

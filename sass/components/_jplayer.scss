@@ -1,33 +1,35 @@
 /**
  * jPlayer
  */
+$jp-height: 70px;
+
 .jp-container {
 
 	ul {
 		list-style-type: none;
 	}
-	.jp-interface {
-
-		> div {
-			height: 70px;
-		}
+	.jp-primary-controls, .jp-main-content, .jp-meta {
+		height: $jp-height;
+		overflow: hidden;
+	}
+	.jp-meta {
+		background: $brand-primary;
+		padding: 2px;
+		height: auto;
 	}
 	.jp-history {
-		background: $brand-primary;
-		text-transform: uppercase;
+		padding: 10px 5px;
 		font-size: 1.25em;
-		text-align: right;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		line-height: 25px;
-		&, a {
+		text-align: center;
+		text-transform: uppercase;
+
+		a {
+			width: 40%;
 			color: $body-bg;
-			display: block;
+			display: inline-block;
 		}
 	}
-	.jp-thumbnail {
-		background: $brand-primary;
-	}
+	
 	.jp-primary-controls {
 		background: $brand-danger;
 		position: relative;
@@ -45,6 +47,23 @@
 
 	.jp-main-content {
 		padding: 0;
+	}
+	.jp-main-content-text {
+		padding: 5px 15px;
+
+		h3 {
+			color: $brand-danger;
+			font-weight: 600;
+			line-height: 35px;
+		}
+		h3, p {
+			width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+			margin: 0;
+		}
 	}
 	.jp-progress {
 		width: 100%;
@@ -91,5 +110,27 @@
 	.jp-pause {
 		@include transform(translateX(-50%) scale3d(0, 0, 1));
 		opacity: 0;
+	}
+
+	@media (min-width: $screen-sm) {
+		.jp-meta {
+			height: $jp-height;
+		}
+		.jp-history {
+			width: 50%;
+			text-align: right;
+			float: left;
+			a {
+				width: 100%;
+			}
+		}
+		.jp-thumbnail {
+			@include transform(translateY(-50%));
+			position: absolute;
+			top: 50%;
+			right: 2px;
+			max-width: 50%;
+			max-height: 66px;
+		}
 	}
 }

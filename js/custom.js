@@ -39,5 +39,13 @@ jQuery(function($){
 			var transitions = true;
 			$('body').addClass('transitions');
 		}
+
+		/**
+		 * Toggle Side Drawer
+		 */
+		$('.drawer-toggle').on('click', function(e) {
+			e.preventDefault();
+			$('body').toggleClass('drawer-open');
+		})
 	});
 });

@@ -1,7 +1,12 @@
 
 <?php 
 	wp_enqueue_script('jplayer', get_bloginfo('template_url') . '/assets/js/jplayer.js',false,false);
+	// wp_enqueue_script('jplayer', '//cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.4/jquery.jplayer/jquery.jplayer.min.js',false,false);
 
+	/**
+	 * populate everything using rss feed, then use caching to minimize requests, create js function to manage the setting of files
+	 */
+	
 	$feedUrl = 'http://myvillagechurch.com/sermons/feed/podcast';
 	$jplayerFeedUrl = file_get_contents($feedUrl);
 
@@ -9,21 +14,21 @@
 
 	$namespaces = $jplayerFeed->channel->item->getNameSpaces(true);
 
-	$jplayerDc = $jplayerFeed->channel->item->children($namespaces['itunes']);
+	$jplayerItunes = $jplayerFeed->channel->item->children($namespaces['itunes']);
 
-	$jplayerAuthor = $jplayerDc->author;
+	$jplayerAuthor = $jplayerItunes->author;
+	$jplayerSubtitle = $jplayerItunes->subtitle;
+	$jplayerImage = $jplayerItunes->image->attributes()[0];
+	$jplayerDate = $jplayerFeed->channel->item->pubDate;
+	$jplayerTitle = $jplayerFeed->channel->item->title;
 
 	$jplayerUrl = $jplayerFeed->channel->item->enclosure->attributes(); 
 	$jplayerUrl = $jplayerUrl['url'];
 
-	$jplayerTitle = htmlentities(str_replace(' - Audio','',$jplayerFeed->channel->item->title));
-
-	$jplayerDate = $jplayerFeed->channel->item->pubDate;
-
-
-	foreach( $jplayerFeed->channel->item as $time_entry ) {
-	    echo "<pre>"; print_r($time_entry); echo "</pre>";
+	foreach($jplayerFeed->channel->item as $time_entry) {
+	    // echo "<pre>"; print_r($time_entry); echo "</pre>";
 	}
+    // echo "<pre>"; print_r($jplayerImage); echo "</pre>";
 ?>
 
 
@@ -32,44 +37,39 @@
 <div id="jp_container_1" class="jp-container">
 	<div class="jp-type-playlist">
 		<div class="row jp-gui jp-interface">
-			<div class="col-sm-2 jp-primary-controls">
+			<div class="col-xs-2 jp-primary-controls">
 				<div class="row">
-					<div class="col-xs-6 text-right">
+					<div class="col-md-6 text-right visible-md visible-lg">
 						<div class="jp-control-title">Latest<br />Sermon</div>
 					</div>
-					<div class="col-xs-6">
+					<div class="col-md-6">
 						<a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play fa-3x"></i></a>
 						<a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause fa-3x"></i></a>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-sm-6 jp-main-content">
-				<div class="jp-title"></div>
-				<div class="jp-test"></div>
-
-				<div class="jp-secondary-controls">
-					<a href="javascript:;" class="jp-next" tabindex="1">next</a>
-					<a href="javascript:;" class="jp-previous" tabindex="1">previous</a>
-					<a href="javascript:;" class="jp-stop" tabindex="1">stop</a>
+			<div class="col-xs-10 col-sm-6 col-lg-7 jp-main-content">
+				<div class="jp-main-content-text">
+					<h3><?php echo $jplayerTitle;?></h3>
+					<p><em><?php echo $jplayerSubtitle.' | '.$jplayerAuthor.' | '.date('F j, Y', strtotime($jplayerDate));?></em></p>
 				</div>
 
-				<div class="jp-progress">
+				<div class="jp-progress hidden-xs">
 					<div class="jp-seek-bar">
 						<div class="jp-play-bar"></div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-sm-2 jp-history">
-				<a href="#">Archive <i class="fa fa-archive"></i></a>
-				<a href="#">Subscribe <i class="fa fa-rss"></i></a>
+			<div class="col-sm-4 col-lg-3 jp-meta">
+				<div class="jp-history">
+					<a href="#">Archive <i class="fa fa-archive"></i></a>
+					<a href="http://myvillagechurch.com/sermons/feed/podcast" target="_blank">Subscribe <i class="fa fa-rss"></i></a>
+				</div>
+				<img src="<?php echo $jplayerImage;?>" class="jp-thumbnail hidden-xs" />
 			</div>
 
-			<div class="col-sm-2 jp-thumbnail">
-				<a href="#">Archive <i class="fa fa-archive"></i></a>
-				<a href="#">Subscribe <i class="fa fa-rss"></i></a>
-			</div>
 		</div>
 		<div class="jp-volume-bar">
 			<div class="jp-volume-bar-value"></div>
@@ -95,18 +95,15 @@ jQuery(function($){
 		$("#jquery_jplayer_1").jPlayer({
 			ready: function (event) {
 				$(this).jPlayer("setMedia", {
-					title: "Bubble",
-					mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3"
+					mp3: '<?php echo $jplayerUrl;?>'
 				});
 			},
+			volume: 1,
 			swfPath: "assets/jplayer.swf",
 			supplied: "mp3",
 			wmode: "window",
 			preload: "none",
-			smoothPlayBar: true,
-			keyEnabled: true,
-			remainingDuration: true,
-			toggleDuration: true
+			smoothPlayBar: 300
 		});
 
 		$("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
