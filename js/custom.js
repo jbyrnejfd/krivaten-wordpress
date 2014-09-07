@@ -46,6 +46,6 @@ jQuery(function($){
 		$('.drawer-toggle').on('click', function(e) {
 			e.preventDefault();
 			$('body').toggleClass('drawer-open');
-		})
+		});
 	});
 });

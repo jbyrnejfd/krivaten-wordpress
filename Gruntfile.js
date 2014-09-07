@@ -1,14 +1,13 @@
 'use strict';
 module.exports = function(grunt) {
 	var jsFiles = [
-			'vendor/bootstrap/js/alert.js',
-			'vendor/bootstrap/js/button.js',
-			'vendor/bootstrap/js/collapse.js',
-			'vendor/bootstrap/js/dropdown.js',
-			'vendor/bootstrap/js/modal.js',
-			'vendor/bootstrap/js/transition.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/button.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js',
+			'vendor/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js',
 			'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
-			'vendor/jquery-touchswipe/jquery.touchSwipe.min.js',
 			'js/custom.js'
 		];
 

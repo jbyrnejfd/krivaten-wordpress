@@ -70,6 +70,11 @@
 					</div>
 				</div>
 			</div>
+			<div class="nav-sub">
+				<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> contact</a>
+				<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> directions</a>
+				<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> give</a>
+			</div>
 		</header>
 
 		<div class="jumbotron <?php if(is_page('home')) {echo "masthead";} else {echo "subhead";} ?>">

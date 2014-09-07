@@ -9,7 +9,7 @@ $navbar-height-md: ($navbar-height * 2);
 		height: 5px;
 		width: 100%;
 		background: $brand-primary;
-		box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.4);
+		box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.4);
 	}
 }
 .nav-collapse {
@@ -49,6 +49,10 @@ $navbar-height-md: ($navbar-height * 2);
 	img {
 		max-height: ($navbar-height - 10);
 	}
+}
+
+.nav-sub {
+	display: none;
 }
 
 @media (min-width: $screen-md) {
@@ -92,5 +96,25 @@ $navbar-height-md: ($navbar-height * 2);
 		text-align: center;
 		padding: 0;
 		margin: 0;
+	}
+
+	.nav-sub {
+		background: $brand-primary;
+		position: absolute;
+		right: 0;
+		bottom: -35px;
+		display: block;
+		padding: 5px 10px;
+		font-size: 18px;
+		border-radius: 0 0 5px 5px;
+		line-height: 1.3em;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+
+		&, a {
+			color: $body-bg;
+		}
+		a {
+			margin: 0 5px;
+		}
 	}
 }
