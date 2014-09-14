@@ -1,7 +1,11 @@
 <?php
 // Start Row
 function sc_row($atts, $content = null){
-	return '<div class="row">'.do_shortcode(trim($content)).'</div>';
+    extract(shortcode_atts(array(  
+        "class" => null,
+    ), $atts));
+
+	return '<div class="row'.($class?' '.$class:'').'">'.do_shortcode(trim($content)).'</div>';
 }
 
 // [row]Content[/row]
