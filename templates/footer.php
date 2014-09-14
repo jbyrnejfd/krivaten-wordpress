@@ -35,13 +35,11 @@
 							513.330.9118
 						</p>
 
-						<p>sign up for our monthly email to stay up to date with <strong>the village church</strong>.</p>
-
-						<form action="http://myvillagechurch.us2.list-manage1.com/subscribe/post?u=5fb57d3da589671f6e1f6f346&amp;id=b836bd2f65" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" role="form" novalidate="">
-							<div class="form-group">
-								<input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" required="" class="form-control subscribeInput">
-							</div>
-						</form>
+						<p class="text-center" style="padding-top: 15px;">
+							<a href="http://www.acts29network.org" target="_blank">
+								<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-acts-29.png" width="60%" alt="<?php bloginfo('name'); ?>" />
+							</a>
+						</p>
 					</div>
 				</div>
 			</div>
