@@ -4,22 +4,17 @@
 
 .featured-tile {
 	margin: 0 0 15px 0;
-	background: $brand-danger;
-	width: 100%;
 	position: relative;
 	overflow: hidden;
-
+	font-size: 14px;
+	line-height: 20px;
+	
 	&:before {
 		content: '';
 		display: block;
 		padding-top: 75%;
 	}
 
-	&:hover {
-		.featured-tile-image {
-			@include transform(translate3d(0, -150%, 0));
-		}
-	}
 	.featured-tile-link {
 		display: block;
 		height: 100%;
@@ -47,10 +42,14 @@
 			color: $body-bg;
 		}
 	}
-}
+	
+	@media (min-width: $screen-md) {
+		background: $brand-danger;
 
-@media (min-width: $screen-md) {
-	.featured-tile {
-		// margin: 15px 0;
+		&:hover {
+			.featured-tile-image {
+				@include transform(translate3d(0, -150%, 0));
+			}
+		}
 	}
 }

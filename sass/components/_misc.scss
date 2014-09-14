@@ -4,6 +4,11 @@
 
 body {
 	overflow-y: scroll !important;
+
+	@media (min-width: $screen-sm) {
+		background: $body-bg url(../img/logo-ghost.png) right 50px bottom 50px no-repeat;
+		background-attachment: fixed;
+	}
 }
 .modal {
 	overflow-y: hidden;
@@ -23,8 +28,10 @@ a {
 	}
 }
 
-
 article {
+	font-size: 16px;
+	line-height: 25px;
+
 	padding: 10px 0;
 	&.excerpt {
 		border-bottom: 1px solid rgba(0,0,0,0.2);
