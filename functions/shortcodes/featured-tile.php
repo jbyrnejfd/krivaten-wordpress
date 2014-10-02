@@ -1,5 +1,5 @@
 <?php
-function sc_overlay($atts, $content = null) {    
+function sc_featured_tile($atts, $content = null) {    
 	extract(shortcode_atts(
 		array(
 			'image' => 'http://lorempixel.com/530/400/people',
@@ -7,7 +7,7 @@ function sc_overlay($atts, $content = null) {
 			'title' => null,
 			'content' => null
 		),
-		$atts) 
+		$atts)
 	);
 	$return = '';
 	$return .= '<div class="featured-tile">';
@@ -18,10 +18,10 @@ function sc_overlay($atts, $content = null) {
 				if($content) {$return .= '<p>'.$content.'</p>';}
 			$return .= '</div>';
 		$return .= $url ? '</a>' : '';
-	$return .= '</div>';	
+	$return .= '</div>';
 
 	return preg_replace("/\s+/", " ", $return);
 }
 
-// [overlay image="http://lorempixel.com/530/400/people" (url="" title="" content="")]
+// [featured image="http://lorempixel.com/530/400/people" (url="" title="" content="")]
 ?>

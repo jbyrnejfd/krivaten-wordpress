@@ -1,9 +1,12 @@
+<?php $sidebarRight = true; ?>
+
 <?php require_once(TEMPLATEPATH . '/templates/header.php'); ?>
-<div class="row">
-	<div class="col-md-8">
+
+<div class="row row-offcanvas row-offcanvas-right">
+	<div class="col-sm-8">
 		<?php require_once(TEMPLATEPATH . '/templates/components/excerpt.php' ); ?>
 	</div>
-	<div class="col-md-4 hidden-xs">
+	<div class="col-sm-4 sidebar-offcanvas">
 		<aside>
 			<?php
 				kvt_sidebar('sidebar-blog');

@@ -2,9 +2,15 @@
  * Medium Screens (SD Desktops)
  */
 
-.text-md-left {text-align: left;}
-.text-md-center {text-align: center;}
-.text-md-right {text-align: right;}
+.text-md-left {
+	text-align: left;
+}
+.text-md-center {
+	text-align: center;
+}
+.text-md-right {
+	text-align: right;
+}
 
 #page-body {
 	padding-top: 0;
@@ -13,8 +19,8 @@
 	padding-top: ($navbar-height +  $jumbotron-padding);
 }
 .navbar {
-	margin: 0 auto;
 	width: $container-desktop;
+	margin: 0 auto;
 }
 
 footer {

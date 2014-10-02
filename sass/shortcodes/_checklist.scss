@@ -3,7 +3,8 @@
  */
 
 .checklist {
-	ul, ol {
+	ul,
+	ol {
 		list-style-type: none;
 	}
 	li {
@@ -11,11 +12,15 @@
 		&:before {
 			position: absolute;
 			left: -40px;
+
 			width: 40px;
-			color: $brand-success;
-			font-family: $icon-font-name;
-			text-align: center;
+
 			content: '\f00c';
+			text-align: center;
+
+			color: $brand-success;
+
+			font-family: $icon-font-name;
 		}
 	}
 }

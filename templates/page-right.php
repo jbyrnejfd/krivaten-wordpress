@@ -3,12 +3,16 @@
 Template Name: Right Column
 */
 ?>
+
+<?php $sidebarRight = true; ?>
+
 <?php require_once(TEMPLATEPATH . '/templates/header.php'); ?>
-<div class="row">
-	<div class="col-md-8">
+
+<div class="row row-offcanvas row-offcanvas-right">
+	<div class="col-sm-8">
 		<?php require_once(TEMPLATEPATH . '/templates/components/content.php' ); ?>
 	</div>
-	<div class="col-md-4 hidden-xs">
+	<div class="col-sm-4 sidebar-offcanvas">
 		<aside>
 			<?php
 				require_once(TEMPLATEPATH . '/templates/components/sub-pages.php' );
@@ -18,4 +22,5 @@ Template Name: Right Column
 		</aside>
 	</div>
 </div>
+
 <?php require_once(TEMPLATEPATH . '/templates/footer.php'); ?>

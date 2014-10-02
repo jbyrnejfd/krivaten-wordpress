@@ -1,0 +1,13 @@
+/**
+ * Buttons
+ */
+.btn-xl {
+	@include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large * 2.5, $line-height-large * 1.5, 0);
+}
+
+.btn {
+	border-radius: 0;
+	span {
+		font-weight: 600;
+	}
+}

@@ -3,7 +3,7 @@
 	</div>
 	<footer class="footer content-info" id="page-footer" role="contentinfo">
 		<div class="container">
-			
+
 			<?php //require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
 
 			<div class="footer-cols">
@@ -56,21 +56,6 @@
 			</div>
 		</div>
 	</footer><!--/#page-footer-->
-</div><!--/#page-content-->
-
-
-<div id="drawer">
-	<nav class="drawer-nav" role="navigation">
-		<?php
-		if (has_nav_menu('mobile-menu')) :
-			wp_nav_menu(array('theme_location' => 'mobile-menu', 'menu_class' => 'hidden-md hidden-lg', 'walker' => new drawer_nav()));
-		endif;
-		?>
-	</nav>
-	<div class="icons">
-		<?php require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
-	</div>
-</div>
 
 <!--Search Modal-->
 <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

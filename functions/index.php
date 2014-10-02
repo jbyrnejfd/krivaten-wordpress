@@ -50,7 +50,7 @@ foreach ($kvt_Widgets as $widget) {
 	        'before_title' => "<h3>",
 	        'after_title' => "</h3>",
 		));
-	}	
+	}
 }
 
 // Widget Check
@@ -99,14 +99,14 @@ function kvt_edit_post_link($output) {
 add_filter('edit_post_link', 'kvt_edit_post_link');
 
 // Enable Custom Royal Slider Skin
-add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);
-function new_royalslider_add_custom_skin($skins) {
-	$skins['customSkin'] = array(
-		'label' => 'Custom skin',
-		'path' => ''
-	);
-	return $skins;
-}
+// add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);
+// function new_royalslider_add_custom_skin($skins) {
+// 	$skins['customSkin'] = array(
+// 		'label' => 'Custom skin',
+// 		'path' => ''
+// 	);
+// 	return $skins;
+// }
 
 // Scripts
 require_once("scripts.php");
@@ -126,4 +126,46 @@ require_once("mobile-detect.php");
 // $detect->isTablet();
 // $detect->isiOS();
 // $detect->isAndroidOS();
+
+// Podcast Post Type
+add_action('init', 'sermons_register');
+function sermons_register() {
+
+	$sermon_labels = array(
+		'name' => _x('Podcasts', 'post type general name'),
+		'singular_name' => _x('Podcast', 'post type singular name'),
+		'add_new' => _x('Add New', 'portfolio item'),
+		'add_new_item' => __('Add New Podcast'),
+		'edit_item' => __('Edit Podcast'),
+		'new_item' => __('New Podcast'),
+		'view_item' => __('View Podcast'),
+		'search_items' => __('Search Podcasts'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash'),
+		'parent_item_colon' => ''
+	);
+
+	$args = array(
+		'labels' => $sermon_labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'menu_icon' => 'dashicons-microphone',
+		'rewrite' => array ('slug' => 'sermons'),
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title','editor','thumbnail')
+	);
+
+	register_post_type( 'sermons' , $args );
+}
+
+// Custom Taxonomy
+$series_labels = array('name' => 'Series', 'all_items' => 'All Series');
+register_taxonomy('series', 'sermons', array('hierarchical' => false, 'labels' => $series_labels, 'query_var' => true, 'rewrite' => array( 'slug' => 'series', 'with_front' => false )));
+$speaker_labels = array('name' => 'Preachers', 'all_items' => 'All Preachers');
+register_taxonomy('preacher', 'sermons', array('hierarchical' => false, 'labels' => $speaker_labels, 'query_var' => true, 'rewrite' => array( 'slug' => 'preachers', 'with_front' => false )));
 ?>

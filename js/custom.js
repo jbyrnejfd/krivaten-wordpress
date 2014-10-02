@@ -1,5 +1,5 @@
 jQuery(function($){
-	$(document).ready(function(){     	
+	$(document).ready(function(){
 		var userAgent = navigator.userAgent;
 
 		/**
@@ -22,7 +22,7 @@ jQuery(function($){
 		if(userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) || userAgent.match(/iPad/i)) {
 			$('label[for]').click(function () {
 				var el = $(this).attr('for');
-				if ($('#' + el + '[type=radio], #' + el + '[type=checkbox]').attr('selected', !$('#' + el).attr('selected'))) {return;} 
+				if ($('#' + el + '[type=radio], #' + el + '[type=checkbox]').attr('selected', !$('#' + el).attr('selected'))) {return;}
 				else {$('#' + el)[0].focus();}
 			});
 		}
@@ -31,7 +31,8 @@ jQuery(function($){
 		 * Target Android < 3.0
 		 */
 		var browserName = userAgent.indexOf("Android "),
-			browserVersion = userAgent.substr(browserName+8,1)
+			browserVersion = userAgent.substr(browserName+8,1);
+
 		if(browserVersion < 3) {
 			var transitions = false;
 			$('body').addClass('no-transitions');
@@ -43,9 +44,10 @@ jQuery(function($){
 		/**
 		 * Toggle Side Drawer
 		 */
-		$('.drawer-toggle').on('click', function(e) {
-			e.preventDefault();
-			$('body').toggleClass('drawer-open');
+		$('[data-toggle="offcanvas"]').click(function (evt) {
+			evt.preventDefault();
+			$(evt.target).toggleClass('active');
+			$('.row-offcanvas').toggleClass('active')
 		});
 	});
 });

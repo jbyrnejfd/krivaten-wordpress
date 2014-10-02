@@ -1,62 +1,75 @@
 /**
  * Footer
  */
-
 footer {
 	h4 {
 		font-weight: 700;
 	}
-	.footer-nav {
-		&, ul {
-			list-style-type: none;
+	.footer-nav-1 {
+		&,
+		ul {
 			padding: 0;
+
+			list-style-type: none;
 		}
 		> li {
 			@extend .col-md-4;
 
 			> a {
 				display: block;
+
 				margin: 10px 0;
+
 				font-size: 18px;
 				font-weight: 700;
-				line-height: $headings-line-height
+				line-height: $headings-line-height;
 			}
 		}
 	}
 	li {
 		a {
-			line-height: 30px;
 			text-transform: lowercase;
 
-			&, &:hover {
+			line-height: 30px;
+
+			&,
+			&:hover {
 				color: $text-color;
 			}
 		}
 	}
 	.container {
-		background: $brand-primary;
 		position: relative;
+
+		background: $brand-primary;
 	}
-	.bg-danger, .bg-warning {
+	.bg-danger,
+	.bg-warning {
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
 	.bg-danger {
 		background: $brand-danger;
 
-		&, h4, a, a:hover {
+		&,
+		h4,
+		a,
+		a:hover {
 			color: $body-bg;
 		}
 		a {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
 			display: block;
+			overflow: hidden;
+
 			width: 100%;
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 	}
 	.bg-warning {
 		position: relative;
+
 		background: $brand-warning;
 
 		h4 {
@@ -67,22 +80,26 @@ footer {
 		position: absolute;
 		bottom: 0;
 		left: 0;
+
 		width: 100%;
 
 		.row {
 			margin: 0 15px;
 			padding-top: 5px;
 			padding-bottom: 5px;
-			background: $brand-info;
-			color: $body-bg;
-			font-weight: 700;
-			font-size: 20px;
+
 			text-transform: lowercase;
-			
+
+			color: $body-bg;
+			background: $brand-info;
+
+			font-size: 20px;
+			font-weight: 700;
 		}
 	}
 	@media (min-width: $screen-md) {
-		.bg-danger, .bg-warning {
+		.bg-danger,
+		.bg-warning {
 			padding-top: 0;
 			padding-bottom: 0;
 		}

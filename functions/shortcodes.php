@@ -2,14 +2,15 @@
 include("shortcodes/accordion.php");
 include("shortcodes/alert.php");
 include("shortcodes/blog.php");
+include("shortcodes/categories.php");
 include("shortcodes/checklist.php");
 include("shortcodes/circle-icon.php");
+include("shortcodes/featured-tile.php");
 include("shortcodes/grid.php");
 include("shortcodes/hr.php");
 include("shortcodes/icon.php");
 include("shortcodes/map.php");
 include("shortcodes/modal-slider.php");
-include("shortcodes/overlay.php");
 include("shortcodes/pre.php");
 include("shortcodes/quote.php");
 include("shortcodes/vimeo.php");
@@ -27,8 +28,10 @@ function pre_process_shortcode($content) {
 	add_shortcode('accordion', 'sc_accordion');
 	add_shortcode('alert', 'sc_alert');
 	add_shortcode('blog', 'sc_blog');
+	add_shortcode('categories', 'sc_categories');
 	add_shortcode('checklist', 'sc_checklist');
 	add_shortcode('circle_icon', 'sc_circle_icon');
+	add_shortcode('featured_tile', 'sc_featured_tile');
 	add_shortcode('row', 'sc_row');
 	add_shortcode('row_inner', 'sc_row');
 	add_shortcode('col', 'sc_col');
@@ -37,7 +40,6 @@ function pre_process_shortcode($content) {
 	add_shortcode("icon", "sc_icon");
 	add_shortcode("map", "sc_map");
 	add_shortcode("modal_slider", "sc_modal_slider");
-	add_shortcode('overlay', 'sc_overlay');
 	add_shortcode('pre', 'sc_pre');
 	add_shortcode('quote', 'sc_quote');
 	add_shortcode("vimeo", "sc_vimeo");

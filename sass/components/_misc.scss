@@ -1,8 +1,8 @@
 /**
  * Misc Styles
  */
-
 body {
+	overflow-x: hidden;
 	overflow-y: scroll !important;
 
 	@media (min-width: $screen-sm) {
@@ -29,10 +29,11 @@ a {
 }
 
 article {
+	padding: 10px 0;
+
 	font-size: 16px;
 	line-height: 25px;
 
-	padding: 10px 0;
 	&.excerpt {
 		border-bottom: 1px solid rgba(0,0,0,0.2);
 		&:last-of-type {
@@ -42,54 +43,46 @@ article {
 	.title {
 		margin-top: 0;
 	}
-	
-	h1, h2, h3, h4, h5, h6 {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		color: $brand-primary;
+
 		font-weight: 300;
 
 		span {
 			color: $brand-danger;
 		}
 	}
-	h3, h4, h5, h6 {
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-weight: 700;
 	}
-}
 
-aside {
-	[class*='sidebar-'] {
-		ul {
-			list-style-type: none;
-			padding: 0;
-		}
-		li {
-			border-bottom: 1px solid rgba(0,0,0,0.2);
-			&:last-child {
-				border-bottom: 0;
-			}
-			a {
-				display: block;
-				padding: 10px;
-				&:hover {
-					background: $brand-primary;
-					color: $body-bg;
-					text-decoration: none;
-				}
-			}
-		}
+	.alignleft,
+	.alignright,
+	.aligncenter {
+		display: block;
+		float: none;
+
+		margin: 0 auto;
 	}
-}
+	@media (min-width: $screen-md) {
+		.alignleft {
+			float: left;
 
-.align-y {
-	@include transform(translate(-50%, -50%));
-	position: absolute;
-	top: 50%;
-	left: 50%;
-}
+			margin: 0 15px 0 0;
+		}
+		.alignright {
+			float: right;
 
-.btn {
-	border-radius: 0;
-	span {
-		font-weight: 600;
+			margin: 0 0 0 15px;
+		}
 	}
 }

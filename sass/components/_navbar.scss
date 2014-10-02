@@ -5,39 +5,74 @@ $navbar-height-md: ($navbar-height * 2);
 
 .navbar {
 	border-bottom: 0;
+
 	&:after {
-		height: 5px;
 		width: 100%;
+		height: 5px;
+
 		background: $brand-primary;
-		box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.4);
+		box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.4);
 	}
 }
-.nav-collapse {
-	@include transform(translate(-50%, -50%));
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	font-size: 1.3em;
-	font-weight: 700;
 
-	.navbar-nav {
+.navbar-nav {
+	.open {
+		.dropdown-menu {
+			background-color: $dropdown-bg;
+		}
+	}
+
+	@media (min-width: $screen-sm) {
+		float: right;
+
 		> li {
 			> a {
 				@include transition(color 0.2s ease-in-out);
-				width: 165px;
+
+				width: 160px;
+
 				text-align: center;
+
+				font-weight: 700;
+			}
+		}
+	}
+
+	@media (min-width: $screen-md) {
+		@include transform(translate(-35%, -50%));
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		float: none;
+
+		font-size: 1.3em;
+		font-weight: 700;
+
+		.dropdown-menu {
+			@include box-shadow(none);
+
+			width: 100%;
+
+			border-radius: 0;
+			background: $dropdown-bg;
+		}
+
+		> li {
+			> a {
+				width: 160px;
 				padding: 15px 5px;
 			}
 		}
 	}
-	.dropdown-menu {
-		width: 100%;
-		@include box-shadow(none);
-		border-radius: 0;
+
+	@media (min-width: $screen-lg) {
+		@include transform(translate(-50%, -50%));
 
 		> li {
 			> a {
-				font-weight: 700;
+				width: 180px;
 			}
 		}
 	}
@@ -45,33 +80,67 @@ $navbar-height-md: ($navbar-height * 2);
 
 .navbar-brand {
 	padding: 5px 15px;
-	float: right;
 	img {
 		max-height: ($navbar-height - 10);
 	}
 }
 
 .nav-sub {
-	display: none;
+	// display: none;
+}
+.nav-sub {
+	position: absolute;
+	right: 0;
+	bottom: -30px;
+
+	display: block;
+
+	padding: 0 10px;
+
+	border-radius: 0 0 5px 5px;
+	background: $brand-primary;
+
+	font-size: 24px;
+	line-height: 1.3em;
+
+	span {
+		display: none;
+	}
+	a {
+		margin: 0 10px;
+
+		color: $body-bg;
+	}
+
+	@media (min-width: $screen-md) {
+		font-size: 18px;
+
+		span {
+			display: inline-block;
+		}
+	}
 }
 
 @media (min-width: $screen-md) {
 	.navbar {
 		height: $navbar-height-md;
 	}
+
 	.navbar-brand {
-		padding: 5px 15px;
-		height: $navbar-height-md;
 		float: left;
+
+		height: $navbar-height-md;
+		padding: 5px 15px;
 		img {
 			max-height: ($navbar-height-md - 20);
 		}
 	}
+
 	.navbar-connect {
 		position: absolute;
 		top: 0;
 		right: 0;
-		
+
 		.icon {
 			@include transition(opacity 0.2s ease-in-out);
 			&:hover {
@@ -79,38 +148,50 @@ $navbar-height-md: ($navbar-height * 2);
 			}
 		}
 	}
+
 	.navbar-icons {
 		font-size: 0;
 	}
+
 	.navbar-address {
 		margin-top: 5px;
 	}
+
 	.navbar-phone {
 		@include transform(rotate(90deg) translate(50%));
-		color: $brand-danger;
-		font-weight: 700;
+
 		position: absolute;
 		top: -5px;
 		right: $navbar-height-md;
+
 		width: ($navbar-height-md - 20);
-		text-align: center;
-		padding: 0;
 		margin: 0;
+		padding: 0;
+
+		text-align: center;
+
+		color: $brand-danger;
+
+		font-weight: 700;
 	}
 
 	.nav-sub {
-		background: $brand-primary;
 		position: absolute;
 		right: 0;
 		bottom: -35px;
-		display: block;
-		padding: 5px 10px;
-		font-size: 18px;
-		border-radius: 0 0 5px 5px;
-		line-height: 1.3em;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.4);
 
-		&, a {
+		display: block;
+
+		padding: 5px 10px;
+
+		border-radius: 0 0 5px 5px;
+		background: $brand-primary;
+
+		font-size: 18px;
+		line-height: 1.3em;
+
+		&,
+		a {
 			color: $body-bg;
 		}
 		a {

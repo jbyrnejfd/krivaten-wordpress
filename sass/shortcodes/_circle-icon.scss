@@ -5,26 +5,31 @@
 $circle-icon-diameter-xs: 80px;
 $circle-icon-diameter-sm: 160px;
 .circle-icon {
-	border-radius: 50%;
 	display: block;
-	margin: 0 auto;
+
 	width: $circle-icon-diameter-xs;
 	height: $circle-icon-diameter-xs;
-	line-height: $circle-icon-diameter-xs;
-	background: $brand-warning;
-	color: $body-bg;
-	font-size: 40px;
+	margin: 0 auto;
+
 	text-align: center;
+
+	color: $body-bg;
+	border-radius: 50%;
+	background: $brand-warning;
+
+	font-size: 40px;
+	line-height: $circle-icon-diameter-xs;
 	&:hover {
-		background: $brand-primary;
 		color: $body-bg;
+		background: $brand-primary;
 	}
 }
 @media (min-width: $screen-sm) {
 	.circle-icon {
 		width: $circle-icon-diameter-sm;
 		height: $circle-icon-diameter-sm;
-		line-height: $circle-icon-diameter-sm;
+
 		font-size: 60px;
+		line-height: $circle-icon-diameter-sm;
 	}
 }

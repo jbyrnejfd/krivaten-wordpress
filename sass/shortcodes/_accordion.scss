@@ -6,17 +6,21 @@
 	.panel-title {
 		a {
 			display: block;
-			color: $text-color;
+
 			text-decoration: none;
+
+			color: $text-color;
 
 			&:before {
 				margin-right: 10px;
+
+				content: '\f106';
+
 				font-family: $icon-font-name;
-				content: '\f056';
 			}
 			&.collapsed {
 				&:before {
-					content: '\f055';
+					content: '\f107';
 				}
 			}
 		}

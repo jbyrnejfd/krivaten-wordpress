@@ -1,75 +1,44 @@
-@import "variables";
-@import "bootstrap";
-@import "../vendor/bourbon/app/assets/stylesheets/bourbon";
+/**
+ * Framework
+ */
+@import 'variables';
+@import 'bootstrap';
 
-// Components
+/**
+ * Dependencies
+ */
+@import '../vendor/bourbon/app/assets/stylesheets/bourbon';
+
+/**
+ * Components
+ */
 // @import "../vendor/bootstrap-datepicker/less/datepicker3.less";
-@import "components/misc";
-@import "components/gravity-forms";
-@import "components/navbar";
-@import "components/jumbotron";
-@import "components/icons";
-@import "components/footer";
-@import "components/featured-tiles";
-@import "components/jplayer";
-@import "components/spacing";
+@import 'components/misc';
+@import 'components/gravity-forms';
+@import 'components/navbar';
+@import 'components/buttons';
+@import 'components/jumbotron';
+@import 'components/icons';
+@import 'components/footer';
+@import 'components/jplayer';
+@import 'components/offcanvas';
+@import 'components/spacing';
 // @import "components/royal-slider";
 
-// Styles
-@import "branding";
 
 /**
  * Shortcodes
  */
-@import "shortcodes/accordion";
-@import "shortcodes/checklist";
-@import "shortcodes/circle-icon";
-@import "shortcodes/hr";
-@import "shortcodes/quote";
-@import "shortcodes/social-icons";
+@import 'shortcodes/accordion';
+@import 'shortcodes/checklist';
+@import 'shortcodes/circle-icon';
+@import 'shortcodes/hr';
+@import 'shortcodes/quote';
+@import 'shortcodes/social-icons';
+@import 'shortcodes/featured-tile';
+@import 'shortcodes/well';
 
-/*
-DEMO CSS PROPERTY ORDER
-.selector {
-	// mixins
-	.border-radius(5px);
-
-	// positioning
-	position: absolute;
-	z-index: 10;
-	top: 0;
-	right: 0;
-
-	// display & box model
-	display: inline-block;
-	overflow: hidden;
-	box-sizing: border-box;
-	width: 100px;
-	height: 100px;
-	padding: 10px;
-	border: 10px solid #333;
-	margin: 10px;
-
-	// color
-	background: #000;
-	color: #fff
-
-	// text
-	font-family: sans-serif;
-	font-size: 16px;
-	line-height: 1.4;
-	text-align: right;
-
-	// other
-	cursor: pointer;
-	
-	// state selectors
-	&.state-selector {}
-
-	// sibling selectors
-	~ .sibling-selector {}
-
-	// sub selectors
-	.sub-selector {}
-}
-*/
+/**
+ * Responsive Overrides
+ */
+@import 'responsive-overrides';

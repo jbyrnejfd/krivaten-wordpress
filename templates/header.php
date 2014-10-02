@@ -3,13 +3,13 @@
   <meta charset="utf-8">
   <title><?php wp_title('|', true, 'right'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
-	
+
 	<?php if (is_search()) { ?>
-		<meta name="robots" content="noindex, nofollow" /> 
+		<meta name="robots" content="noindex, nofollow" />
 	<?php } ?>
 
 	<title><?php wp_title(''); ?></title>
-	
+
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/css.css" />
@@ -23,7 +23,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-144.png" />
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-144.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
+
 	<?php $detect = new Mobile_Detect; ?>
 	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 	<?php wp_head(); ?>
@@ -33,27 +33,35 @@
 
 </head>
 <body <?php body_class('site-background'); ?>>
-	
-	<div id="page-body">
+
 		<header class="navbar navbar-default navbar-fixed-top" role="banner">
 			<div class="container">
-				<div class="navbar-inner">
-					<div class="hidden-md hidden-lg pull-left btn-drawer">
-						<a href="#" class="drawer-toggle"><i class="fa fa-bars"></i>&nbsp;</a>
-						<!-- <a href="#modalSearch" data-toggle="modal" class="search-toggle"><i class="fa fa-search"></i>&nbsp;</a> -->
-					</div>
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
 					<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 						<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
 					</a>
-
-					<nav class="nav-collapse hidden-xs hidden-sm" role="navigation">
-						<?php
-						if (has_nav_menu('main-menu')) :
-							wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'walker' => new top_nav()));
-						endif;
-						?>
-					</nav>
 				</div>
+
+				<div class="navbar-inner">
+					<?php
+						if(has_nav_menu('main-menu')) {
+							wp_nav_menu(array(
+								'theme_location' => 'main-menu',
+								'container' => 'nav',
+								'container_class' => 'navbar-collapse collapse',
+								'menu_class' => 'nav navbar-nav',
+								'depth' => '0',
+								'walker' => new top_nav()
+							));
+						}
+					?>
+				</div>
+
 				<div class="navbar-connect visible-md visible-lg">
 					<div class="navbar-phone">
 						<?php
@@ -69,11 +77,12 @@
 						Hamilton, OH
 					</div>
 				</div>
+
 			</div>
 			<div class="nav-sub">
-				<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> contact</a>
-				<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> directions</a>
-				<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> give</a>
+				<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> <span>contact</span></a>
+				<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> <span>directions</span></a>
+				<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> <span>give</span></a>
 			</div>
 		</header>
 
@@ -103,17 +112,27 @@
 					<h1><?php the_title(); ?></h1>
 				<?php } ?>
 			</div>
+
+			<?php if($sidebarToggleLeft) { ?>
+				<a href="#" class="btn-sidebar-toggle left" data-toggle="offcanvas">
+					Toggle Sidebar <i class="fa fa-fw fa-angle-right"></i>
+				</a>
+			<?php } elseif($sidebarToggleRight) { ?>
+				<a href="#" class="btn-sidebar-toggle right" data-toggle="offcanvas">
+					<i class="fa fa-fw fa-angle-left"></i> Toggle Sidebar
+				</a>
+			<?php } ?>
 		</div>
 
 		<!--[if lt IE 9]>
 		<div class="container">
 			<div class="alert alert-warning text-center">
-				<h2 class="text-center">Outdated Browser Warning</h4>	
+				<h2 class="text-center">Outdated Browser Warning</h4>
 				<p class="text-center">While this site will look and work fine for the most part, you are likely missing out on an optimal user experience.</p>
 				<p class="text-center">Do yourself a favor and please upgrade to <a href="https://www.google.com/chrome" title="Google Chrome" target="_blank" style="color: black; font-weight: bold;">Google Chrome</a> or <a href="http://www.mozilla.org/" title="Mozilla Firefox" target="_blank" style="color: black; font-weight: bold;">Mozilla Firefox</a></p>
 			</div>
 		</div>
 		<![endif]-->
-		
+
 		<div id="page-content">
 			<div class="container">

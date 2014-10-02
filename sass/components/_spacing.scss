@@ -1,15 +1,23 @@
 /**
  * Spacing
  */
-
-// margins
+// Margins
 .margin-y-15 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
 
-// padding
+// Paddings
 .padding-y-15 {
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+// Alignments
+.align-y {
+	@include transform(translate(-50%, -50%));
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }

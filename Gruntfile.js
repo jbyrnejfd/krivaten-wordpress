@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
+
 		// js
 		'concat': {
 			development: {
@@ -67,10 +67,21 @@ module.exports = function(grunt) {
 					"assets/js/jplayer.playlist.js": "assets/js/jplayer.playlist.js"
 				}
 			}
+		},
+
+		'csscomb': {
+				dynamic_mappings: {
+				expand: true,
+				cwd: 'sass',
+				src: ['**/*.scss', '!_variables.scss'],
+				dest: 'sass',
+				ext: '.scss'
+			}
 		}
 
 	});
 
 	// register task
 	grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
+	grunt.registerTask('cleanStyles', ['csscomb']);
 };

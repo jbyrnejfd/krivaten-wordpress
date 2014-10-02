@@ -87,7 +87,7 @@
  $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
 
  //** File name for all font files.
- $icon-font-name:          "glyphicons-halflings-regular" !default;
+ $icon-font-name:          "FontAwesome" !default;
  //** Element ID within SVG icon file.
  $icon-font-svg-id:        "glyphicons_halflingsregular" !default;
 
@@ -153,9 +153,9 @@
 
  $btn-font-weight:                normal !default;
 
- $btn-default-color:              #333 !default;
- $btn-default-bg:                 #fff !default;
- $btn-default-border:             #ccc !default;
+ $btn-default-color:              $brand-primary !default;
+ $btn-default-bg:                 $body-bg !default;
+ $btn-default-border:             transparent !default;
 
  $btn-primary-color:              #fff !default;
  $btn-primary-bg:                 $brand-primary !default;
@@ -853,6 +853,4 @@
  //** Width of horizontal description list titles
  $dl-horizontal-offset:        $component-offset-horizontal !default;
  //** Horizontal line color.
- $hr-border:                   $gray-lighter !default;
-
-
+ $hr-border:                   rgba(0,0,0,0.3) !default;
