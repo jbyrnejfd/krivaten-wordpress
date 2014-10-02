@@ -11,7 +11,6 @@
 			<?php } ?>
 			<?php the_content(); ?>
 		</div>
-		<?php // edit_post_link('Edit Entry', '<p class="text-center">', '</p>'); ?>
 	</article>
 <?php endwhile; ?>
 

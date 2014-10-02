@@ -1,18 +1,21 @@
-			<div class="clearfix"></div>
-		</div>
+		<div class="clearfix"></div>
 	</div>
+
 	<footer class="footer content-info" id="page-footer" role="contentinfo">
 		<div class="container">
-
-			<?php //require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
-
 			<div class="footer-cols">
 				<div class="row">
 					<div class="col-md-6">
 						<?php
-						if (has_nav_menu('main-menu')) :
-							wp_nav_menu(array('theme_location' => 'footer-misc', 'menu_class' => 'footer-nav row'));
-						endif;
+							if(has_nav_menu('footer-misc')) {
+								wp_nav_menu(array(
+									'theme_location' => 'footer-misc',
+									'container' => 'nav',
+									'container_class' => 'navbar-collapse collapse',
+									'menu_class' => 'footer-nav row',
+									'depth' => '0'
+								));
+							}
 						?>
 					</div>
 					<div class="col-md-3 bg-danger">
@@ -57,32 +60,33 @@
 		</div>
 	</footer><!--/#page-footer-->
 
-<!--Search Modal-->
-<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form role="search" method="get" id="modalSearchForm" class="form-search" action="<?php echo home_url('/'); ?>">
-				<div class="modal-body">
-					<input type="text" name="s" id="s" class="form-control" placeholder="<?php _e('Search', 'roots'); ?> <?php bloginfo('name'); ?>">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-small pull-left" data-dismiss="modal">Cancel</button>
-					<button class="btn btn-primary btn-small pull-right">Submit</button>
-					<div class="clearfix"></div>
-				</div>
-			</form>
+	<!--Search Modal-->
+	<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form role="search" method="get" id="modalSearchForm" class="form-search" action="<?php echo home_url('/'); ?>">
+					<div class="modal-body">
+						<input type="text" name="s" id="s" class="form-control" placeholder="<?php _e('Search', 'roots'); ?> <?php bloginfo('name'); ?>">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-small pull-left" data-dismiss="modal">Cancel</button>
+						<button class="btn btn-primary btn-small pull-right">Submit</button>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-</div><!--/#modalSearch-->
+	</div><!--/#modalSearch-->
 
-<?php wp_footer(); ?>
-<?php
-$googleAnalytics = get_option("roots_google_analytics");
-if($googleAnalytics != "") { ?>
-	<script>
-	var _gaq=[['_setAccount','<?php echo $googleAnalytics?>'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
-<?php } ?>
+	<?php wp_footer(); ?>
+	<?php $googleAnalytics = get_option("roots_google_analytics"); ?>\
+	<?php if($googleAnalytics != "") { ?>
+		<script>
+			var _gaq = [['_setAccount','<?php echo $googleAnalytics?>'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+				g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+	<?php } ?>
+</body>
+</html>

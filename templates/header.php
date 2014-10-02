@@ -24,7 +24,6 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory'); ?>/assets/img/logos/logo-144.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-	<?php $detect = new Mobile_Detect; ?>
 	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 	<?php wp_head(); ?>
 
@@ -34,105 +33,104 @@
 </head>
 <body <?php body_class('site-background'); ?>>
 
-		<header class="navbar navbar-default navbar-fixed-top" role="banner">
-			<div class="container">
+	<header class="navbar navbar-default navbar-fixed-top" role="banner">
+		<div class="container">
 
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<i class="fa fa-bars"></i>
-					</button>
-					<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
-						<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
-					</a>
-				</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="fa fa-bars"></i>
+				</button>
+				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
+					<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
+				</a>
+			</div>
 
-				<div class="navbar-inner">
+			<div class="navbar-inner">
+				<?php
+					if(has_nav_menu('main-menu')) {
+						wp_nav_menu(array(
+							'theme_location' => 'main-menu',
+							'container' => 'nav',
+							'container_class' => 'navbar-collapse collapse',
+							'menu_class' => 'nav navbar-nav',
+							'depth' => '0',
+							'walker' => new top_nav()
+						));
+					}
+				?>
+			</div>
+
+			<div class="navbar-connect visible-md visible-lg">
+				<div class="navbar-phone">
 					<?php
-						if(has_nav_menu('main-menu')) {
-							wp_nav_menu(array(
-								'theme_location' => 'main-menu',
-								'container' => 'nav',
-								'container_class' => 'navbar-collapse collapse',
-								'menu_class' => 'nav navbar-nav',
-								'depth' => '0',
-								'walker' => new top_nav()
-							));
-						}
+						echo get_option("kvt_phone_num");
 					?>
 				</div>
-
-				<div class="navbar-connect visible-md visible-lg">
-					<div class="navbar-phone">
-						<?php
-							echo get_option("kvt_phone_num");
-						?>
-					</div>
-					<div class="navbar-icons">
-						<?php require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
-					</div>
-					<div class="navbar-address">
-						Sunday @ 10:30 AM<br />
-						210 S 2nd Street<br />
-						Hamilton, OH
-					</div>
+				<div class="navbar-icons">
+					<?php require(TEMPLATEPATH . '/templates/components/social-icons.php'); ?>
 				</div>
-
-			</div>
-			<div class="nav-sub">
-				<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> <span>contact</span></a>
-				<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> <span>directions</span></a>
-				<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> <span>give</span></a>
-			</div>
-		</header>
-
-		<div class="jumbotron <?php if(is_page('home')) {echo "masthead";} else {echo "subhead";} ?>">
-			<div class="container">
-				<?php if(is_page('home')) { ?>
-					<h1>love &bull; live &bull; move</h1>
-				<?php /* If this is the blog page */ } elseif (is_home()) { ?>
-					<h1>Blog</h1>
-				<?php /* If this is a category archive */ } elseif (is_category()) { ?>
-					<h1>Posts in Category &#8216<?php single_cat_title(); ?>&#8216</h1>
-				<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-					<h1>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h1>
-				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-					<h1>Archive for <?php the_time('F jS, Y'); ?></h1>
-				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-					<h1>Archive for <?php the_time('F, Y'); ?></h1>
-				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-					<h1>Archive for <?php the_time('Y'); ?></h1>
-				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-					<h1>Author Archive</h1>
-				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-					<h1>Blog Archives</h1>
-				<?php /* If this is a search result */ } elseif(is_search()) { ?>
-					<h1>Search results for &quot;<?php the_search_query() ?>&quot;</h1>
-				<?php /* If this is a page */ } else { ?>
-					<h1><?php the_title(); ?></h1>
-				<?php } ?>
+				<div class="navbar-address">
+					Sunday @ 10:30 AM<br />
+					210 S 2nd Street<br />
+					Hamilton, OH
+				</div>
 			</div>
 
-			<?php if($sidebarToggleLeft) { ?>
-				<a href="#" class="btn-sidebar-toggle left" data-toggle="offcanvas">
-					Toggle Sidebar <i class="fa fa-fw fa-angle-right"></i>
-				</a>
-			<?php } elseif($sidebarToggleRight) { ?>
-				<a href="#" class="btn-sidebar-toggle right" data-toggle="offcanvas">
-					<i class="fa fa-fw fa-angle-left"></i> Toggle Sidebar
-				</a>
+		</div>
+		<div class="nav-sub">
+			<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> <span>contact</span></a>
+			<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> <span>directions</span></a>
+			<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> <span>give</span></a>
+		</div>
+	</header>
+
+	<div class="jumbotron <?php if(is_page('home')) {echo "masthead";} else {echo "subhead";} ?>">
+		<div class="container">
+			<?php if(is_page('home')) { ?>
+				<h1>love &bull; live &bull; move</h1>
+			<?php /* If this is the blog page */ } elseif (is_home()) { ?>
+				<h1>Blog</h1>
+			<?php /* If this is a category archive */ } elseif (is_category()) { ?>
+				<h1>Posts in Category &#8216<?php single_cat_title(); ?>&#8216</h1>
+			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+				<h1>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h1>
+			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+				<h1>Archive for <?php the_time('F jS, Y'); ?></h1>
+			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+				<h1>Archive for <?php the_time('F, Y'); ?></h1>
+			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+				<h1>Archive for <?php the_time('Y'); ?></h1>
+			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
+				<h1>Author Archive</h1>
+			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+				<h1>Blog Archives</h1>
+			<?php /* If this is a search result */ } elseif(is_search()) { ?>
+				<h1>Search results for &quot;<?php the_search_query() ?>&quot;</h1>
+			<?php /* If this is a page */ } else { ?>
+				<h1><?php the_title(); ?></h1>
 			<?php } ?>
 		</div>
 
-		<!--[if lt IE 9]>
-		<div class="container">
-			<div class="alert alert-warning text-center">
-				<h2 class="text-center">Outdated Browser Warning</h4>
-				<p class="text-center">While this site will look and work fine for the most part, you are likely missing out on an optimal user experience.</p>
-				<p class="text-center">Do yourself a favor and please upgrade to <a href="https://www.google.com/chrome" title="Google Chrome" target="_blank" style="color: black; font-weight: bold;">Google Chrome</a> or <a href="http://www.mozilla.org/" title="Mozilla Firefox" target="_blank" style="color: black; font-weight: bold;">Mozilla Firefox</a></p>
-			</div>
-		</div>
-		<![endif]-->
+		<?php if($sidebarLeft) { ?>
+			<a href="#" class="btn-sidebar-toggle left" data-toggle="offcanvas">
+				Toggle Sidebar <i class="fa fa-fw fa-angle-right"></i>
+			</a>
+		<?php } elseif($sidebarRight) { ?>
+			<a href="#" class="btn-sidebar-toggle right" data-toggle="offcanvas">
+				<i class="fa fa-fw fa-angle-left"></i> Toggle Sidebar
+			</a>
+		<?php } ?>
+	</div>
 
-		<div id="page-content">
-			<div class="container">
+	<!--[if lt IE 9]>
+	<div class="container">
+		<div class="alert alert-warning text-center">
+			<h2 class="text-center">Outdated Browser Warning</h4>
+			<p class="text-center">While this site will look and work fine for the most part, you are likely missing out on an optimal user experience.</p>
+			<p class="text-center">Do yourself a favor and please upgrade to <a href="https://www.google.com/chrome" title="Google Chrome" target="_blank" style="color: black; font-weight: bold;">Google Chrome</a> or <a href="http://www.mozilla.org/" title="Mozilla Firefox" target="_blank" style="color: black; font-weight: bold;">Mozilla Firefox</a></p>
+		</div>
+	</div>
+	<![endif]-->
+
+	<div class="container">

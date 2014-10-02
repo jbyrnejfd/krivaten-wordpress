@@ -1,8 +1,12 @@
 /**
  * Misc Styles
  */
+html,
 body {
-	overflow-x: hidden;
+	overflow: hidden;
+}
+
+body {
 	overflow-y: scroll !important;
 
 	@media (min-width: $screen-sm) {
