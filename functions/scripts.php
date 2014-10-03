@@ -1,6 +1,6 @@
 <?php
 /**
- * Enqueue scripts
+ * Default scripts to enqueue
  */
 function kvt_scripts($DEVELOPMENT) {
 
@@ -15,5 +15,8 @@ function kvt_scripts($DEVELOPMENT) {
 
 	wp_enqueue_script('jquery', get_bloginfo('template_url') . '/assets/js/jquery.min.js',false,false,true);
 	wp_enqueue_script('datepicker', get_bloginfo('template_url') . '/assets/js/js.js',false,false,true);
+
 }
+
 add_action('wp_enqueue_scripts', 'kvt_scripts', 100);
+?>

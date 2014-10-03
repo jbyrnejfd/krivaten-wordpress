@@ -3,7 +3,7 @@ jQuery(function($){
 		var userAgent = navigator.userAgent;
 
 		/**
-		 * Form Effects
+		 * Form effects
 		 */
 		$("ul.gfield_checkbox li input").change(function() {
 			$(this).next('label').toggleClass("active");
@@ -17,7 +17,7 @@ jQuery(function($){
 		});
 
 		/**
-		 * Form Effects on iPhone
+		 * Form effects on iPhone
 		 */
 		if(userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) || userAgent.match(/iPad/i)) {
 			$('label[for]').click(function () {
@@ -42,7 +42,7 @@ jQuery(function($){
 		}
 
 		/**
-		 * Toggle Side Drawer
+		 * Toggle side drawer
 		 */
 		$('[data-toggle="offcanvas"]').click(function (evt) {
 			evt.preventDefault();

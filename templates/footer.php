@@ -1,4 +1,3 @@
-		<div class="clearfix"></div>
 	</div>
 
 	<footer class="footer content-info" id="page-footer" role="contentinfo">
@@ -7,13 +6,14 @@
 				<div class="row">
 					<div class="col-md-6">
 						<?php
-							if(has_nav_menu('footer-misc')) {
+							if(has_nav_menu('footer-menu')) {
 								wp_nav_menu(array(
-									'theme_location' => 'footer-misc',
+									'theme_location' => 'footer-menu',
 									'container' => 'nav',
-									'container_class' => 'navbar-collapse collapse',
+									'container_class' => '',
 									'menu_class' => 'footer-nav row',
-									'depth' => '0'
+									'depth' => '2',
+									'walker' => new footer_nav()
 								));
 							}
 						?>

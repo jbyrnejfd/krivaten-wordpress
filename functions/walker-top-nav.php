@@ -1,34 +1,32 @@
 <?php
-///////////////
-//  TOP NAV  //
-///////////////
-// https://github.com/twittem/wp-bootstrap-navwalker
+/**
+ * Top nav menu walker
+ */
 class top_nav extends Walker_Nav_Menu {
 
 	public $has_dropdown = false;
 
 	function start_lvl(&$output, $depth) {
+
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
+
 	}
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 
-		// if it has a url then add it
+		// Add divider
 		if($item->title == 'divider') {
 
 			$item_output = '<li class="divider"></li>';
 
+		// Otherwise render the link
 		} else {
 
 			$has_dropdown = $this->has_dropdown = in_array('menu-item-has-children', $item->classes) && !$depth;
-
 			$item_output .= '<li class="'.($item->current || $item->current_item_parent ? 'active' : '').($has_dropdown ? ' dropdown' : '').'">';
-
 				$item_output .= '<a href="'.esc_attr($item->url).'" class="'.($has_dropdown ? 'dropdown-toggle' : '').($item->current ? ' active' : '').'"'.($has_dropdown ? ' data-toggle="dropdown"' : '').(!empty($item->target) ? ' target="'.esc_attr( $item->target).'"' : '').'>';
-
 					$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).($has_dropdown && !$depth ? ' <i class="fa fa-angle-down"></i>' : '').$args->link_after;
-
 				$item_output .= '</a>';
 
 		}
@@ -37,16 +35,17 @@ class top_nav extends Walker_Nav_Menu {
 
 	}
 
-	function end_el(&$output, $depth) {
-			if($this->has_dropdown) $output .= "</ul>";
+	function end_el(&$output, $item, $depth = 0) {
+
+		// Close the ul if it is a dropdown
+		if($this->has_dropdown) $output .= "</ul>";
 		$output .= "</li>";
+
 	}
 
 	function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
-		if (!$element) return;
 
-		// only render menu item relatives
-		$this->current_relatives[] = $element->ID;
+		if (!$element) return;
 
 		$id_field = $this->db_fields['id'];
 		if (is_object($args[0])) {

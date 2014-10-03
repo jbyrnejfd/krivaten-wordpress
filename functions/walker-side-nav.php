@@ -1,8 +1,7 @@
 <?php
-////////////////
-//  SIDE NAV  //
-////////////////
-
+/**
+ * Side nav menu walker
+ */
 class side_nav extends Walker_Nav_Menu {
 
 	public $current_relatives = array();
@@ -11,7 +10,7 @@ class side_nav extends Walker_Nav_Menu {
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 
-		// if it has a url then add it
+		// If it has a url then add it
 		if($item->url != '#' && !empty($item->url)) {
 
 			$attributes = ' class="list-group-item'.($item->current ? ' active' : '').'"';
@@ -20,10 +19,9 @@ class side_nav extends Walker_Nav_Menu {
 
 			$item_output = $args->before;
 
-
 			$item_output .= '<a'.$attributes.'>';
 
-			// add ellipsis for sub menus
+			// Add ellipsis for sub menus
 			$icon_depth = $depth - 1;
 			if($icon_depth > 0) {
 				for($i = 0 ; $i<$icon_depth ; $i++) {
@@ -47,6 +45,7 @@ class side_nav extends Walker_Nav_Menu {
 			$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 
 		}
+
 	}
 
 	function end_lvl(&$output, $depth) {}
@@ -54,7 +53,7 @@ class side_nav extends Walker_Nav_Menu {
 	function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
 		if (!$element) return;
 
-		// only render menu item relatives
+		// Only render menu item relatives to limit markup
 		if($element->current_item_parent || $element->current_item_ancestor || in_array($element->menu_item_parent, $this->current_relatives)) {
 			$this->current_relatives[] = $element->ID;
 

@@ -1,51 +1,51 @@
 <?php
 /**
- * Footer nav
+ * Footer nav menu walker
  */
 class footer_nav extends Walker_Nav_Menu {
 
-	public $has_dropdown = false;
-
 	function start_lvl(&$output, $depth) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
 	}
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 
-		// if it has a url then add it
+		// Don't include dividers
 		if($item->title == 'divider') {
 
-			$item_output = '<li class="divider"></li>';
+			return false;
 
+		// All root levels are headers
+		} elseif($depth == 0) {
+
+			$this->parent_id = true;
+			$item_output .= '<div class="col-md-4">';
+				$item_output .= '<h4>'.$item->title.'</h4>';
+				$item_output .= '<ul class="list-unstyled">';
+
+		// Everything else
 		} else {
 
-			$has_dropdown = $this->has_dropdown = in_array('menu-item-has-children', $item->classes) && !$depth;
-
-			$item_output .= '<li class="'.($item->current || $item->current_item_parent ? 'active' : '').($has_dropdown ? ' dropdown' : '').'">';
-
-				$item_output .= '<a href="'.esc_attr($item->url).'" class="'.($has_dropdown ? 'dropdown-toggle' : '').($item->current ? ' active' : '').'"'.($has_dropdown ? ' data-toggle="dropdown"' : '').(!empty($item->target) ? ' target="'.esc_attr( $item->target).'"' : '').'>';
-
-					$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).($has_dropdown && !$depth ? ' <i class="fa fa-angle-down"></i>' : '').$args->link_after;
-
+			$item_output .= '<li>';
+				$item_output .= '<a href="'.esc_attr($item->url).'" '.(!empty($item->target) ? ' target="'.esc_attr( $item->target).'"' : '').'>';
+					$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).$args->link_after;
 				$item_output .= '</a>';
+			$item_output .= '</li>';
 
 		}
 
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-
 	}
 
-	function end_el(&$output, $depth) {
-			if($this->has_dropdown) $output .= "</ul>";
-		$output .= "</li>";
+	function end_el(&$output, $item, $depth = 0) {
+
+		if($depth == 0) $output .= "</div>";
+
 	}
 
 	function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
-		if (!$element) return;
 
-		// only render menu item relatives
-		$this->current_relatives[] = $element->ID;
+		if (!$element) return;
 
 		$id_field = $this->db_fields['id'];
 		if (is_object($args[0])) {
@@ -53,6 +53,7 @@ class footer_nav extends Walker_Nav_Menu {
 		}
 
 		parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+
 	}
 }
 ?>

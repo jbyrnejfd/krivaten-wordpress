@@ -15,4 +15,5 @@
 		</aside>
 	</div>
 </div>
+
 <?php require_once(TEMPLATEPATH . '/templates/footer.php'); ?>

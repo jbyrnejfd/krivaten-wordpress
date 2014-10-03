@@ -1,4 +1,7 @@
 <?php
+/**
+ * Include shortcode files
+ */
 include("shortcodes/accordion.php");
 include("shortcodes/alert.php");
 include("shortcodes/blog.php");
@@ -17,10 +20,13 @@ include("shortcodes/vimeo.php");
 include("shortcodes/well.php");
 include("shortcodes/youtube.php");
 
+/**
+ * Preprocess shortcocdes
+ */
 function pre_process_shortcode($content) {
 	global $shortcode_tags;
 
-    // Backup current registered shortcodes and clear them all out
+	// Backup current registered shortcodes and clear them all out
 	$orig_shortcode_tags = $shortcode_tags;
 	$shortcode_tags = array();
 
@@ -46,13 +52,14 @@ function pre_process_shortcode($content) {
 	add_shortcode('well', 'sc_well');
 	add_shortcode("youtube", "sc_youtube");
 
-    // Do the shortcode (only the one above is registered)
+	// Do the shortcode (only the one above is registered)
 	$content = do_shortcode($content);
 
-    // Put the original shortcodes back
+	// Put the original shortcodes back
 	$shortcode_tags = $orig_shortcode_tags;
 
 	return $content;
 }
+
 add_filter('the_content', 'pre_process_shortcode', 7);
 ?>
