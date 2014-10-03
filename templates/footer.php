@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="footer-cols">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 visible-md visible-lg">
 						<?php
 							if(has_nav_menu('footer-menu')) {
 								wp_nav_menu(array(
@@ -79,7 +79,7 @@
 	</div><!--/#modalSearch-->
 
 	<?php wp_footer(); ?>
-	<?php $googleAnalytics = get_option("roots_google_analytics"); ?>\
+	<?php $googleAnalytics = get_option("roots_google_analytics"); ?>
 	<?php if($googleAnalytics != "") { ?>
 		<script>
 			var _gaq = [['_setAccount','<?php echo $googleAnalytics?>'],['_trackPageview']];
