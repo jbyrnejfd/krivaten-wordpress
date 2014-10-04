@@ -16,10 +16,13 @@ function sc_categories($atts, $content = null) {
 	$return = wp_list_categories($args);
 
 	// Add an H2 tag before the links
-	$return = str_replace('<a ', '<h2 class="list-group-item"><a ', $return);
-	$return = str_replace('</a>', '</a></h2>', $return);
+	$return = str_replace('<a ', '<a class="list-group-item" ', $return);
+	$return = str_replace('</a>', '</a>', $return);
+	$return = str_replace('<br />', '', $return);
 
-	return '<div class="list-group">'.$return.'</div>';
+	$return = '<div class="list-group categories">'.$return.'</div>';
+
+	return preg_replace( "/\r|\n/", "", $return );
 }
 
 // [categories (taxonomy="categories" order="ASC")]
