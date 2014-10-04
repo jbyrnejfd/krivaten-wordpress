@@ -82,14 +82,14 @@
 		<div class="nav-sub">
 			<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> <span>contact</span></a>
 			<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> <span>directions</span></a>
-			<a href="<?php echo site_url(); ?>"><i class="fa fa-usd"></i> <span>give</span></a>
+			<a href="<?php echo site_url('give'); ?>"><i class="fa fa-usd"></i> <span>give</span></a>
 		</div>
 	</header>
 
 	<div class="jumbotron <?php if(is_page('home')) {echo "masthead";} else {echo "subhead";} ?>">
 		<div class="container">
 			<?php if(is_page('home')) { ?>
-				<h1>love &bull; live &bull; move</h1>
+				<h1><span>love</span><span>live</span><span>move</span></h1>
 			<?php /* If this is the blog page */ } elseif (is_home()) { ?>
 				<h1>Blog</h1>
 			<?php /* If this is a category archive */ } elseif (is_category()) { ?>

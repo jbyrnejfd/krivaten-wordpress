@@ -19,6 +19,13 @@
 
 	h1 {
 		padding: 20px 0;
+
+		body.home  & {
+			span {
+				display: block;
+			}
+
+		}
 	}
 
 	@media (min-width: $screen-md) {
@@ -39,6 +46,20 @@
 				width: 100%;
 
 				font-size: 115px;
+
+				span {
+					display: inline-block;
+
+					&:before {
+						content: '\00a0\2022\00a0';
+
+					}
+					&:first-of-type {
+						&:before {
+							content: '';
+						}
+					}
+				}
 			}
 		}
 

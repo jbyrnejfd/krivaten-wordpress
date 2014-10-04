@@ -3,12 +3,13 @@
  */
 html,
 body {
-	overflow-x: hidden;
+	overflow: hidden;
+}
+html {
+	overflow-y: auto;
 }
 
 body {
-	overflow-y: scroll !important;
-
 	@media (min-width: $screen-sm) {
 		background: $body-bg url(../img/logo-ghost.png) right 50px bottom 50px no-repeat;
 		background-attachment: fixed;
@@ -20,10 +21,6 @@ body {
 
 img {
 	max-width: 100%;
-}
-
-#page-body {
-	padding-top: $navbar-height;
 }
 
 a {

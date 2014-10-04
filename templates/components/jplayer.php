@@ -14,8 +14,8 @@
 	<?php if($sidebarPresent) { ?>
 		<div class="row jp-gui jp-interface jp-sm">
 			<div class="col-xs-2 jp-primary-controls">
-				<a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play fa-3x"></i></a>
-				<a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause fa-3x"></i></a>
+				<a href="javascript:;" class="jp-play"><i class="fa fa-play"></i></a>
+				<a href="javascript:;" class="jp-pause"><i class="fa fa-pause"></i></a>
 			</div>
 
 			<div class="col-xs-10 jp-main-content">
@@ -39,8 +39,8 @@
 						<div class="jp-control-title">Latest<br />Sermon</div>
 					</div>
 					<div class="col-md-6">
-						<a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play fa-3x"></i></a>
-						<a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause fa-3x"></i></a>
+						<a href="javascript:;" class="jp-play"><i class="fa fa-play"></i></a>
+						<a href="javascript:;" class="jp-pause"><i class="fa fa-pause"></i></a>
 					</div>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 
 			<div class="col-sm-4 col-lg-3 jp-meta">
 				<div class="jp-history">
-					<a href="#">Archive <i class="fa fa-archive"></i></a>
+					<a href="<?php echo site_url('sermons'); ?>">Archive <i class="fa fa-archive"></i></a>
 					<a href="http://myvillagechurch.com/sermons/feed/podcast" target="_blank">Subscribe <i class="fa fa-rss"></i></a>
 				</div>
 				<img src="<?php echo $jplayerData['itunes_image'];?>" class="jp-thumbnail hidden-xs" />

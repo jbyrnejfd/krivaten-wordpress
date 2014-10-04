@@ -19,11 +19,6 @@ $jp-height: 70px;
 
 		height: $jp-height;
 	}
-	.jp-primary-controls {
-		.fa {
-			line-height: $jp-height;
-		}
-	}
 
 	.jp-meta {
 		height: auto;
@@ -68,6 +63,10 @@ $jp-height: 70px;
 		.jp-control-title {
 			font-size: 1.25em;
 			font-weight: 700;
+		}
+		.fa {
+			line-height: $jp-height;
+			font-size: 2em;
 		}
 	}
 
@@ -154,6 +153,11 @@ $jp-height: 70px;
 
 			max-width: 50%;
 			max-height: 66px;
+		}
+		.jp-primary-controls {
+			.fa {
+				font-size: 3em;
+			}
 		}
 	}
 }
