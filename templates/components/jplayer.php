@@ -1,7 +1,7 @@
 
 <?php
-	wp_enqueue_script('jplayer', get_bloginfo('template_url') . '/assets/js/jplayer.js',false,false);
-	// wp_enqueue_script('jplayer', '//cdnjs.cloudflare.com/ajax/libs/jplayer/2.6.4/jquery.jplayer/jquery.jplayer.min.js',false,false);
+	// wp_enqueue_script('jplayer', get_bloginfo('template_url') . '/assets/js/jplayer.js',false,false);
+	wp_enqueue_script('jplayer', '//cdnjs.cloudflare.com/ajax/libs/jplayer/2.7.1/jquery.jplayer/jquery.jplayer.min.js',false,false);
 ?>
 
 <?php $jplayerData = powerpress_get_enclosure_data(get_the_ID()); ?>
