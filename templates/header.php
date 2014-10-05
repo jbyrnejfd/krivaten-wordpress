@@ -90,25 +90,29 @@
 		<div class="container">
 			<?php if(is_page('home')) { ?>
 				<h1><span>love</span><span>live</span><span>move</span></h1>
-			<?php /* If this is the blog page */ } elseif (is_home()) { ?>
-				<h1>Blog</h1>
-			<?php /* If this is a category archive */ } elseif (is_category()) { ?>
-				<h1>Posts in Category &#8216<?php single_cat_title(); ?>&#8216</h1>
-			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h1>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h1>
-			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+			<?php } elseif(is_tax()) { ?>
+				<h1><?php single_tag_title(); ?></h1>
+			<?php } elseif(is_category()) { ?>
+				<h1><?php single_cat_title(); ?></h1>
+			<?php } elseif(is_tag()) { ?>
+				<h1><?php single_tag_title(); ?></h1>
+			<?php } elseif(is_day()) { ?>
 				<h1>Archive for <?php the_time('F jS, Y'); ?></h1>
-			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+			<?php } elseif(is_month()) { ?>
 				<h1>Archive for <?php the_time('F, Y'); ?></h1>
-			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+			<?php } elseif(is_year()) { ?>
 				<h1>Archive for <?php the_time('Y'); ?></h1>
-			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
+			<?php } elseif(is_author()) { ?>
 				<h1>Author Archive</h1>
-			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+			<?php } elseif(isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 				<h1>Blog Archives</h1>
-			<?php /* If this is a search result */ } elseif(is_search()) { ?>
+			<?php } elseif(is_home()) { ?>
+				<h1>Blog</h1>
+			<?php } elseif(is_post_type_archive('sermons')) { ?>
+				<h1>Sermons</h1>
+			<?php } elseif(is_search()) { ?>
 				<h1>Search results for &quot;<?php the_search_query() ?>&quot;</h1>
-			<?php /* If this is a page */ } else { ?>
+			<?php } else { ?>
 				<h1><?php the_title(); ?></h1>
 			<?php } ?>
 		</div>

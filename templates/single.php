@@ -9,6 +9,14 @@
 	<div class="col-sm-4 sidebar-offcanvas">
 		<aside>
 			<?php
+				echo '<ul class="list-group">';
+				$args = array('numberposts' => '5');
+				$recent_posts = wp_get_recent_posts($args);
+				foreach($recent_posts as $recent){
+					echo '<a class="list-group-item" href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a>';
+				}
+				echo '</ul>';
+
 				kvt_sidebar('sidebar-blog');
 				kvt_sidebar('sidebar-all');
 			?>

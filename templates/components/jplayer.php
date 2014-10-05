@@ -60,7 +60,7 @@
 
 			<div class="col-sm-4 col-lg-3 jp-meta">
 				<div class="jp-history">
-					<a href="<?php echo site_url('sermons'); ?>">Archive <i class="fa fa-archive"></i></a>
+					<a href="<?php echo site_url('connect/sermons'); ?>">Archive <i class="fa fa-archive"></i></a>
 					<a href="http://myvillagechurch.com/sermons/feed/podcast" target="_blank">Subscribe <i class="fa fa-rss"></i></a>
 				</div>
 				<img src="<?php echo $jplayerData['itunes_image'];?>" class="jp-thumbnail hidden-xs" />

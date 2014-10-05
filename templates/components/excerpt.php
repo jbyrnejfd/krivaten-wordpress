@@ -8,7 +8,7 @@
 					<img src="<?php echo $thumb[0]?>" alt="<?php the_title_attribute(); ?>" width="100%"/>
 				</a>
 			<?php } ?>
-			<?php the_excerpt(); ?>
+			<?php if($showExcerpt) the_excerpt(); ?>
 			<?php include (TEMPLATEPATH . '/templates/components/meta.php' ); ?>
 		</div>
 	</article>
