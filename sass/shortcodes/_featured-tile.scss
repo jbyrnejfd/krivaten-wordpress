@@ -53,12 +53,12 @@
 
 		p,
 		h3 {
-			color: $body-bg;
+			color: $text-color;
 		}
 	}
 
 	@media (min-width: $screen-md) {
-		background: $brand-danger;
+		background: $brand-info;
 
 		&:hover {
 			.featured-tile-image {
