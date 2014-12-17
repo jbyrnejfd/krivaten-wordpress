@@ -24,11 +24,21 @@ class top_nav extends Walker_Nav_Menu {
 		} else {
 
 			$has_dropdown = $this->has_dropdown = in_array('menu-item-has-children', $item->classes) && !$depth;
-			$item_output .= '<li class="'.($item->current || $item->current_item_parent ? 'active' : '').($has_dropdown ? ' dropdown' : '').'">';
-				$item_output .= '<a href="'.esc_attr($item->url).'" class="'.($has_dropdown ? 'dropdown-toggle' : '').($item->current ? ' active' : '').'"'.($has_dropdown ? ' data-toggle="dropdown"' : '').(!empty($item->target) ? ' target="'.esc_attr( $item->target).'"' : '').'>';
-					$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).($has_dropdown && !$depth ? ' <i class="fa fa-angle-down"></i>' : '').$args->link_after;
-				$item_output .= '</a>';
+			$item_output .= '<li class="'.($item->current || $item->current_item_parent ? 'active' : '').($has_dropdown ? ' dropdown nav-top col-sm-3' : '').'">';
+				if($has_dropdown) {
+					$item_output .= '<span ';
+				} else {
+					$item_output .= '<a href="'.esc_attr($item->url).'"'.(!empty($item->target) ? ' target="'.esc_attr( $item->target).'"' : '');
+				}
 
+				$item_output .= 'class="'.($has_dropdown ? 'dropdown-toggle' : '').($item->current ? ' active' : '').'"'.($has_dropdown ? ' data-toggle="dropdown"' : '').'>';
+				$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).$args->link_after;
+				
+				if ($has_dropdown) {
+					$item_output .= '</span>';
+				} else {
+					$item_output .= '</a>';
+				}
 		}
 
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

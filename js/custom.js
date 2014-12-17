@@ -16,6 +16,7 @@ jQuery(function($){
 			format: 'mm-dd-yyyy'
 		});
 
+
 		/**
 		 * Form effects on iPhone
 		 */
@@ -26,6 +27,7 @@ jQuery(function($){
 				else {$('#' + el)[0].focus();}
 			});
 		}
+
 
 		/**
 		 * Target Android < 3.0
@@ -41,6 +43,7 @@ jQuery(function($){
 			$('body').addClass('transitions');
 		}
 
+
 		/**
 		 * Toggle side drawer
 		 */
@@ -48,6 +51,36 @@ jQuery(function($){
 			evt.preventDefault();
 			$(evt.target).toggleClass('active');
 			$('.row-offcanvas').toggleClass('active')
+		});
+
+
+		/**
+		 * Trigger navbar toggle
+		 */
+		$('[data-toggle="toggle-nav"]').click(function (evt) {
+			var context = $(this),
+				navbar = $('.navbar'),
+				target = navbar.find('.navbar-inner'),
+				windowWidth = $(window).width(),
+				innerTargetHeight;
+
+			// If navbar has navbar-active class, remove height
+			if (navbar.hasClass('navbar-active')) {
+				target.height('');
+
+			// Otherwise, add height
+			} else {
+				if (windowWidth > 767) {
+					// Get height of inner target
+					innerTargetHeight = target.find('.navbar-collapse').outerHeight();
+
+					// Set height of target
+					target.height(innerTargetHeight);
+				}
+			}
+
+			// Toggle navbar-active class
+			$('.navbar').toggleClass('navbar-active');
 		});
 	});
 });

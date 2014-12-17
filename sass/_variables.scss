@@ -222,7 +222,7 @@
  //## Dropdown menu container and contents.
 
  //** Background for the dropdown menu.
- $dropdown-bg:                    darken(#f8f8f8, 6.5%) !default;
+ $dropdown-bg:                    transparent;
  //** Dropdown menu `border-color`.
  $dropdown-border:                $dropdown-bg;
  //** Dropdown menu `border-color` **for IE8**.

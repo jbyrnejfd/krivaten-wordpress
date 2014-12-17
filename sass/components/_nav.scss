@@ -1,0 +1,199 @@
+/**
+ * Navigation
+ */
+.navbar-trigger {
+	position: absolute;
+	top: 5px;
+	right: 0;
+
+	height: 42px;
+
+	cursor: pointer;
+
+	color: $brand-primary;
+	border: 0;
+	outline: none;
+	background: none;
+
+	line-height: 42px;
+
+	&:before {
+		@include transition(color 0.3s ease-in-out);
+		@include transform(translateY(-50%));
+
+		position: absolute;
+		top: 50%;
+		left: -50px;
+
+		content: 'Menu';
+		text-transform: uppercase;
+
+		color: $text-color;
+
+		font-size: 16px;
+		font-weight: 700;
+	}
+	&:hover,
+	.navbar-active & {
+		&:before {
+			color: $brand-primary;
+		}
+	}
+}
+
+.navbar-inner {
+	overflow: hidden;
+
+	height: 0;
+
+	background: darken($navbar-default-bg, 5%);
+
+	ul {
+		padding: 0;
+
+		list-style-type: none;
+
+		font-size: 18px;
+		line-height: 30px;
+	}
+	.nav-top {
+		> span {
+			text-transform: uppercase;
+
+			font-weight: 700;
+		}
+	}
+
+	a {
+		display: block;
+
+		color: $brand-primary;
+
+		&:active,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&.active,
+		&:hover {
+			color: $brand-danger;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.navbar-inner {
+		.navbar-active & {
+			overflow: visible;
+
+			height: auto;
+		}
+
+		.nav-top {
+			span {
+				display: block;
+
+				cursor: pointer;
+			}
+
+			> .dropdown-toggle {
+				@include transition(color 0.3s ease-in-out);
+
+				&:before {
+					@include transition(-webkit-transform 0.3s ease-in-out);
+
+					position: absolute;
+					top: 0;
+					right: 0;
+
+					display: block;
+
+					width: 12px;
+					height: 30px;
+
+					content: '\f107';
+
+					font-family: $icon-font-name;
+					line-height: 30px;
+				}
+			}
+
+			> .dropdown-menu {
+				display: none;
+			}
+
+			&.open {
+				> .dropdown-toggle {
+					color: $brand-primary;
+
+					&:before {
+						@include transform(rotate(180deg));
+					}
+				}
+
+				> .dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.navbar-inner {
+		@include transition(opacity 0.3s ease-in-out, height 0.3s ease-in-out);
+		@include transform(translateZ(0));
+
+		opacity: 0;
+
+		.navbar-active & {
+			opacity: 1;
+		}
+		.navbar-collapse {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		li:not(.nav-top) {
+			position: relative;
+
+			&:before {
+				position: absolute;
+				left: 0;
+
+				content: '\f105';
+
+				font-family: $icon-font-name;
+			}
+		}
+
+		a {
+			@include transition(color 0.2s ease-in-out);
+
+			padding-left: 10px;
+		}
+	}
+	.navbar-nav {
+		float: none;
+	}
+}
+
+@media (min-width: $screen-md) {
+	.navbar-trigger {
+		@include transform(translateX(-50%));
+
+		top: $navbar-height / 2;
+		right: 50%;
+	}
+
+	.navbar-inner {
+		a {
+			@include transition(all 0.2s ease-in-out);
+
+			&.active,
+			&:hover {
+				@include transform(translateX(10px));
+			}
+		}
+	}
+}
