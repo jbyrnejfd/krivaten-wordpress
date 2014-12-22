@@ -3,10 +3,12 @@
  */
 
 .featured-tile {
+	@include transition(background-color 0.2s ease-in-out);
+
 	position: relative;
 
 	overflow: hidden;
-	background: transparent;
+	background: rgba($brand-info, 0%);
 	margin: 0 0 15px 0;
 
 	font-size: 14px;
@@ -62,8 +64,8 @@
 	@media (min-width: $screen-md) {
 
 		&:hover {
-			background: $brand-info;
-			
+			background: rgba($brand-info, 100%);
+
 			.featured-tile-image {
 				@include transform(translate3d(0, -150%, 0));
 			}
