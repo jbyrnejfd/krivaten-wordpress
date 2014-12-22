@@ -47,6 +47,8 @@
 	.featured-tile-desription {
 		@include transform(translateY(-50%));
 
+		display: none;
+
 		z-index: 0;
 
 		padding: 0 15px;
@@ -64,6 +66,10 @@
 			.featured-tile-image {
 				@include transform(translate3d(0, -150%, 0));
 			}
+		}
+
+		.featured-tile-desription {
+			display: block;
 		}
 	}
 }

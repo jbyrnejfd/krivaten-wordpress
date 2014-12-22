@@ -38,29 +38,15 @@
 		<div class="container">
 
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<i class="fa fa-bars"></i>
-				</button>
 				<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>" class="navbar-brand">
 					<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="<?php bloginfo('name'); ?>" />
 				</a>
 			</div>
 
-			<div class="navbar-inner">
-				<?php
-					if(has_nav_menu('main-menu')) {
-						wp_nav_menu(array(
-							'theme_location' => 'main-menu',
-							'container' => 'nav',
-							'container_class' => 'navbar-collapse collapse',
-							'menu_class' => 'nav navbar-nav',
-							'depth' => '0',
-							'walker' => new top_nav()
-						));
-					}
-				?>
-			</div>
+			<button type="button" class="navbar-trigger" data-toggle="toggle-nav">
+				<i class="fa fa-bars fa-3x"></i>
+			</button>
+
 
 			<div class="navbar-connect visible-md visible-lg">
 				<div class="navbar-phone">
@@ -79,6 +65,22 @@
 			</div>
 
 		</div>
+
+		<div class="navbar-inner">
+			<?php
+				if(has_nav_menu('main-menu')) {
+					wp_nav_menu(array(
+						'theme_location' => 'main-menu',
+						'container' => 'nav',
+						'container_class' => 'navbar-collapse',
+						'menu_class' => 'nav navbar-nav',
+						'depth' => '0',
+						'walker' => new top_nav()
+					));
+				}
+			?>
+		</div>
+
 		<div class="nav-sub">
 			<a href="<?php echo site_url('contact'); ?>"><i class="fa fa-phone"></i> <span>contact</span></a>
 			<a href="<?php echo site_url('directions'); ?>"><i class="fa fa-map-marker"></i> <span>directions</span></a>
@@ -138,4 +140,4 @@
 	</div>
 	<![endif]-->
 
-	<div class="container">
+	<div class="container" id="container">
