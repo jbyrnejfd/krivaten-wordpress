@@ -63,6 +63,7 @@ jQuery(function($){
 				target = navbar.find('.navbar-inner'),
 				windowWidth = $(window).width(),
 				innerTargetHeight;
+
 			// If navbar has navbar-active class, remove height
 			if (navbar.hasClass('navbar-active')) {
 				target.height('');
@@ -72,7 +73,6 @@ jQuery(function($){
 				if (windowWidth > 767) {
 					// Get height of inner target
 					innerTargetHeight = target.find('.navbar-collapse').outerHeight();
-					console.log('HERE', innerTargetHeight)
 
 					// Set height of target
 					target.height(innerTargetHeight);
