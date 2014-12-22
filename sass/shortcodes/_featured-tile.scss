@@ -60,9 +60,10 @@
 	}
 
 	@media (min-width: $screen-md) {
-		background: $brand-info;
 
 		&:hover {
+			background: $brand-info;
+			
 			.featured-tile-image {
 				@include transform(translate3d(0, -150%, 0));
 			}
