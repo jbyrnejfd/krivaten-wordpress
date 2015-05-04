@@ -8,7 +8,6 @@ Template Name: Home Page
 
 <div class="entry content-full">
 	<?php kvt_sidebar('body-top'); ?>
-
 	<?php
 		$new_loop = new WP_Query(array('post_type' => 'sermons', 'posts_per_page' => 1));
 		if($new_loop->have_posts()) {

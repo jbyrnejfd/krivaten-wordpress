@@ -1,3 +1,4 @@
+
 <?php
 	if(is_page() && !is_page_template()) {
 		$pageTemplate = 'page';

@@ -20,8 +20,14 @@ body {
 	overflow-y: hidden;
 }
 
+.well {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
 img {
 	max-width: 100%;
+	height: auto !important;
 }
 
 a {
@@ -33,8 +39,8 @@ a {
 article {
 	padding: 10px 0;
 
-	font-size: 16px;
-	line-height: 25px;
+	font-size: 20px;
+	line-height: 30px;
 
 	&.excerpt {
 		border-bottom: 1px solid rgba(0,0,0,0.2);

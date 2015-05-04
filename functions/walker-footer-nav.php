@@ -19,7 +19,7 @@ class footer_nav extends Walker_Nav_Menu {
 		} elseif($depth == 0) {
 
 			$this->parent_id = true;
-			$item_output .= '<div class="col-md-4">';
+			$item_output .= '<div class="col-md-3">';
 				$item_output .= '<h4>'.$item->title.'</h4>';
 				$item_output .= '<ul class="list-unstyled">';
 

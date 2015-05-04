@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="footer-cols">
 				<div class="row">
-					<div class="col-md-6 visible-md visible-lg">
+					<div class="col-md-9 visible-md visible-lg">
 						<?php
 							if(has_nav_menu('footer-menu')) {
 								wp_nav_menu(array(
@@ -29,20 +29,6 @@
 								}
 							?>
 						<li>
-					</div>
-					<div class="col-md-3 bg-warning">
-						<h4>the village church</h4>
-						<p>
-							210 s. second st. <br />
-							hamilton, oh <br />
-							513.330.9118
-						</p>
-
-						<p class="text-center" style="padding-top: 15px;">
-							<a href="http://www.acts29network.org" target="_blank">
-								<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-acts-29.png" width="60%" alt="<?php bloginfo('name'); ?>" />
-							</a>
-						</p>
 					</div>
 				</div>
 			</div>

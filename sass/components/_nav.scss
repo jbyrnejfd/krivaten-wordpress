@@ -98,23 +98,25 @@
 
 			> .dropdown-toggle {
 				@include transition(color 0.3s ease-in-out);
+				height: 40px;
+				line-height: 40px;
 
 				&:before {
 					@include transition(-webkit-transform 0.3s ease-in-out);
 
 					position: absolute;
 					top: 0;
-					right: 0;
+					right: 10px;
 
 					display: block;
 
 					width: 12px;
-					height: 30px;
+					height: 40px;
 
 					content: '\f107';
 
 					font-family: $icon-font-name;
-					line-height: 30px;
+					line-height: 40px;
 				}
 			}
 

@@ -43,6 +43,14 @@
 		@extend .btn-primary;
 		@extend .btn-lg;
 	}
+
+	input {
+
+		& + label {
+			font-weight: normal;
+			font-size: 80%;
+		}
+	}
 }
 .gfield_radio {
 	input {
@@ -182,5 +190,11 @@
 		float: left;
 
 		width: auto;
+	}
+}
+
+.panel {
+	input, textarea {
+		background: $gray-lighter;
 	}
 }

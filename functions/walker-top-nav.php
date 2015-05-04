@@ -33,7 +33,7 @@ class top_nav extends Walker_Nav_Menu {
 
 				$item_output .= 'class="'.($has_dropdown ? 'dropdown-toggle' : '').($item->current ? ' active' : '').'"'.($has_dropdown ? ' data-toggle="dropdown"' : '').'>';
 				$item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).$args->link_after;
-				
+
 				if ($has_dropdown) {
 					$item_output .= '</span>';
 				} else {
