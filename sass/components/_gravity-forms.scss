@@ -45,10 +45,9 @@
 	}
 
 	input {
-
 		& + label {
-			font-weight: normal;
 			font-size: 80%;
+			font-weight: normal;
 		}
 	}
 }
@@ -194,7 +193,8 @@
 }
 
 .panel {
-	input, textarea {
+	input,
+	textarea {
 		background: $gray-lighter;
 	}
 }

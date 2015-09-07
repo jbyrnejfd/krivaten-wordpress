@@ -8,8 +8,10 @@
 	position: relative;
 
 	overflow: hidden;
-	background: rgba($brand-info, 0%);
+
 	margin: 0 0 15px 0;
+
+	background: rgba($brand-info, 0%);
 
 	font-size: 14px;
 	line-height: 20px;
@@ -49,9 +51,9 @@
 	.featured-tile-desription {
 		@include transform(translateY(-50%));
 
-		display: none;
-
 		z-index: 0;
+
+		display: none;
 
 		padding: 0 15px;
 
@@ -62,7 +64,6 @@
 	}
 
 	@media (min-width: $screen-md) {
-
 		&:hover {
 			background: rgba($brand-info, 100%);
 

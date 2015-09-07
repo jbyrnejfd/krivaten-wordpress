@@ -17,13 +17,15 @@ $navbar-height-md: ($navbar-height * 2);
 .navbar-nav {
 	.open {
 		.dropdown-menu {
-			background-color: $dropdown-bg;
 			margin: 10px 0;
+
+			background-color: $dropdown-bg;
 
 			> li {
 				> a {
-					padding: 0;
 					height: 40px;
+					padding: 0;
+
 					line-height: 40px;
 				}
 
